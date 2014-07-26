@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  snap_dependent_no: 1
+  snap_gross_income: 9.99
+
+two:
+  snap_dependent_no: 1
+  snap_gross_income: 9.99

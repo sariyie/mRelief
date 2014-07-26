@@ -1,0 +1,44 @@
+<div class="page-header">
+  <h1>Snap eligibilities</h1>
+</div>
+
+<p><a href="/snap_eligibilities/new" class="btn btn-primary">Add a New Snap Eligibility</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Snap dependent no</th>
+      <th>Snap gross income</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snap_eligibilities.each do |snap_eligibility| %>
+      <tr>
+        <td><%= snap_eligibility.snap_dependent_no %></td>
+        <td><%= snap_eligibility.snap_gross_income %></td>
+        <td><%= snap_eligibility.age %></td>
+        <td>
+          <a href="/snap_eligibilities/<%= snap_eligibility.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/snap_eligibilities/<%= snap_eligibility.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_snap_eligibility/<%= snap_eligibility.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
