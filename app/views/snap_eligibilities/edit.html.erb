@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit Snap Eligibility #<%= @snap_eligibility.id %></h1>
+</div>
+
+<% if @snap_eligibility.errors.any? %>
+  <% @snap_eligibility.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_snap_eligibility/<%= @snap_eligibility.id %>" class="form-horizontal">
+  <!-- Label and input for snap_dependent_no -->
+  <div class="form-group">
+    <label for="snap_dependent_no" class="col-sm-2 control-label">
+      Snap dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="Snap dependent no" class="form-control" value="<%= @snap_eligibility.snap_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for snap_gross_income -->
+  <div class="form-group">
+    <label for="snap_gross_income" class="col-sm-2 control-label">
+      Snap gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="Snap gross income" class="form-control" value="<%= @snap_eligibility.snap_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for age -->
+  <div class="form-group">
+    <label for="age" class="col-sm-2 control-label">
+      Age
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="age" name="age" placeholder="Age" class="form-control" value="<%= @snap_eligibility.age %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Snap Eligibility" class="btn btn-primary">
+    </div>
+  </div>
+</form>
