@@ -12,30 +12,34 @@ class SnapEligibilitiesController < ApplicationController
   end
 
   def create
-    @snap_eligibility = SnapEligibility.new
     age = params[:age].to_i
-    snap_dependent_no = params[:snap_dependent_no]
-    snap_gross_income = params[:snap_gross_income].to_i
+    snap_dependent_no = params[:snap_dependent_no].to_i
+    snap_gross_income = params[:snap_gross_income]
+    snap_gross_income = snap_gross_income.gsub(/[^0-9\.]/, '').to_i
 
-    dependents = SnapEligibility.find_by(params[:snap_dependent_no])
-    senior_dependents = SnapEligibilitySenior.find_by(params[:snap_dependent_no])
+    if age.present? && snap_gross_income.present? && snap_dependent_no.present?
 
-    if age.present? && age <= 59
-      if snap_gross_income && snap_gross_income < dependents.snap_gross_income
-        @status = "Based on your household size and income, you likely qualify for food stamps."
-      else
-         @status = "Based on your household size and income, you likely do not qualify for food stamps.
-         If you need food assistance text FOOD to 877-877, to see a summer meal site near you."
-      end
+       if age <= 59
+         snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+       else
+         snap_eligibility = SnapEligibilitySenior.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+       end
 
-    else
-      if snap_gross_income && snap_gross_income < senior_dependents.snap_gross_income
-        @status = "Based on your household size and income, you likely qualify for food stamps."
-      else
-        @status = "Based on your household size and income, you likely do not qualify for food stamps."
-      end
+       p "snap_gross_income = #{snap_gross_income}"
+       p "snap_eligibility.snap_gross_income = #{snap_eligibility.snap_gross_income}"
 
-    end
+       if snap_gross_income < snap_eligibility.snap_gross_income
+         # @yes = "Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps.""Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps."
+         @eligible = true
+       else
+
+          # @status = "Based on your household size and income, you likely do not qualify for food stamps."
+          # @status = "Based on your household size and income, you likely do not qualify for food stamps.
+          # If you need food assistance, text FOOD to 877-877 to see a summer meal site near you."
+       end
+     else
+       redirect_to :back, :notice => "All fields are required."
+     end
   end
 
   def edit

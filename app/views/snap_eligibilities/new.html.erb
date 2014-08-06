@@ -1,6 +1,6 @@
 <div class = "container">
 <div class="page-header">
-  <h1>Do I qualify for food stamps?</h1>
+  <h1>Do I qualify for Food Stamps?</h1>
 </div>
 
 <% if @snap_eligibility.errors.any? %>
@@ -31,7 +31,11 @@
   <!-- Label and input for snap_dependent_no -->
   <div class="form-group">
     <label for="snap_dependent_no" class="col-sm-6 control-label">
-      How many dependents (including yourself) are in your household?
+      How many dependents
+     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
+        dependents
+        </button>
+      (including yourself) are in your household?
     </label>
 
 
@@ -43,7 +47,11 @@
   <!-- Label and input for snap_gross_income -->
   <div class="form-group">
     <label for="snap_gross_income" class="col-sm-6 control-label">
-      What is your gross monthly income, before taxes?
+      What is your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
+        gross monthly income?
+        </button>
+
     </label>
     <div class="col-sm-6">
       <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @snap_eligibility.snap_gross_income %>">

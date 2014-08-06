@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725235328) do
+ActiveRecord::Schema.define(version: 20140801220843) do
+
+  create_table "child_care_vouchers", force: true do |t|
+    t.integer  "ccdf_dependent_no"
+    t.integer  "ccdf_eligible_children"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "ccdf_gross_income"
+  end
+
+  create_table "rta_free_rides", force: true do |t|
+    t.integer  "rta_dependent_no"
+    t.decimal  "rta_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rta_ride_frees", force: true do |t|
+    t.integer  "rta_dependent_no"
+    t.decimal  "rta_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "snap_eligibilities", force: true do |t|
     t.integer  "snap_dependent_no"

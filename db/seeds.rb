@@ -5,6 +5,59 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+s = SnapEligibility.new
+s.snap_dependent_no = 1
+s.snap_gross_income = 1245.0
+s.save
+
+s = SnapEligibility.new
+s.snap_dependent_no = 2
+s.snap_gross_income = 1681.0
+s.save
+
+
+s = SnapEligibility.new
+s.snap_dependent_no = 3
+s.snap_gross_income = 2116.0
+s.save
+
+
+s = SnapEligibility.new
+s.snap_dependent_no = 4
+s.snap_gross_income = 2552.0
+s.save
+
+
+s = SnapEligibility.new
+s.snap_dependent_no = 5
+s.snap_gross_income = 2987.0
+s.save
+
+
+s = SnapEligibility.new
+s.snap_dependent_no = 6
+s.snap_gross_income = 3423.0
+s.save
+
+s = SnapEligibility.new
+s.snap_dependent_no = 7
+s.snap_gross_income = 3858.0
+s.save
+
+s = SnapEligibility.new
+s.snap_dependent_no = 8
+s.snap_gross_income = 4294.0
+s.save
+
+s = SnapEligibility.new
+s.snap_dependent_no = 9
+s.snap_gross_income = 4730.0
+s.save
+
+s = SnapEligibility.new
+s.snap_dependent_no = 10
+s.snap_gross_income = 5166.0
+s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 11
@@ -73,7 +126,7 @@ s.snap_gross_income = 1915.0
 s.save
 
 
-
+s = SnapEligibilitySenior.new
 s.snap_dependent_no = 2
 s.snap_gross_income = 2585.0
 s.save
@@ -91,7 +144,7 @@ s.snap_gross_income = 3925.0
 s.save
 
 
-
+s = SnapEligibilitySenior.new
 s.snap_dependent_no = 5
 s.snap_gross_income = 4595.0
 s.save
@@ -185,3 +238,201 @@ s.snap_dependent_no = 20
 s.snap_gross_income = 14645.0
 s.save
 
+#Transit Benefits
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 1
+r.rta_gross_income = 27610.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 2
+r.rta_gross_income = 36635.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 3
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 4
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 5
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 6
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 7
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 8
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 9
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 10
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 11
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 12
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 13
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 14
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 15
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 16
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 17
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 18
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 19
+r.rta_gross_income = 45657.0
+r.save
+
+r = RtaFreeRide.new
+r.rta_dependent_no = 20
+r.rta_gross_income = 45657.0
+r.save
+
+# Child Care Voucher
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 1
+c.ccdf_gross_income = 0.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 2
+c.ccdf_gross_income = 2392.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 3
+c.ccdf_gross_income = 3011.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 4
+c.ccdf_gross_income = 3631.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 5
+c.ccdf_gross_income = 4251.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 6
+c.ccdf_gross_income = 4871.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 7
+c.ccdf_gross_income = 5490.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 8
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 9
+c.ccdf_gross_income = 6110.0
+c.save
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 10
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 11
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 12
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 13
+c.ccdf_gross_income = 6110.0
+c.save
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 14
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 15
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 16
+c.ccdf_gross_income = 6110.0
+c.save
+
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 17
+c.ccdf_gross_income = 6110.0
+c.save
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 18
+c.ccdf_gross_income = 6110.0
+c.save
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 19
+c.ccdf_gross_income = 6110.0
+c.save
+c = ChildCareVoucher.new
+c.ccdf_dependent_no = 20
+c.ccdf_gross_income = 6110.0
+c.save

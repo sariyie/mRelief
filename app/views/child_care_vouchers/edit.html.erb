@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit Child Care Voucher #<%= @child_care_voucher.id %></h1>
+</div>
+
+<% if @child_care_voucher.errors.any? %>
+  <% @child_care_voucher.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_child_care_voucher/<%= @child_care_voucher.id %>" class="form-horizontal">
+  <!-- Label and input for ccdf_dependent_no -->
+  <div class="form-group">
+    <label for="ccdf_dependent_no" class="col-sm-2 control-label">
+      Ccdf dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="Ccdf dependent no" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for cccdf_gross_income -->
+  <div class="form-group">
+    <label for="cccdf_gross_income" class="col-sm-2 control-label">
+      Cccdf gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="cccdf_gross_income" name="cccdf_gross_income" placeholder="Cccdf gross income" class="form-control" value="<%= @child_care_voucher.cccdf_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for ccdf_eligible_children -->
+  <div class="form-group">
+    <label for="ccdf_eligible_children" class="col-sm-2 control-label">
+      Ccdf eligible children
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ccdf_eligible_children" name="ccdf_eligible_children" placeholder="Ccdf eligible children" class="form-control" value="<%= @child_care_voucher.ccdf_eligible_children %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Child Care Voucher" class="btn btn-primary">
+    </div>
+  </div>
+</form>
