@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Rta free rides</h1>
+</div>
+
+<p><a href="/rta_free_rides/new" class="btn btn-primary">Add a New Rta Free Ride</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Rta dependent no</th>
+      <th>Rta gross income</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rta_free_rides.each do |rta_free_ride| %>
+      <tr>
+        <td><%= rta_free_ride.rta_dependent_no %></td>
+        <td><%= rta_free_ride.rta_gross_income %></td>
+        <td>
+          <a href="/rta_free_rides/<%= rta_free_ride.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/rta_free_rides/<%= rta_free_ride.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_rta_free_ride/<%= rta_free_ride.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

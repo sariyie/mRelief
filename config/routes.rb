@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
+  # Routes for the Child_care_voucher resource:
+  # CREATE
+  get('/child_care_vouchers/new', { :controller => 'child_care_vouchers', :action => 'new' })
+  get('/create_child_care_voucher', { :controller => 'child_care_vouchers', :action => 'create' })
+
+  # READ
+  get('/child_care_vouchers', { :controller => 'child_care_vouchers', :action => 'index' })
+  get('/child_care_vouchers/:id', { :controller => 'child_care_vouchers', :action => 'show' })
+
+  # UPDATE
+  get('/child_care_vouchers/:id/edit', { :controller => 'child_care_vouchers', :action => 'edit' })
+  get('/update_child_care_voucher/:id', { :controller => 'child_care_vouchers', :action => 'update' })
+
+  # DELETE
+  get('/delete_child_care_voucher/:id', { :controller => 'child_care_vouchers', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Rta_free_ride resource:
+  # CREATE
+  get('/rta_free_rides/new', { :controller => 'rta_free_rides', :action => 'new' })
+  get('/create_rta_free_ride', { :controller => 'rta_free_rides', :action => 'create' })
+
+  # READ
+  get('/rta_free_rides', { :controller => 'rta_free_rides', :action => 'index' })
+  get('/rta_free_rides/:id', { :controller => 'rta_free_rides', :action => 'show' })
+
+  # UPDATE
+  get('/rta_free_rides/:id/edit', { :controller => 'rta_free_rides', :action => 'edit' })
+  get('/update_rta_free_ride/:id', { :controller => 'rta_free_rides', :action => 'update' })
+
+  # DELETE
+  get('/delete_rta_free_ride/:id', { :controller => 'rta_free_rides', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Snap_eligibility resource:
   # CREATE
   get('/mrelief', { :controller => 'snap_eligibilities', :action => 'new' })

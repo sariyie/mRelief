@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>mRelief</title>
+  <title>Mrelief</title>
 
-
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
   <style>
@@ -24,7 +23,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top" style= "background-color:#E6E6F5" role="navigation">
+  <%=image_tag(image_path("mRelieflogo.png"), class: 'navbar-left', style: "max-width:250px; margin-top: -7px; padding: 20px 0 0 30px") %>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -33,20 +33,31 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/mrelief" class="navbar-brand">mRelief</a>
+     <!--  <a href="/" class="navbar-brand "><b>mRelief</b></a> -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/what_is_snap">What is SNAP?</a></li>
+      <ul class="nav navbar-nav" style="float:right;">
         <li><a href="/how_mrelief_works">How mRelief Works</a></li>
+        <li><a href="/child_care_vouchers/new">Child Care Vouchers</a></li>
+        <li><a href="/rta_free_rides/new">RTA Ride Free</a></li>
+        <li><a href="/mrelief">Food Stamps</a></li>
         <li><a href="/about_us">About Us</a></li>
         <li><a href="/contact_us">Contact Us</a></li>
       </ul>
 
+
     </div><!-- /.navbar-collapse -->
   </nav>
+
+  <div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-dismissable alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
 
     <% if alert.present? %>
       <div class="alert alert-dismissable alert-warning">
@@ -54,9 +65,8 @@
         <%= alert %>
       </div>
     <% end %>
-    <div class="container">
+
     <%= yield %>
-    </div>
   </div>
 </body>
 </html>

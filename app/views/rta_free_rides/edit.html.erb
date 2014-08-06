@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Edit Rta Free Ride #<%= @rta_free_ride.id %></h1>
+</div>
+
+<% if @rta_free_ride.errors.any? %>
+  <% @rta_free_ride.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_rta_free_ride/<%= @rta_free_ride.id %>" class="form-horizontal">
+  <!-- Label and input for rta_dependent_no -->
+  <div class="form-group">
+    <label for="rta_dependent_no" class="col-sm-2 control-label">
+      Rta dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="Rta dependent no" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for rta_gross_income -->
+  <div class="form-group">
+    <label for="rta_gross_income" class="col-sm-2 control-label">
+      Rta gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="rta_gross_income" name="rta_gross_income" placeholder="Rta gross income" class="form-control" value="<%= @rta_free_ride.rta_gross_income %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Rta Free Ride" class="btn btn-primary">
+    </div>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+def DisplayMultiples(multiplesOf, count)
+  i = multiplesOf
+  while i <= 1000
+    if i % multiplesOf == 3
+      puts i
+    end
+    i += 1
+  end
+end
