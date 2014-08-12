@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1>All Programs on mRelief</h1>
+</div>
+
+<div class="row">
+<% @programs.each do |program| %>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <!-- <img data-src="holder.js/300x300" alt="..."> -->
+      <div class="caption">
+        <h3> <%= program.name %> </li></h3>
+        <p>Brief Description of the Program</p>
+        <p><a href="<%= program.url %>" class="btn btn-primary" role="button">See If You Qualify</a></p>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
+</div>

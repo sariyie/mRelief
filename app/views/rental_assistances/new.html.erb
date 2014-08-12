@@ -1,0 +1,76 @@
+<div class = "container">
+<div class="page-header">
+  <h1> Do I qualify for rental assistance?</h1>
+</div>
+
+<p class="lead">If you have a notarized 5-day notice you may qualify for rental assistance. Please answer the following questions:</p>
+
+<% if @rental_assistance.errors.any? %>
+  <% @rental_assistance.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/create_rental_assistance" class="form-horizontal">
+
+ <!--  <div class="form-group">
+  <label for="rental_status" class= "col-sm-2 control-label theme">Are you in one of the following categories?</label>
+    <div class="col-sm-6 form_row"> -->
+  <div class="form-group">
+    <label for="rental_status" class="col-sm-6 control-label theme">Select one of the following categories to describe your rental status:</label>
+  </div>
+  <div class="relative">
+    <br><%= radio_button_tag 'theme', 'homeless', true %> Homeless
+    <br><%= radio_button_tag 'theme', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
+    <br><%= radio_button_tag 'theme', 'a recipient of an eviction notice' %> A recipient of an eviction notice
+    <br><%= radio_button_tag 'theme', 'someone whose unemployment benefits have ended' %> Someone whose unemployment benefits have ended
+    <br><%= radio_button_tag 'theme', 'have experienced a temporary loss of income' %> Have experienced a temporary loss of income
+     <br><%= radio_button_tag 'theme', 'a victim of domestic violence' %> A victim of domestic violence
+      <br><%= radio_button_tag 'theme', 'none of the above' %> None of the above
+  </div>
+
+
+  <!-- Label and input for rental_dependent_no -->
+ <br/>
+ <br/>
+  <div class="form-group">
+    <label for="rental_dependent_no" class="col-sm-6 control-label">
+      How many
+     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
+        dependents
+        </button>
+      (including yourself) are in your household?
+    </label>
+
+    <div class="col-sm-6">
+      <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for rental_gross_income -->
+  <div class="form-group">
+    <label for="rental_gross_income" class="col-sm-6 control-label">
+       What is your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out (please include child support, social security benefits, and TANF (cash assistance))">
+        gross monthly income?
+        </button>
+
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="rental_gross_income" name="rental_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @rental_assistance.rental_gross_income %>">
+    </div>
+    <br>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+      <input type="submit" value="See if I qualify" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+</div>
+
