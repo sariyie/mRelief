@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Rental_assistance resource:
+  get('/programs', {:controller => 'programs', :action => 'index'})
+
+  # CREATE
+  get('/rental_assistances/new', { :controller => 'rental_assistances', :action => 'new' })
+  get('/create_rental_assistance', { :controller => 'rental_assistances', :action => 'create' })
+
+  # READ
+  get('/rental_assistances', { :controller => 'rental_assistances', :action => 'index' })
+  get('/rental_assistances/:id', { :controller => 'rental_assistances', :action => 'show' })
+
+  # UPDATE
+  get('/rental_assistances/:id/edit', { :controller => 'rental_assistances', :action => 'edit' })
+  get('/update_rental_assistance/:id', { :controller => 'rental_assistances', :action => 'update' })
+
+  # DELETE
+  get('/delete_rental_assistance/:id', { :controller => 'rental_assistances', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Child_care_voucher resource:
   # CREATE
   get('/child_care_vouchers/new', { :controller => 'child_care_vouchers', :action => 'new' })
@@ -54,6 +73,7 @@ Rails.application.routes.draw do
   get('/contact_us', { :controller => 'snap_eligibilities', :action => 'contact_us' })
   get('/what_is_snap', { :controller => 'snap_eligibilities', :action => 'what_is_snap' })
   get('/how_mrelief_works', { :controller => 'snap_eligibilities', :action => 'how_mrelief_works' })
+  get("/", { :controller => "pages", :action => "homepage" })
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

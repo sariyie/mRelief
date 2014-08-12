@@ -424,15 +424,80 @@ c = ChildCareVoucher.new
 c.ccdf_dependent_no = 17
 c.ccdf_gross_income = 6110.0
 c.save
+
 c = ChildCareVoucher.new
 c.ccdf_dependent_no = 18
 c.ccdf_gross_income = 6110.0
 c.save
+
 c = ChildCareVoucher.new
 c.ccdf_dependent_no = 19
 c.ccdf_gross_income = 6110.0
 c.save
+
 c = ChildCareVoucher.new
 c.ccdf_dependent_no = 20
 c.ccdf_gross_income = 6110.0
 c.save
+
+# Rental Assistance
+
+r = RentalAssistance.new
+r.rental_dependent_no = 1
+r.rental_gross_income = 3646.88
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 2
+r.rental_gross_income = 4915.63
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 3
+r.rental_gross_income = 6184.38
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 4
+r.rental_gross_income = 7453.13
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 5
+r.rental_gross_income = 8721.88
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 6
+r.rental_gross_income = 9990.63
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 7
+r.rental_gross_income = 11259.38
+r.save
+
+r = RentalAssistance.new
+r.rental_dependent_no = 8
+r.rental_gross_income = 12528.13
+r.save
+
+p = Program.new
+p.name = "Food Stamps"
+p.url = "/mrelief"
+p.save
+
+p = Program.new
+p.name = "RTA Ride Free"
+p.url = "/rta_free_rides/new"
+p.save
+
+p = Program.new
+p.name = "Child Care Voucher"
+p.url = "/child_care_vouchers/new"
+p.save
+
+p = Program.new
+p.name = "Rental Assistance"
+p.save
+

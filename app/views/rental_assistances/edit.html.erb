@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit Rental Assistance #<%= @rental_assistance.id %></h1>
+</div>
+
+<% if @rental_assistance.errors.any? %>
+  <% @rental_assistance.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_rental_assistance/<%= @rental_assistance.id %>" class="form-horizontal">
+  <!-- Label and input for rental_dependent_no -->
+  <div class="form-group">
+    <label for="rental_dependent_no" class="col-sm-2 control-label">
+      Rental dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="Rental dependent no" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for rental_gross_income -->
+  <div class="form-group">
+    <label for="rental_gross_income" class="col-sm-2 control-label">
+      Rental gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="rental_gross_income" name="rental_gross_income" placeholder="Rental gross income" class="form-control" value="<%= @rental_assistance.rental_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for rental_status -->
+  <div class="form-group">
+    <label for="rental_status" class="col-sm-2 control-label">
+      Rental status
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="rental_status" name="rental_status" placeholder="Rental status" class="form-control" value="<%= @rental_assistance.rental_status %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Rental Assistance" class="btn btn-primary">
+    </div>
+  </div>
+</form>
