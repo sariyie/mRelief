@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700italic' rel='stylesheet' type='text/css'>
+
   <meta charset="utf-8">
   <title>Mrelief</title>
 
@@ -23,9 +25,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top" style= "background-color:#E6E6F5" role="navigation">
-  <%=image_tag(image_path("mRelieflogo.png"), class: 'navbar-left', style: "max-width:250px; margin-top: -7px; padding: 20px 0 0 30px") %>
+  <nav class="navbar navbar-default navbar-fixed-top" style= "background-color:white; border-bottom:thin solid #E6E6E6" role="navigation">
+
+<%#=link_to image_tag("mRelieflogo.png", :border => 0), {:action => 'homepage', :controller => 'pages'}, {:class => 'navbar-left', :style => "max-width:100%; margin-top: -7px; padding: 20px 0 0 30px"} %>
+
+
     <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -33,7 +39,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-     <!--  <a href="/" class="navbar-brand "><b>mRelief</b></a> -->
+      <a href="/" class="navbar-brand logo"><b>mRelief</b></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,11 +52,11 @@
             <li class="divider"></li>
             <li><a href="/child_care_vouchers/new">Child Care Vouchers</a></li>
             <li class="divider"></li>
-            <li><a href="#">Rental Assistance</a></li>
+            <li><a href="/rental_assistances/new">Rental Assistance</a></li>
             <li class="divider"></li>
             <li><a href="/rta_free_rides/new">RTA Ride Free</a></li>
             <li class="divider"></li>
-            <li><a href="/programs">All Programs</a></li>
+            <li><a href="/programs">See All Programs</a></li>
         </ul>
         </li>
         <li><a href="/how_mrelief_works">How mRelief Works</a></li>
@@ -63,7 +69,7 @@
 <!-- /.navbar-collapse -->
   </nav>
 
-  <div class="container">
+  <div class="">
     <% if notice.present? %>
       <div class="alert alert-dismissable alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -79,6 +85,16 @@
     <% end %>
 
     <%= yield %>
+  </div>
+  <div style="border-top:thin solid #E6E6E6; padding:20px 0 20px 0; max-width:100%">
+    <div class="container">
+        <div><a href="/programs" class="logo" style="text-decoration:none">mRelief</a>
+        <a href ="https://www.facebook.com/"><i class="fa fa-facebook-square pull-right" style="font-size:32px"></i></a>
+        <a href ="https://www.twitter.com/"><i class="fa fa-twitter-square pull-right" style="font-size:32px"></i></a>
+        <a href ="https://www.google.com/"><i class="fa fa-google-plus-square pull-right" style="font-size:32px"></i></a>
+        </div>
+
+    </div>
   </div>
 </body>
 </html>
