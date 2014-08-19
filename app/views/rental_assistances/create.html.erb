@@ -1,0 +1,57 @@
+
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p>Based on your rental status, household size and income, you likely qualify for rental assistance.
+      </div>
+
+          <% if @eligible_homeless %>
+            <div class="well">
+            <p> Message for people who are homeless and eligible</p>
+            </div>
+          <% end %>
+
+          <% if @eligible_natural_disaster %>
+            <div class="well">
+            <p> Message for people who are victims of natural disasters</p>
+            </div>
+          <% end %>
+
+          <% if @eligible_eviction %>
+            <div class="well">
+            <p> Message for people who have received eviction notices</p>
+            </div>
+          <% end %>
+
+          <% if @eligible_unemployment %>
+            <div class="well">
+            <p> Message for someone whose unemployment benefits have ended</p>
+            </div>
+          <% end %>
+
+          <% if @eligible_income_loss %>
+            <div class="well">
+            <p> Message for people who have experienced a temporary loss of income</p>
+            </div>
+          <% end %>
+
+          <% if @eligible_domestic_violence %>
+            <div class="well">
+            <p> Message for people who are victims of domestic violence</p>
+            </div>
+          <% end %>
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for rental assistance?</h1></div>
+      <div class="well">
+        <p>Based on your rental status, household size and income, you likely do not qualify for rental assistance.</p>
+      <% end %>
+      </div>
+
+    <div class="row">
+      <a class="btn btn-default" href="/rental_assistances/new"><i class="fa fa-chevron-left"></i> Back</a>
+    </div>
+</div>

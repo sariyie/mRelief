@@ -499,5 +499,6 @@ p.save
 
 p = Program.new
 p.name = "Rental Assistance"
+p.url = "/rental_assistances/new"
 p.save
 

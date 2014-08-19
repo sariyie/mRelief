@@ -1,5 +1,6 @@
-<div class = "container">
-<div class="page-header">
+<div class= "container">
+
+<div class="page-header" style="border:none">
   <h1>Do I qualify for Food Stamps?</h1>
 </div>
 
@@ -13,58 +14,49 @@
 <% end %>
 
 
-<form action="/create_snap_eligibility" class="form-horizontal">
-
+<div>
+<form action="/create_snap_eligibility" role="form">
 
   <!-- Label and input for age -->
-  <div class="form-group">
-    <label for="age" class="col-sm-6 control-label">
-      How old are you?
-    </label>
-    <div class="col-sm-6">
-      <input type="text" id="age" name="age" placeholder="Age" class="form-control"
-    </div>
-    <br>
+  <div class="form-group" style="padding:0 0 20px 0">
+    <label for="age">How old are you?</label>
+      <input type="text" id="age" name="age" placeholder="Age" class="form-control" style="max-width:25%">
   </div>
 
 
   <!-- Label and input for snap_dependent_no -->
-  <div class="form-group">
-    <label for="snap_dependent_no" class="col-sm-6 control-label">
-      How many dependents
-     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
-        dependents
-        </button>
+  <div class="form-group"style="padding:0 0 20px 0">
+    <label for="snap_dependent_no">How many
+     <!-- <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support"> -->
+        dependents <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
       (including yourself) are in your household?
     </label>
 
-
-    <div class="col-sm-6">
-      <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @snap_eligibility.snap_dependent_no %>">
+    <div>
+      <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="# of dependents" class="form-control" style="max-width:15%" value="<%= @snap_eligibility.snap_dependent_no %>">
     </div>
   </div>
 
   <!-- Label and input for snap_gross_income -->
   <div class="form-group">
-    <label for="snap_gross_income" class="col-sm-6 control-label">
+    <label for="snap_gross_income">
       What is your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
-        gross monthly income?
-        </button>
+      <!-- <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out"> -->
+        gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
 
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @snap_eligibility.snap_gross_income %>">
+    <div>
+      <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="gross monthly income ($)" class="form-control" style="max-width:25%" value="<%= @snap_eligibility.snap_gross_income %>">
     </div>
     <br>
   </div>
 
 
-
-
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-6">
-      <input type="submit" value="See if I qualify" class="btn btn-primary">
+  <div class="form-group" style="padding:0 0 60px 0">
+    <div>
+      <input type="submit" value="Find out if I qualify" class="btn btn-primary">
     </div>
   </div>
 </form>
