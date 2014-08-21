@@ -6,20 +6,10 @@
    clear:both;
 }
 
-left{
-  text-align: left
-  left: 3em
-
-
-
 .relative {
   position: relative;
   left: 3em;
 }
-/*div{
-  clear: both;
-}
-*/
 
 }
 .breathing-room{
@@ -32,3 +22,4 @@ margin:75px 0;
   font-style: italic;
   font-size: 24px;
 }
+

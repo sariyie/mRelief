@@ -27,8 +27,6 @@
 <body>
   <nav class="navbar navbar-default navbar-fixed-top" style= "background-color:white; border-bottom:thin solid #E6E6E6" role="navigation">
 
-<%#=link_to image_tag("mRelieflogo.png", :border => 0), {:action => 'homepage', :controller => 'pages'}, {:class => 'navbar-left', :style => "max-width:100%; margin-top: -7px; padding: 20px 0 0 30px"} %>
-
 
     <!-- Brand and toggle get grouped for better mobile display -->
   <div class="container">
@@ -85,7 +83,9 @@
     <% end %>
 
     <%= yield %>
+
   </div>
+
   <div style="border-top:thin solid #E6E6E6; padding:20px 0 20px 0; max-width:100%">
     <div class="container">
         <div><a href="/programs" class="logo" style="text-decoration:none">mRelief</a>

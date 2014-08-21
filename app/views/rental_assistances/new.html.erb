@@ -1,11 +1,9 @@
-
-
 <div class = "container">
-<div class="page-header">
+
+<div>
+<div style="padding:30px 0 0 0">
   <h1> Do I qualify for rental assistance?</h1>
 </div>
-
-<p class="lead">If you have a notarized 5-day notice you may qualify for rental assistance. Please answer the following questions:</p>
 
 <% if @rental_assistance.errors.any? %>
   <% @rental_assistance.errors.full_messages.each do |message| %>
@@ -16,16 +14,13 @@
   <% end %>
 <% end %>
 
-<form action="/create_rental_assistance" class="form-horizontal">
+<p style="font-size:20px">If you have a notarized 5-day notice you may qualify for rental assistance.</p>
 
- <!--  <div class="form-group">
-  <label for="rental_status" class= "col-sm-2 control-label theme">Are you in one of the following categories?</label>
-    <div class="col-sm-6 form_row"> -->
-  <div class="form-group">
-    <label for="rental_status" class="col-sm-6 control-label theme">Select one of the following categories to describe your rental status:</label>
-  </div>
+<form action="/create_rental_assistance" role="form">
+
+<p style="padding: 20px 0 0 0; font-style:italic"> Describe you're current rental status: </p>
   <div class="relative" id="rental_status">
-    <br><%= radio_button_tag 'rental_status', 'homeless' %> Homeless
+    <%= radio_button_tag 'rental_status', 'homeless' %> Homeless
     <br><%= radio_button_tag 'rental_status', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
     <br><%= radio_button_tag 'rental_status', 'a recipient of an eviction notice' %> A recipient of an eviction notice
     <br><%= radio_button_tag 'rental_status', 'someone whose unemployment benefits have ended' %> Someone whose unemployment benefits have ended
@@ -34,11 +29,9 @@
     <br><%= radio_button_tag 'rental_status', 'none of the above' %> None of the above
   </div>
 
-
   <!-- Label and input for rental_dependent_no -->
- <br/>
- <br/>
-  <div class="form-group">
+
+  <div class="form-group" style="padding:0 0 20px 0">
     <label for="rental_dependent_no" class="col-sm-6 control-label">
       How many
      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
