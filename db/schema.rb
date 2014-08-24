@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812210854) do
+ActiveRecord::Schema.define(version: 20140822213025) do
+
+  create_table "auto_repair_assistances", force: true do |t|
+    t.integer  "auto_household_size"
+    t.decimal  "auto_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "child_care_vouchers", force: true do |t|
     t.integer  "ccdf_dependent_no"
@@ -19,6 +26,41 @@ ActiveRecord::Schema.define(version: 20140812210854) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "ccdf_gross_income"
+  end
+
+  create_table "dentals", force: true do |t|
+    t.decimal  "dental_gross_income"
+    t.integer  "dental_household_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "early_head_starts", force: true do |t|
+    t.integer  "ehs_dependent_no"
+    t.decimal  "ehs_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "family_nutritions", force: true do |t|
+    t.decimal  "nutrition_gross_income"
+    t.integer  "nutrition_household_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "head_starts", force: true do |t|
+    t.integer  "hs_dependent_no"
+    t.decimal  "hs_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "housing_assistances", force: true do |t|
+    t.integer  "housing_dependent_no"
+    t.decimal  "housing_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "programs", force: true do |t|
@@ -54,6 +96,20 @@ ActiveRecord::Schema.define(version: 20140812210854) do
   create_table "snap_eligibility_seniors", force: true do |t|
     t.integer  "snap_dependent_no"
     t.decimal  "snap_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visions", force: true do |t|
+    t.decimal  "vision_gross_income"
+    t.integer  "vision_household_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wics", force: true do |t|
+    t.integer  "wic_household_size"
+    t.decimal  "wic_gross_income"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

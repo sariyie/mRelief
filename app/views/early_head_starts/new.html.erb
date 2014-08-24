@@ -1,0 +1,59 @@
+<div class = "container">
+<div class="page-header">
+  <h1>Do I qualify for Early Head Start?</h1>
+</div>
+
+<% if @early_head_start.errors.any? %>
+  <% @early_head_start.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+<p class="lead"> If you are either pregnant or have a child who is between 0 and 2 years old, you may be eligible for Early Head Start. Please answer the following questions to find out:</p>
+
+<form action="/create_early_head_start" class="form-horizontal">
+
+
+
+
+
+  <!-- Label and input for ehs_dependent_no -->
+  <div class="form-group">
+    <label for="ehs_dependent_no" class="col-sm-6 control-label">
+     How many
+     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
+        dependents </button>
+      (including yourself) are in your household?
+    </label>
+
+
+    <div class="col-sm-6">
+      <input type="text" id="ehs_dependent_no" name="ehs_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @early_head_start.ehs_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for ehs_gross_income -->
+  <div class="form-group">
+    <label for="ehs_gross_income" class="col-sm-6 control-label">
+      What is your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each year before taxes are taken out">
+        gross annual income?
+        </button>
+
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="ehs_gross_income" name="ehs_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @early_head_start.ehs_gross_income %>">
+    </div>
+    <br>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+      <input type="submit" value="See if I qualify" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+</div>

@@ -1,0 +1,57 @@
+<div class="page-header">
+  <h1>Do I Qualify for Vision Assistance?</h1>
+</div>
+
+<% if @vision.errors.any? %>
+  <% @vision.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Vision Assistance.  Please answer the following questions to find out:</p>
+
+
+<form action="/create_vision" class="form-horizontal">
+
+  <div class="form-group">
+    <label for="case_management" class="col-sm-6 control-label theme">Are you participating in Case Management?</label>
+
+  <div class="relative col-sm-6" id="case_management">
+    <br><%= radio_button_tag 'case_management', 'yes' %> yes
+    <br><%= radio_button_tag 'case_management', 'no' %> no
+  </div>
+  </div>
+
+  <!-- Label and input for vision_household_size -->
+  <div class="form-group">
+    <label for="vision_household_size" class="col-sm-6 control-label">
+      What is your household size?
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>" required>
+    </div>
+  </div>
+
+  <!-- Label and input for vision_gross_income -->
+  <div class="form-group">
+    <label for="vision_gross_income" class="col-sm-6 control-label">
+      What has been your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
+        income over the past 90 days?
+      </button>
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="vision_gross_income" name="vision_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @vision.vision_gross_income %>" required>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="See if I qualify" class="btn btn-primary pull-right">
+    </div>
+  </div>
+</form>

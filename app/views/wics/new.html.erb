@@ -1,0 +1,65 @@
+<div class="page-header">
+  <h1>Do I Qualify for WIC?</h1>
+</div>
+
+<% if @wic.errors.any? %>
+  <% @wic.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<p class="lead">If you are pregnant, breastfeeding, have had a baby in the past six months, or have a child or infant younger than five years old, you may be qualify for WIC benefits.  Please answer the following questions to find out:</p>
+
+<form action="/create_wic" class="form-horizontal">
+
+  <div class="form-group">
+    <label for="wic_status" class="col-sm-7 control-label theme">Select one of the following to describe your health status:</label>
+  </div>
+  <div class="relative" id="wic_status">
+    <br><%= radio_button_tag 'wic_status', 'anemic' %> anemic
+    <br><%= radio_button_tag 'wic_status', 'underweight' %> underweight
+    <br><%= radio_button_tag 'wic_status', 'of a risky maternal age' %> of a risky maternal age
+    <br><%= radio_button_tag 'wic_status', 'have a history of pregnancy complications ' %> have a history of pregnancy complications
+    <br><%= radio_button_tag 'wic_status', 'have a history of poor pregnancy outcomes' %> have a history of poor pregnancy outcomes
+    <br><%= radio_button_tag 'wic_status', 'has an inadequate dietary pattern' %> has an inadequate dietary pattern
+    <br><%= radio_button_tag 'wic_status', 'none of the above' %> None of the above
+  </div>
+
+  <!-- Label and input for wic_household_size -->
+  <div class="form-group">
+
+    <label for="wic_household_size" class="col-sm-6 control-label">
+      What is your household size?
+    </label>
+
+    <div class="col-sm-6">
+      <input type="text" id="wic_household_size" name="wic_household_size" placeholder="household size" class="form-control" value="<%= @wic.wic_household_size %>" required>
+    </div>
+  </div>
+
+  <!-- Label and input for wic_gross_income -->
+  <div class="form-group">
+
+
+    <label for="rta_gross_income" class="col-sm-6 control-label">
+      What is your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
+        gross monthly income?
+        </button>
+    </label>
+
+
+    <div class="col-sm-6">
+      <input type="text" id="wic_gross_income" name="wic_gross_income" placeholder="monthly income" class="form-control" value="<%= @wic.wic_gross_income %>" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="See if I qualify" class="btn btn-primary pull-right">
+    </div>
+  </div>
+</form>

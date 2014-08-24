@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Edit Early Head Start #<%= @early_head_start.id %></h1>
+</div>
+
+<% if @early_head_start.errors.any? %>
+  <% @early_head_start.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_early_head_start/<%= @early_head_start.id %>" class="form-horizontal">
+  <!-- Label and input for ehs_dependent_no -->
+  <div class="form-group">
+    <label for="ehs_dependent_no" class="col-sm-2 control-label">
+      Ehs dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ehs_dependent_no" name="ehs_dependent_no" placeholder="Ehs dependent no" class="form-control" value="<%= @early_head_start.ehs_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for ehs_gross_income -->
+  <div class="form-group">
+    <label for="ehs_gross_income" class="col-sm-2 control-label">
+      Ehs gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="ehs_gross_income" name="ehs_gross_income" placeholder="Ehs gross income" class="form-control" value="<%= @early_head_start.ehs_gross_income %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Early Head Start" class="btn btn-primary">
+    </div>
+  </div>
+</form>

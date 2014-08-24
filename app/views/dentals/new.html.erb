@@ -1,0 +1,54 @@
+<div class="page-header">
+  <h1>Do I Qualify for Dental Assistance?</h1>
+</div>
+
+
+<p class="lead"> If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Dental Assistance. Please answer the following questions:</p>
+
+<% if @dental.errors.any? %>
+  <% @dental.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_dental" class="form-horizontal">
+
+  <!-- Label and input for dental_household_size -->
+  <div class="form-group">
+    <label for="dental_household_size" class="col-sm-6 control-label">
+      What is your
+     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the number of people in your household who rely on you for financial support" required>
+        household size?
+        </button>
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="dental_household_size" name="dental_household_size" placeholder="Household size" class="form-control" value="<%= @dental.dental_household_size %>" required>
+    </div>
+  </div>
+
+
+  <!-- Label and input for dental_gross_income -->
+  <div class="form-group">
+    <label for="dental_gross_income" class="col-sm-6 control-label">
+       What has been your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
+        income over the past 90 days?
+      </button>
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="dental_gross_income" name="dental_gross_income" placeholder="Dental gross income" class="form-control" value="<%= @dental.dental_gross_income %>" required>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="See if I qualify" class="btn btn-primary pull-right">
+    </div>
+  </div>
+</form>

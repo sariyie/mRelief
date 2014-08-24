@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Edit Family Nutrition #<%= @family_nutrition.id %></h1>
+</div>
+
+<% if @family_nutrition.errors.any? %>
+  <% @family_nutrition.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_family_nutrition/<%= @family_nutrition.id %>" class="form-horizontal">
+  <!-- Label and input for nutrition_gross_income -->
+  <div class="form-group">
+    <label for="nutrition_gross_income" class="col-sm-2 control-label">
+      Nutrition gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="nutrition_gross_income" name="nutrition_gross_income" placeholder="Nutrition gross income" class="form-control" value="<%= @family_nutrition.nutrition_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for nutrition_household_size -->
+  <div class="form-group">
+    <label for="nutrition_household_size" class="col-sm-2 control-label">
+      Nutrition household size
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="nutrition_household_size" name="nutrition_household_size" placeholder="Nutrition household size" class="form-control" value="<%= @family_nutrition.nutrition_household_size %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Family Nutrition" class="btn btn-primary">
+    </div>
+  </div>
+</form>

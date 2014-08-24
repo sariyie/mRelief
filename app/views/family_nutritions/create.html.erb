@@ -1,0 +1,23 @@
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p>You may be in luck! Based on your household size and income, you qualify for Family Nutrition Assistance. Please be sure to find an office near you
+        <%= link_to "here", "http://www.cedaorg.net/www2/CDS.html " %>.
+       </p>
+      </div>
+
+
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for Family Nutrition Assistance?</h1></div>
+      <div class="well">
+        <p>Based on your household size and income, you likely do not qualify for a family nutrition program. If you need food assistance, text FOOD to 877-877 to see a summer meal site near you.
+        </p>
+      <% end %>
+      </div>
+
+
+</div>

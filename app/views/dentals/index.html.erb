@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Dentals</h1>
+</div>
+
+<p><a href="/dentals/new" class="btn btn-primary">Add a New Dental</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Dental gross income</th>
+      <th>Dental household size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dentals.each do |dental| %>
+      <tr>
+        <td><%= dental.dental_gross_income %></td>
+        <td><%= dental.dental_household_size %></td>
+        <td>
+          <a href="/dentals/<%= dental.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/dentals/<%= dental.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_dental/<%= dental.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

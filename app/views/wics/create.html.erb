@@ -1,0 +1,23 @@
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p>You may be in luck! Based on your household size, income, and nutrition risk, you qualify for WIC. Call (855)WIC-CEDA (855-942-2332) or
+        <%= link_to "click here", "www.cedaorg.net " %>
+        to find the clinic nearest you or for more information.</p>
+      </div>
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for WIC?</h1></div>
+      <div class="well">
+        <p>Based on your status, household size and income, you likely do not qualify for WIC. However, Firman Community Services has programs focusing on the health of families and children. Visit their website
+        <%= link_to "here", "http://www.firmancs.org/index.html" %>
+        or call their office to identify the best resource at Phone: 773 373 3400.</p>
+      <% end %>
+      </div>
+
+</div>
+
+<div class="container">

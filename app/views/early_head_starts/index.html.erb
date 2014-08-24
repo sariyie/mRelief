@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Early head starts</h1>
+</div>
+
+<p><a href="/early_head_starts/new" class="btn btn-primary">Add a New Early Head Start</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Ehs dependent no</th>
+      <th>Ehs gross income</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @early_head_starts.each do |early_head_start| %>
+      <tr>
+        <td><%= early_head_start.ehs_dependent_no %></td>
+        <td><%= early_head_start.ehs_gross_income %></td>
+        <td>
+          <a href="/early_head_starts/<%= early_head_start.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/early_head_starts/<%= early_head_start.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_early_head_start/<%= early_head_start.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
