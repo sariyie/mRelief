@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Family nutritions</h1>
+</div>
+
+<p><a href="/family_nutritions/new" class="btn btn-primary">Add a New Family Nutrition</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nutrition gross income</th>
+      <th>Nutrition household size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @family_nutritions.each do |family_nutrition| %>
+      <tr>
+        <td><%= family_nutrition.nutrition_gross_income %></td>
+        <td><%= family_nutrition.nutrition_household_size %></td>
+        <td>
+          <a href="/family_nutritions/<%= family_nutrition.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/family_nutritions/<%= family_nutrition.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_family_nutrition/<%= family_nutrition.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

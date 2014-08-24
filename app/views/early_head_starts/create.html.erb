@@ -1,0 +1,23 @@
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p>Based on the ages of your children, household size, and income, you likely qualify for Early Head Start. <p> For application information please visit chicagoearlylearning.org to find early learning programs near you or call the Chicago: Ready to Learn! Hotline at (312) 229-1690.</p>
+      </div>
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for Early Head Start?</h1></div>
+      <div class="well">
+        <p>Based on the age of your children, household size and income, you likely do not qualify for Early Head Start.</p>
+        <p> If you need assistance, please call the Illinois Action for Children at 312.823.1100.</p>
+      <% end %>
+      </div>
+
+    <div class="row">
+      <a class="btn btn-default" href="/mrelief"><i class="fa fa-chevron-left"></i> Back</a>
+    </div>
+</div>
+
+<div class="container">

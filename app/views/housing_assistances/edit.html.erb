@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Edit Housing Assistance #<%= @housing_assistance.id %></h1>
+</div>
+
+<% if @housing_assistance.errors.any? %>
+  <% @housing_assistance.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_housing_assistance/<%= @housing_assistance.id %>" class="form-horizontal">
+  <!-- Label and input for housing_dependent_no -->
+  <div class="form-group">
+    <label for="housing_dependent_no" class="col-sm-2 control-label">
+      Housing dependent no
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="Housing dependent no" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>">
+    </div>
+  </div>
+
+  <!-- Label and input for housing_gross_income -->
+  <div class="form-group">
+    <label for="housing_gross_income" class="col-sm-2 control-label">
+      Housing gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="Housing gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Housing Assistance" class="btn btn-primary">
+    </div>
+  </div>
+</form>

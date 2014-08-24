@@ -1,0 +1,53 @@
+<div class="page-header">
+  <h1>Do I Qualify for Family Nutrition Assistance?</h1>
+</div>
+
+<p class="lead"> If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Family Nutrition Assistance. Please answer the following questions:</p>
+
+<% if @family_nutrition.errors.any? %>
+  <% @family_nutrition.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_family_nutrition" class="form-horizontal">
+
+   <!-- Label and input for nutrition_household_size -->
+  <div class="form-group">
+    <label for="nutrition_household_size" class="col-sm-6 control-label">
+      What is your
+     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the number of people in your household who rely on you for financial support">
+        household size?
+      </button>
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="nutrition_household_size" name="nutrition_household_size" placeholder="household size" class="form-control" value="<%= @family_nutrition.nutrition_household_size %>" required>
+    </div>
+  </div>
+
+
+  <!-- Label and input for nutrition_gross_income -->
+  <div class="form-group">
+    <label for="nutrition_gross_income" class="col-sm-6 control-label">
+       What has been your
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
+        income over the past 90 days?
+      </button>
+    </label>
+    <div class="col-sm-6">
+      <input type="text" id="nutrition_gross_income" name="nutrition_gross_income" placeholder="90 day income" class="form-control" value="<%= @family_nutrition.nutrition_gross_income %>" required>
+    </div>
+  </div>
+
+
+
+ <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="See if I qualify" class="btn btn-primary pull-right">
+    </div>
+  </div>
+</form>

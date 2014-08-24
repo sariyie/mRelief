@@ -502,3 +502,848 @@ p.name = "Rental Assistance"
 p.url = "/rental_assistances/new"
 p.save
 
+p = Program.new
+p.name =  "Auto Repair Assistance"
+p.url = "/auto_repair_assistances/new"
+p.save
+
+p = Program.new
+p.name =  "Women, Infants and Children (WIC)"
+p.url = "/wics/new"
+p.save
+
+p = Program.new
+p.name =  "Vision Assistance"
+p.url = "/visions/new"
+p.save
+
+p = Program.new
+p.name = "Family Nutrition"
+p.url = "/family_nutritions/new"
+p.save
+
+p = Program.new
+p.name = "Dental Assistance"
+p.url = "/dentals/new"
+p.save
+
+p = Program.new
+p.name = "Head Start"
+p.url = "/head_starts/new"
+p.save
+
+p = Program.new
+p.name = "Early Head Start"
+p.url = "/early_head_starts/new"
+p.save
+
+p = Program.new
+p.name = "Housing Assistance"
+p.url = "/housing_assistances/new"
+p.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 1
+a.auto_gross_income = 3646.88
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 2
+a.auto_gross_income = 4915.63
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 3
+a.auto_gross_income = 6184.38
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 4
+a.auto_gross_income = 7453.13
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 5
+a.auto_gross_income = 8721.88
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 6
+a.auto_gross_income = 9990.63
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 7
+a.auto_gross_income = 11259.38
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 8
+a.auto_gross_income = 12528.13
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 9
+a.auto_gross_income = 13796.88
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 10
+a.auto_gross_income = 15065.63
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 11
+a.auto_gross_income = 16334.38
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 12
+a.auto_gross_income = 17603.13
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 13
+a.auto_gross_income = 18871.88
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 14
+a.auto_gross_income = 20140.63
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 15
+a.auto_gross_income = 21409.38
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 16
+a.auto_gross_income = 22678.13
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 17
+a.auto_gross_income = 23946.88
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 18
+a.auto_gross_income = 25215.63
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 19
+a.auto_gross_income = 26484.38
+a.save
+
+a = AutoRepairAssistance.new
+a.auto_household_size = 20
+a.auto_gross_income = 27753.13
+a.save
+
+w = Wic.new
+w.wic_household_size = 1
+w.wic_gross_income = 1800.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 2
+w.wic_gross_income = 2426.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 3
+w.wic_gross_income = 3051.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 4
+w.wic_gross_income = 3677.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 5
+w.wic_gross_income = 4303.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 6
+w.wic_gross_income = 4929.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 7
+w.wic_gross_income = 5555.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 8
+w.wic_gross_income = 6181.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 9
+w.wic_gross_income = 6807.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 10
+w.wic_gross_income = 7433.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 11
+w.wic_gross_income = 8059.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 12
+w.wic_gross_income = 8685.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 13
+w.wic_gross_income = 9311.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 14
+w.wic_gross_income = 9937.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 15
+w.wic_gross_income = 10563.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 16
+w.wic_gross_income = 11189.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 17
+w.wic_gross_income = 11815.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 18
+w.wic_gross_income = 12441.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 19
+w.wic_gross_income = 13067.00
+w.save
+
+w = Wic.new
+w.wic_household_size = 20
+w.wic_gross_income = 13693.00
+w.save
+
+
+v = Vision.new
+v.vision_household_size = 1
+v.vision_gross_income = 3646.88
+v.save
+
+v = Vision.new
+v.vision_household_size = 2
+v.vision_gross_income = 4915.63
+v.save
+
+v = Vision.new
+v.vision_household_size = 3
+v.vision_gross_income = 6184.38
+v.save
+
+v = Vision.new
+v.vision_household_size = 4
+v.vision_gross_income = 7453.13
+v.save
+
+v = Vision.new
+v.vision_household_size = 5
+v.vision_gross_income = 8721.88
+v.save
+
+v = Vision.new
+v.vision_household_size = 6
+v.vision_gross_income = 9990.63
+v.save
+
+v = Vision.new
+v.vision_household_size = 7
+v.vision_gross_income = 11259.38
+v.save
+
+v = Vision.new
+v.vision_household_size = 8
+v.vision_gross_income = 12528.13
+v.save
+
+v = Vision.new
+v.vision_household_size = 9
+v.vision_gross_income = 13796.88
+v.save
+
+v = Vision.new
+v.vision_household_size = 10
+v.vision_gross_income = 15065.63
+v.save
+
+v = Vision.new
+v.vision_household_size = 11
+v.vision_gross_income = 16334.38
+v.save
+
+v = Vision.new
+v.vision_household_size = 12
+v.vision_gross_income = 17603.13
+v.save
+
+v = Vision.new
+v.vision_household_size = 13
+v.vision_gross_income = 18871.88
+v.save
+
+v = Vision.new
+v.vision_household_size = 14
+v.vision_gross_income = 20140.63
+v.save
+
+v = Vision.new
+v.vision_household_size = 15
+v.vision_gross_income = 21409.38
+v.save
+
+v = Vision.new
+v.vision_household_size = 16
+v.vision_gross_income = 22678.13
+v.save
+
+v = Vision.new
+v.vision_household_size = 17
+v.vision_gross_income = 23946.88
+v.save
+
+v = Vision.new
+v.vision_household_size = 18
+v.vision_gross_income = 25215.63
+v.save
+
+v = Vision.new
+v.vision_household_size = 19
+v.vision_gross_income = 26484.38
+v.save
+
+v = Vision.new
+v.vision_household_size = 20
+v.vision_gross_income = 27753.13
+v.save
+
+d = Dental.new
+d.dental_household_size = 1
+d.dental_gross_income = 3646.88
+d.save
+
+d = Dental.new
+d.dental_household_size = 2
+d.dental_gross_income = 4915.63
+d.save
+
+d = Dental.new
+d.dental_household_size = 3
+d.dental_gross_income = 6184.38
+d.save
+
+d = Dental.new
+d.dental_household_size = 4
+d.dental_gross_income = 7453.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 5
+d.dental_gross_income = 7453.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 6
+d.dental_gross_income = 9990.63
+d.save
+
+d = Dental.new
+d.dental_household_size = 7
+d.dental_gross_income = 11259.38
+d.save
+
+d = Dental.new
+d.dental_household_size = 8
+d.dental_gross_income = 12528.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 9
+d.dental_gross_income = 13796.88
+d.save
+
+d = Dental.new
+d.dental_household_size = 10
+d.dental_gross_income = 15065.63
+d.save
+
+d = Dental.new
+d.dental_household_size = 11
+d.dental_gross_income = 16334.38
+d.save
+
+d = Dental.new
+d.dental_household_size = 12
+d.dental_gross_income = 17603.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 13
+d.dental_gross_income = 17603.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 14
+d.dental_gross_income = 20140.63
+d.save
+
+d = Dental.new
+d.dental_household_size = 15
+d.dental_gross_income = 21409.38
+d.save
+
+d = Dental.new
+d.dental_household_size = 16
+d.dental_gross_income = 22678.13
+d.save
+
+d = Dental.new
+d.dental_household_size = 17
+d.dental_gross_income = 23946.88
+d.save
+
+d = Dental.new
+d.dental_household_size = 18
+d.dental_gross_income = 25215.63
+d.save
+
+d = Dental.new
+d.dental_household_size = 19
+d.dental_gross_income = 26484.38
+d.save
+
+d = Dental.new
+d.dental_household_size = 20
+d.dental_gross_income = 27753.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 1
+d.nutrition_gross_income = 3646.88
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 2
+d.nutrition_gross_income = 4915.63
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 3
+d.nutrition_gross_income = 6184.38
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 4
+d.nutrition_gross_income = 7453.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 5
+d.nutrition_gross_income = 7453.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 6
+d.nutrition_gross_income = 9990.63
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 7
+d.nutrition_gross_income = 11259.38
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 8
+d.nutrition_gross_income = 12528.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 9
+d.nutrition_gross_income = 13796.88
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 10
+d.nutrition_gross_income = 15065.63
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 11
+d.nutrition_gross_income = 16334.38
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 12
+d.nutrition_gross_income = 17603.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 13
+d.nutrition_gross_income = 17603.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 14
+d.nutrition_gross_income = 20140.63
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 15
+d.nutrition_gross_income = 21409.38
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 16
+d.nutrition_gross_income = 22678.13
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 17
+d.nutrition_gross_income = 23946.88
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 18
+d.nutrition_gross_income = 25215.63
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 19
+d.nutrition_gross_income = 26484.38
+d.save
+
+d = FamilyNutrition.new
+d.nutrition_household_size = 20
+d.nutrition_gross_income = 27753.13
+d.save
+
+# Housing Assistance
+h = HousingAssistance.new
+h.housing_dependent_no = 1
+h.housing_gross_income = 3646.88
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 2
+h.housing_gross_income = 4915.63
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 3
+h.housing_gross_income = 6184.38
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 4
+h.housing_gross_income = 7453.13
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 5
+h.housing_gross_income = 8721.88
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 6
+h.housing_gross_income = 9990.63
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 7
+h.housing_gross_income = 11259.38
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 8
+h.housing_gross_income = 12528.13
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 9
+h.housing_gross_income = 13796.88
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 10
+h.housing_gross_income = 15065.63
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 11
+h.housing_gross_income = 16334.38
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 12
+h.housing_gross_income = 17603.13
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 13
+h.housing_gross_income = 18871.88
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 14
+h.housing_gross_income = 20140.63
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 15
+h.housing_gross_income = 21409.38
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 16
+h.housing_gross_income = 22678.13
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 17
+h.housing_gross_income = 23946.88
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 18
+h.housing_gross_income = 25215.63
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 19
+h.housing_gross_income = 26484.38
+h.save
+
+h = HousingAssistance.new
+h.housing_dependent_no = 20
+h.housing_gross_income = 27753.13
+h.save
+
+# EarlyHeadStart
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 1
+e.ehs_gross_income = 11670
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 2
+e.ehs_gross_income = 15730
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 3
+e.ehs_gross_income = 19790
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 4
+e.ehs_gross_income = 23850
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 5
+e.ehs_gross_income = 27910
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 6
+e.ehs_gross_income = 31970
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 7
+e.ehs_gross_income = 36030
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 8
+e.ehs_gross_income = 40090
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 9
+e.ehs_gross_income = 44150
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 10
+e.ehs_gross_income = 48210
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 11
+e.ehs_gross_income = 52270
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 12
+e.ehs_gross_income = 56330
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 13
+e.ehs_gross_income = 60390
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 14
+e.ehs_gross_income = 64450
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 15
+e.ehs_gross_income = 68510
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 16
+e.ehs_gross_income = 72570
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 17
+e.ehs_gross_income = 76630
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 18
+e.ehs_gross_income = 80690
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 19
+e.ehs_gross_income = 84750
+e.save
+
+e = EarlyHeadStart.new
+e.ehs_dependent_no = 20
+e.ehs_gross_income = 88810
+e.save
+
+# Head Start
+
+h = HeadStart.new
+h.hs_dependent_no = 1
+h.hs_gross_income = 11670
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 2
+h.hs_gross_income = 15730
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 3
+h.hs_gross_income = 19790
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 4
+h.hs_gross_income = 23850
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 5
+h.hs_gross_income = 27910
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 6
+h.hs_gross_income = 31970
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 7
+h.hs_gross_income = 36030
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 8
+h.hs_gross_income = 40090
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 9
+h.hs_gross_income = 44150
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 10
+h.hs_gross_income = 48210
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 11
+h.hs_gross_income = 52270
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 12
+h.hs_gross_income = 56330
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 13
+h.hs_gross_income = 60390
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 14
+h.hs_gross_income = 64450
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 15
+h.hs_gross_income = 68510
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 16
+h.hs_gross_income = 72570
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 17
+h.hs_gross_income = 76630
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 18
+h.hs_gross_income = 80690
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 19
+h.hs_gross_income = 84750
+h.save
+
+h = HeadStart.new
+h.hs_dependent_no = 20
+h.hs_gross_income = 88810
+h.save

@@ -1,0 +1,25 @@
+
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p> Based on your household size and income, you likely qualify for Housing Counseling and Referral Information. </p> <p>Please be sure to find an office near you <%= link_to "here", "http://www.cedaorg.net/www2/CDS.html"%>
+         or contact CEDA at their Toll-free number:(800) 571-CEDA (2332) to pursue your application further.</p>
+      </div>
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for Housing Counseling and Referral Information?</h1></div>
+      <div class="well">
+        <p>Based on your household size and income, you likely do not qualify for Housing Counseling and Referral Information. Please refer to the resources on the Illinios Housing Development Authority's website. </p>
+        <p> Their resources for buying a new house or rehabilitating an existing one can be found <%= link_to "here", "http://www.ihda.org/homeowner/granthomebuyer.html"%> or you can also call their office here: (312) 836-5200.</p>
+      <% end %>
+      </div>
+
+    <div class="row">
+      <a class="btn btn-default" href="/mrelief"><i class="fa fa-chevron-left"></i> Back</a>
+    </div>
+</div>
+
+<div class="container">

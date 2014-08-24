@@ -1,0 +1,24 @@
+<div class="container">
+
+      <% if @eligible %>
+      <div class="page-header"><h1>You may be in luck!</h1></div>
+      <div class="well">
+        <p>Based on your household size and income, you qualify for Dental Assistance. Please be sure to bring estimates from a CSBG approved dental care providers and find an office near you
+        <%= link_to "here", "http://www.cedaorg.net/www2/CDS.html  " %>.
+       </p>
+      </div>
+
+
+
+      <% else %>
+
+      <div class="page-header"><h1>Do I qualify for Dental Assistance?</h1></div>
+      <div class="well">
+        <p>Based on your household size and income, you likely do not qualify for dental assistance. However, the Chicago dental society has provided a detailed list on community dental clinics in Chicago and beyond
+        <%= link_to "here", "http://www.cds.org/Find_a_Dental_Clinic/Find_a_Dental_Clinic_Content.aspx" %>.
+        Also, feel free to call them at 312.836.7300 for more information.</p>
+      <% end %>
+      </div>
+
+
+</div>

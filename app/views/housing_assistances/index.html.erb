@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Housing assistances</h1>
+</div>
+
+<p><a href="/housing_assistances/new" class="btn btn-primary">Add a New Housing Assistance</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Housing dependent no</th>
+      <th>Housing gross income</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @housing_assistances.each do |housing_assistance| %>
+      <tr>
+        <td><%= housing_assistance.housing_dependent_no %></td>
+        <td><%= housing_assistance.housing_gross_income %></td>
+        <td>
+          <a href="/housing_assistances/<%= housing_assistance.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/housing_assistances/<%= housing_assistance.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_housing_assistance/<%= housing_assistance.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
