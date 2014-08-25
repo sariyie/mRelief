@@ -1,7 +1,9 @@
-<div class = "container">
-<div class="page-header">
+<div class= "container">
+
+<div class="page-header" style="border:none">
   <h1>Do I qualify for Housing Counseling and Referral Information?</h1>
-</div>
+
+<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Housing Counseling and Referral Information. Please answer the following questions to find out:</p>
 
 <% if @housing_assistance.errors.any? %>
   <% @housing_assistance.errors.full_messages.each do |message| %>
@@ -11,49 +13,41 @@
     </div>
   <% end %>
 <% end %>
-<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Housing Counseling and Referral Information. Please answer the following questions to find out:</p>
 
-<form action="/create_housing_assistance" class="form-horizontal">
+
+<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+  <div class="panel-body">
+    <form action="/create_housing_assistance" role="form">
 
 
 
 
 
   <!-- Label and input for housing_dependent_no -->
-  <div class="form-group">
-    <label for="housing_dependent_no" class="col-sm-6 control-label">
-      How many
-     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
-        dependents </button>
-      (including yourself) are in your household?
-    </label>
-
-
-    <div class="col-sm-6">
-      <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>">
-    </div>
+     <div class="form-group col-sm-9">
+    <label for="housing_dependent_no">How many dependents(including yourself) are in your household?</label>
+     <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>">
   </div>
 
   <!-- Label and input for housing_gross_income -->
-  <div class="form-group">
-    <label for="housing_gross_income" class="col-sm-6 control-label">
-      What is your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you made over the past three months before taxes were taken out">
-        gross income
-        </button>
-        over the past 90 days?
+    <div class="form-group col-sm-9">
+    <label for="housing_gross_income">
+      What is your gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>">
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+        <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>">
+      <span class="input-group-addon">.00</span>
     </div>
-    <br>
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-6">
-      <input type="submit" value="See if I qualify" class="btn btn-primary">
-    </div>
-  </div>
 </form>
+</div>
+</div>
 </div>

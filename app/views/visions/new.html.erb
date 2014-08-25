@@ -1,5 +1,9 @@
-<div class="page-header">
-  <h1>Do I Qualify for Vision Assistance?</h1>
+<div class= "container">
+
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for rental assistance?</h1>
+
+<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Vision Assistance.<br>Please answer the following questions to find out:</p>
 </div>
 
 <% if @vision.errors.any? %>
@@ -11,47 +15,42 @@
   <% end %>
 <% end %>
 
-<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Vision Assistance.  Please answer the following questions to find out:</p>
+<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+  <div class="panel-body">
+    <form action="/create_vision" role="form">
 
-
-<form action="/create_vision" class="form-horizontal">
-
-  <div class="form-group">
-    <label for="case_management" class="col-sm-6 control-label theme">Are you participating in Case Management?</label>
-
-  <div class="relative col-sm-6" id="case_management">
-    <br><%= radio_button_tag 'case_management', 'yes' %> yes
-    <br><%= radio_button_tag 'case_management', 'no' %> no
-  </div>
+  <div class="form-group col-sm-6">
+    <label for="case_management" id="case_management" >Are you participating in Case Management?</label>
+    <div>
+      <%= radio_button_tag 'case_management', 'yes' %> yes
+      <%= radio_button_tag 'case_management', 'no' %> no
+    </div>
   </div>
 
   <!-- Label and input for vision_household_size -->
-  <div class="form-group">
-    <label for="vision_household_size" class="col-sm-6 control-label">
-      What is your household size?
-    </label>
-    <div class="col-sm-6">
-      <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>" required>
-    </div>
+   <div class="form-group col-sm-9">
+    <label for="vision_household_size">What is your household size?</label>
+      <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>">
   </div>
 
   <!-- Label and input for vision_gross_income -->
-  <div class="form-group">
-    <label for="vision_gross_income" class="col-sm-6 control-label">
-      What has been your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out">
-        income over the past 90 days?
-      </button>
+  <div class="form-group col-sm-9">
+    <label for="rental_gross_income">
+      What is income over the past 90 days? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="vision_gross_income" name="vision_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @vision.vision_gross_income %>" required>
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+         <input type="text" id="vision_gross_income" name="vision_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @vision.vision_gross_income %>" required>
+      <span class="input-group-addon">.00</span>
+    </div>
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
     </div>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="See if I qualify" class="btn btn-primary pull-right">
-    </div>
-  </div>
 </form>
+</div>
+</div>
