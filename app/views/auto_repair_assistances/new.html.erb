@@ -1,6 +1,9 @@
-<div class = "container">
-<div class="page-header">
-  <h1>Do I qualify for Auto Repair Assistance?</h1>
+<div class= "container">
+
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for Auto Repair assistance?</h1>
+
+<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Auto-Repair Assistance.  <br>Please answer the following questions to find out:</p>
 </div>
 
 <% if @auto_repair_assistance.errors.any? %>
@@ -12,42 +15,36 @@
   <% end %>
 <% end %>
 
-<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Auto-Repair Assistance.  Please answer the following questions to find out:</p>
+<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+  <div class="panel-body">
+    <form action="/create_auto_repair_assistance" role="form">
 
-
-<form action="/create_auto_repair_assistance" class="form-horizontal">
-  <!-- Label and input for auto_household_size -->
-  <div class="form-group">
-    <label for="auto_household_size" class="col-sm-6 control-label">
-      What is your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the number of people who live in your household">
-      household
-      </button>
-      size?
-    </label>
-    <div class="col-sm-6">
-      <input type="text" id="auto_household_size" name="auto_household_size" placeholder="Household size" class="form-control" value="<%= @auto_repair_assistance.auto_household_size %>" required>
-    </div>
+  <div class="form-group col-sm-9">
+    <label for="auto_household_size">What is your household size?</label>
+       <input type="text" id="auto_household_size" name="auto_household_size" placeholder="Household size" class="form-control" value="<%= @auto_repair_assistance.auto_household_size %>" required>
   </div>
+
 
   <!-- Label and input for auto_gross_income -->
-  <div class="form-group">
-    <label for="auto_gross_income" class="col-sm-6 control-label">
-      What is your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you have made over the past 90 days before taxes were taken out">
-      gross income
-      </button>
-
-      over the past 90 days?
+   <div class="form-group col-sm-9">
+    <label for="auto_gross_income">
+      What is income over the past 90 days? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="auto_gross_income" name="auto_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @auto_repair_assistance.auto_gross_income %>" required>
-    </div>
-  </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-6">
-      <input type="submit" value="See if I qualify" class="btn btn-primary">
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+        <input type="text" id="auto_gross_income" name="auto_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @auto_repair_assistance.auto_gross_income %>" required>
+      <span class="input-group-addon">.00</span>
     </div>
+
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
+
+
   </div>
 </form>
+</div>
+</div>

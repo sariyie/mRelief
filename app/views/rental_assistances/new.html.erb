@@ -1,8 +1,9 @@
-<div class = "container">
+<div class= "container">
 
-<div>
-<div style="padding:30px 0 0 0">
-  <h1> Do I qualify for rental assistance?</h1>
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for rentail assistance?</h1>
+
+<p class="lead">If you have a notarized 5-day notice you may qualify for rental assistance.</p>
 </div>
 
 <% if @rental_assistance.errors.any? %>
@@ -14,11 +15,11 @@
   <% end %>
 <% end %>
 
-<p style="font-size:20px">If you have a notarized 5-day notice you may qualify for rental assistance.</p>
+<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+  <div class="panel-body">
+    <form action="/create_rental_assistance" role="form">
 
-<form action="/create_rental_assistance" role="form">
-
-<p style="padding: 20px 0 0 0; font-style:italic"> Describe you're current rental status: </p>
+<p> Describe you're current rental status: </p>
   <div class="relative" id="rental_status">
     <%= radio_button_tag 'rental_status', 'homeless' %> Homeless
     <br><%= radio_button_tag 'rental_status', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
@@ -28,44 +29,34 @@
     <br><%= radio_button_tag 'rental_status', 'a victim of domestic violence' %> A victim of domestic violence
     <br><%= radio_button_tag 'rental_status', 'none of the above' %> None of the above
   </div>
+  <br>
 
   <!-- Label and input for rental_dependent_no -->
-
-  <div class="form-group" style="padding:0 0 20px 0">
-    <label for="rental_dependent_no" class="col-sm-6 control-label">
-      How many
-     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
-        dependents
-        </button>
-      (including yourself) are in your household?
-    </label>
-
-    <div class="col-sm-6">
+     <div class="form-group col-sm-9">
+    <label for="rental_dependent_no">How many dependents(including yourself) are in your household?</label>
       <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>">
-    </div>
   </div>
+
 
   <!-- Label and input for rental_gross_income -->
-  <div class="form-group">
-    <label for="rental_gross_income" class="col-sm-6 control-label">
-       What is your income
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you earned over the past 90 days before taxes are taken out (please include child support, social security benefits, and TANF (cash assistance))">
-        over the past 90 days?
-        </button>
-
+  <div class="form-group col-sm-9">
+    <label for="rental_gross_income">
+      What is income over the past 90 days? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="rental_gross_income" name="rental_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @rental_assistance.rental_gross_income %>">
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+        <input type="text" id="rental_gross_income" name="rental_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @rental_assistance.rental_gross_income %>">
+      <span class="input-group-addon">.00</span>
     </div>
-    <br>
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-6">
-      <input type="submit" value="See if I qualify" class="btn btn-primary">
-    </div>
-  </div>
 </form>
+</div>
 </div>
 

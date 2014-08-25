@@ -1,9 +1,11 @@
-<div class = "container">
-<div class="page-header">
-  <h1> Do I qualify for a Child Care Voucher?</h1>
-</div>
+<div class= "container">
 
-<p class="lead">If your child is between the ages of 6 months and 12 years, you may qualify for a Child Care Voucher. Please answer the following questions to find out:</p>
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for a Child Care Voucher?</h1>
+
+
+<p class="lead">If your child is between the ages of 6 months and 12 years, you may qualify for a Child Care Voucher. <br>Please answer the following questions to find out:</p>
+</div>
 
 <% if @child_care_voucher.errors.any? %>
   <% @child_care_voucher.errors.full_messages.each do |message| %>
@@ -15,46 +17,35 @@
 <% end %>
 
 
-<form action="/create_child_care_voucher" class="form-horizontal">
+<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+  <div class="panel-body">
+    <form action="/create_child_care_voucher" role="form">
 
-
-
-  <!-- Label and input for ccdf_dependent_no -->
-  <div class="form-group">
-    <label for="ccdf_dependent_no" class="col-sm-6 control-label">
-      How many dependents
-     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="a person in your household who relies on you for financial support">
-        dependents
-        </button>
-      (including yourself) are in your household?
-    </label>
-
-
-    <div class="col-sm-6">
+      <div class="form-group col-sm-9">
+    <label for="ccdf_dependent_no">How many dependents(including yourself) are in your household?</label>
       <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>">
-    </div>
   </div>
 
-  <!-- Label and input for ccdf_gross_income -->
-  <div class="form-group">
-    <label for="ccdf_gross_income" class="col-sm-6 control-label">
-       What is your
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="the total amount of money you make each month before taxes are taken out (please include child support, social security benefits, and TANF (cash assistance))">
-        gross monthly income?
-        </button>
 
+  <!-- Label and input for rta_gross_income -->
+  <div class="form-group col-sm-9">
+    <label for="ccdf_gross_income">
+      What is your gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
+       <!--  </button> -->
     </label>
-    <div class="col-sm-6">
-      <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>">
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+        <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>">
+      <span class="input-group-addon">.00</span>
     </div>
-    <br>
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-6">
-      <input type="submit" value="See if I qualify" class="btn btn-primary">
-    </div>
-  </div>
 </form>
 </div>
+</div>
+
