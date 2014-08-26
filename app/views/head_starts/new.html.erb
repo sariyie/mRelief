@@ -2,9 +2,13 @@
 
 <div class="page-header" style="border:none">
   <h1>Do I qualify for Head Start?</h1>
-</div>
 
-<p class="lead"> If you are either pregnant or have a child who is between 3 and 5 years old, you may be eligible for Head Start. Please answer the following questions to find out:</p>
+<div class="lead">
+  <p>Head Start provides educational and early childhood development activities that promote school readiness for three to five year old children from low-income families. It includes free medical, dental, and mental health services and nutritious meals, as well as parent education and training.</p>
+  </div>
+
+  <p>You can find more information on Head Start <a href="http://chicagoearlylearning.org/faq">here</a></p>
+</div>
 
 <% if @head_start.errors.any? %>
   <% @head_start.errors.full_messages.each do |message| %>
@@ -15,7 +19,7 @@
   <% end %>
 <% end %>
 
-<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_head_start" role="form">
 
@@ -36,10 +40,9 @@
   <!-- Label and input for hs_dependent_no -->
    <div class="form-group col-sm-9">
     <label for="hs_dependent_no">How many
-        dependents <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
-      (including yourself) are in your household?
+        dependents (including yourself) are in your household?
     </label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
 
     <div>
       <input type="text" id="hs_dependent_no" name="hs_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @head_start.hs_dependent_no %>">
@@ -51,9 +54,9 @@
   <!-- Label and input for hs_gross_income -->
    <div class="form-group col-sm-9">
     <label for="hs_gross_income">
-      What is your gross annual income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
+      What is your gross annual income?
     </label>
+       <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
 
     <div class="input-group">
   <span class="input-group-addon">$</span>

@@ -1,7 +1,7 @@
 <div class= "container">
 
 <div class="page-header" style="border:none">
-  <h1> Do I qualify for rentail assistance?</h1>
+  <h1> Do I qualify for Rental Assistance?</h1>
 
  <div class="lead"> <p>Emergency Rental Assistance is available for people suffering financial hardship due to a crisis such as loss of job, home fire or illness. The program is intended to allow families to maintain housing during the time it takes to regain stability.</p>
   </div>
@@ -37,6 +37,8 @@
   <!-- Label and input for rental_dependent_no -->
      <div class="form-group col-sm-9">
     <label for="rental_dependent_no">How many dependents(including yourself) are in your household?</label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+
       <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>">
   </div>
 
@@ -44,8 +46,8 @@
   <!-- Label and input for rental_gross_income -->
   <div class="form-group col-sm-9">
     <label for="rental_gross_income">
-      What is income over the past 90 days? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
+      What is income over the past 90 days?
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
     </label>
 
     <div class="input-group">

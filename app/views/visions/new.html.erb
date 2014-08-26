@@ -3,7 +3,10 @@
 <div class="page-header" style="border:none">
   <h1> Do I qualify for rental assistance?</h1>
 
-<p class="lead">If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Vision Assistance.<br>Please answer the following questions to find out:</p>
+<div class="lead"> <p>Vision assistance involves providing eye exams and glasses for individuals to remove a barrier to employment, education, and self-sufficiency in the state of Illinois.</p>
+  </div>
+
+  <p>You can find more information about Vision Assistance <a href="http://www.cedaorg.net/www2/CDS.html">here</a></p>
 </div>
 
 <% if @vision.errors.any? %>
@@ -15,7 +18,7 @@
   <% end %>
 <% end %>
 
-<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_vision" role="form">
 
@@ -30,15 +33,17 @@
   <!-- Label and input for vision_household_size -->
    <div class="form-group col-sm-9">
     <label for="vision_household_size">What is your household size?</label>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
       <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>">
   </div>
 
   <!-- Label and input for vision_gross_income -->
   <div class="form-group col-sm-9">
     <label for="rental_gross_income">
-      What is income over the past 90 days? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
-    </label>
+      What is income over the past 90 days?</label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+
+
 
     <div class="input-group">
       <span class="input-group-addon">$</span>

@@ -3,7 +3,10 @@
 <div class="page-header" style="border:none">
   <h1> Do I qualify for WIC?</h1>
 
-<p class="lead">If you are pregnant, breastfeeding, have had a baby in the past six months, or have a child or infant younger than five years old, you may be qualify for WIC benefits.  Please answer the following questions to find out:</p>
+<div class="lead"> <p>The Women, Infants and Children (WIC) Program, funded by the United States Department of Agriculture, is a supplemental nutrition program focused on eating healthy for moms and kids. WIC can provide nutrition education, nutrition counseling, breastfeeding support, nutritious foods and referrals to other services as needed.</p>
+  </div>
+
+  <p>You can find more information about WIC <a href="http://www.cedaorg.net/www2/HNS.html">here</a></p>
 </div>
 
 <% if @wic.errors.any? %>
@@ -16,7 +19,7 @@
 <% end %>
 
 
-<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_wic" role="form">
 
@@ -35,6 +38,7 @@
   <!-- Label and input for wic_household_size -->
      <div class="form-group col-sm-9">
     <label for="rental_dependent_no">What is your household size?</label>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
      <input type="text" id="wic_household_size" name="wic_household_size" placeholder="household size" class="form-control" value="<%= @wic.wic_household_size %>" required>
   </div>
 
@@ -42,9 +46,9 @@
   <!-- Label and input for wic_gross_income -->
     <div class="form-group col-sm-9">
     <label for="rta_gross_income">
-      What is gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
+      What is gross monthly income?
     </label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
