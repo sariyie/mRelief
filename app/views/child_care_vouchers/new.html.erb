@@ -3,8 +3,10 @@
 <div class="page-header" style="border:none">
   <h1> Do I qualify for a Child Care Voucher?</h1>
 
+  <div class="lead"> <p>Child Care Assistance Program provides low-income, working families with access to quality, affordable child care that allows them to continue working and contributes to the healthy, emotional and social development of the child. Also commonly referred to as a Child Care Voucher, the state of Illinos helps income eligible families pay for their child care services while they work, go to school, training and other work-related activities.</p>
+  </div>
 
-<p class="lead">If your child is between the ages of 6 months and 12 years, you may qualify for a Child Care Voucher. <br>Please answer the following questions to find out:</p>
+  <p>You can find more information about CCAP <a href="http://www.dhs.state.il.us/page.aspx?item=30355">here</a></p>
 </div>
 
 <% if @child_care_voucher.errors.any? %>
@@ -17,12 +19,14 @@
 <% end %>
 
 
-<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_child_care_voucher" role="form">
 
       <div class="form-group col-sm-9">
     <label for="ccdf_dependent_no">How many dependents(including yourself) are in your household?</label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+
       <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>">
   </div>
 
@@ -30,8 +34,8 @@
   <!-- Label and input for rta_gross_income -->
   <div class="form-group col-sm-9">
     <label for="ccdf_gross_income">
-      What is your gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
+      What is your gross monthly income?
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
     </label>
 
     <div class="input-group">

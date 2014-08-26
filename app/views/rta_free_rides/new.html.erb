@@ -2,7 +2,10 @@
 
 <div class="page-header" style="border:none">
    <h1>Do I qualify for RTA Ride Free?</h1>
-  <p class="lead">If you are 65 and older or disabled, you may qualify for RTA Ride Free. <br>Please answer the following questions to find out:</p>
+ <div class="lead"> <p>RTA Ride Free provides free rides on fixed-route transit (regularly scheduled CTA, Metra and Pace buses or trains) for any Illinois resident who is enrolled in the Illinois Department on Aging Benefit Access Program and with a disability or as a senior aged 65 or older.</p>
+ </div>
+
+  <p>You can find more information about RTA RIDE FREE <a href="http://www.rtachicago.com/images/stories/Ride_Free_Brochure_2013.pdf">here</a></p>
 </div>
 
 <% if @rta_free_ride.errors.any? %>
@@ -14,7 +17,7 @@
   <% end %>
 <% end %>
 
-<div class="panel panel-default col-md-10" style="margin: 0 0 40px 0">
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_snap_eligibility" role="form">
 
@@ -22,6 +25,8 @@
 
   <div class="form-group col-sm-9">
     <label for="rta_dependent_no">How many dependents(including yourself) are in your household?</label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+
       <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>">
   </div>
 
@@ -29,8 +34,9 @@
   <!-- Label and input for rta_gross_income -->
   <div class="form-group col-sm-9">
     <label for="rta_gross_income">
-      What is your gross monthly income? <a data-toggle="popover" title="Popover title" data-placement="top" data-content="And here's some amazing content. It's very engaging. Right?"><i class="fa fa-info-circle"></i></a>
-       <!--  </button> -->
+      What is your gross monthly income?
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+
     </label>
 
     <div class="input-group">

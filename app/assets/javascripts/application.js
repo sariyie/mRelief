@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('[data-toggle=popover]').popover({
+    trigger: 'click',
+    'placement': 'top'
+  });
+});
