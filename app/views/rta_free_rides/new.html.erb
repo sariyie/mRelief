@@ -6,6 +6,8 @@
  </div>
 
   <p>You can find more information about RTA RIDE FREE <a href="http://www.rtachicago.com/images/stories/Ride_Free_Brochure_2013.pdf">here</a></p>
+
+  <p><a href="http://www.illinois.gov/aging/BenefitsAccess/Pages/Eligibility%20and%20Frequently-Asked-Questions.aspx">Please click here for disability criteria</a></p>
 </div>
 
 <% if @rta_free_ride.errors.any? %>
@@ -25,9 +27,9 @@
 
   <div class="form-group col-sm-9">
     <label for="rta_dependent_no">How many dependents(including yourself) are in your household?</label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself, your spouse (if applicable), and/or resident for whom you (or you and your spouse) provided more than half of that person's total financial support last year."} %>
 
-      <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>">
+      <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>" required>
   </div>
 
 
@@ -35,13 +37,12 @@
   <div class="form-group col-sm-9">
     <label for="rta_gross_income">
       What is your gross monthly income?
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
-
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Your total income before tax deductions, including your spouse's income if married and living together on December 31 of last year, and that of a qualified additional resident (if applicable)."} %>
     </label>
 
     <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input type="text" id="rta_gross_income" name="rta_gross_income" placeholder="gross monthly income" class="form-control" value= "<%= @rta_free_ride.rta_gross_income %>">
+  <input type="text" id="rta_gross_income" name="rta_gross_income" placeholder="gross monthly income" class="form-control" value= "<%= @rta_free_ride.rta_gross_income %>" required>
   <span class="input-group-addon">.00</span>
 </div>
 
