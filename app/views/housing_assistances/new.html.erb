@@ -31,8 +31,8 @@
   <!-- Label and input for housing_dependent_no -->
      <div class="form-group col-sm-9">
     <label for="housing_dependent_no">How many dependents(including yourself) are in your household?</label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
-     <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>">
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Family size, including yourself."} %>
+     <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>" required>
   </div>
 
   <!-- Label and input for housing_gross_income -->
@@ -41,11 +41,11 @@
       What is your gross monthly income?
     </label>
 
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Income of all household members 18 years and older before deductions."} %>
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>">
+        <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

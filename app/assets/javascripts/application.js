@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function() {
+$(document).ready(function(e) {
   $('[data-toggle=popover]').popover({
     trigger: 'click',
     'placement': 'top'
   });
+  e.preventDefault();
 });

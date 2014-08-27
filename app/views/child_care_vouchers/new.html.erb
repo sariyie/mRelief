@@ -25,9 +25,9 @@
 
       <div class="form-group col-sm-9">
     <label for="ccdf_dependent_no">How many dependents(including yourself) are in your household?</label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total family size, including yourself and child[ren]."} %>
 
-      <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>">
+      <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>" required>
   </div>
 
 
@@ -35,12 +35,12 @@
   <div class="form-group col-sm-9">
     <label for="ccdf_gross_income">
       What is your gross monthly income?
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, including work, child support, TANF, and Social Security before any deductions."} %>
     </label>
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>">
+        <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

@@ -24,6 +24,7 @@
 
   <div class="form-group col-sm-6">
     <label for="case_management" id="case_management" >Are you participating in Case Management?</label>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "The case management program helps one make informed decisions about needed programs and services. One must go through an intake an assessment process to determine the need and readiness to engage in case management. Call 800-571-CEDA (2332) for intake locations."} %>
     <div>
       <%= radio_button_tag 'case_management', 'yes' %> yes
       <%= radio_button_tag 'case_management', 'no' %> no
@@ -34,14 +35,14 @@
    <div class="form-group col-sm-9">
     <label for="vision_household_size">What is your household size?</label>
      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
-      <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>">
+      <input type="text" id="vision_household_size" name="vision_household_size" placeholder="household size" class="form-control" value="<%= @vision.vision_household_size %>" required>
   </div>
 
   <!-- Label and input for vision_gross_income -->
   <div class="form-group col-sm-9">
     <label for="rental_gross_income">
       What is income over the past 90 days?</label>
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Income of all household members 18 years and older before deductions."} %>
 
 
 

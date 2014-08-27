@@ -38,7 +38,7 @@
   <!-- Label and input for wic_household_size -->
      <div class="form-group col-sm-9">
     <label for="rental_dependent_no">What is your household size?</label>
-     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself and your child[ren]."} %>
      <input type="text" id="wic_household_size" name="wic_household_size" placeholder="household size" class="form-control" value="<%= @wic.wic_household_size %>" required>
   </div>
 
@@ -48,7 +48,7 @@
     <label for="rta_gross_income">
       What is gross monthly income?
     </label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources."} %>
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
