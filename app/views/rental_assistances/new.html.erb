@@ -21,13 +21,12 @@
 <div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_rental_assistance" role="form">
-<p><b> If you have a notarized 5-day notice you may qualify for rental assistance. Please answer the following questions:</b></p>
+
 <p> Describe you're current rental status: </p>
   <div class="relative" id="rental_status">
-    <%= radio_button_tag 'rental_status', 'homeless' %> Homeless
+    <%= radio_button_tag 'rental_status', 'medical circumstance' %> Someone experiencing a medical circumstance
     <br><%= radio_button_tag 'rental_status', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
     <br><%= radio_button_tag 'rental_status', 'a recipient of an eviction notice' %> A recipient of an eviction notice
-    <br><%= radio_button_tag 'rental_status', 'someone whose unemployment benefits have ended' %> Someone whose unemployment benefits have ended
     <br><%= radio_button_tag 'rental_status', 'have experienced a temporary loss of income' %> Have experienced a temporary loss of income
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Economic crisis or hardship that is out of your control such as an unexpected job loss or medical emergency."} %>
     <br><%= radio_button_tag 'rental_status', 'a victim of domestic violence' %> A victim of domestic violence

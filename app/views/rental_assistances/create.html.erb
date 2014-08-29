@@ -5,49 +5,49 @@
       <div class="page-header"><h1>You may be in luck!</h1></div>
       <div class="well">
         <p>Based on your rental status, household size and income, you likely qualify for rental assistance.
-      </div>
+      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p></div>
 
-          <% if @eligible_homeless %>
+        <!--   <%# if @eligible_medical %>
             <div class="well">
             <p> Message for people who are homeless and eligible</p>
             </div>
-          <% end %>
+          <%# end %>
 
-          <% if @eligible_natural_disaster %>
+          <%# if @eligible_natural_disaster %>
             <div class="well">
             <p> Message for people who are victims of natural disasters</p>
             </div>
-          <% end %>
+          <%# end %>
 
-          <% if @eligible_eviction %>
+          <%# if @eligible_eviction %>
             <div class="well">
             <p> Message for people who have received eviction notices</p>
             </div>
-          <% end %>
+          <%# end %>
 
-          <% if @eligible_unemployment %>
+          <%# if @eligible_unemployment %>
             <div class="well">
             <p> Message for someone whose unemployment benefits have ended</p>
             </div>
-          <% end %>
+          <%# end %>
 
-          <% if @eligible_income_loss %>
+          <%# if @eligible_income_loss %>
             <div class="well">
             <p> Message for people who have experienced a temporary loss of income</p>
             </div>
-          <% end %>
+          <%# end %>
 
-          <% if @eligible_domestic_violence %>
+          <%# if @eligible_domestic_violence %>
             <div class="well">
             <p> Message for people who are victims of domestic violence</p>
             </div>
-          <% end %>
+          <%# end %> -->
 
       <% else %>
 
       <div class="page-header"><h1>Do I qualify for rental assistance?</h1></div>
       <div class="well">
-        <p>Based on your rental status, household size and income, you likely do not qualify for rental assistance.</p>
+        <p>Based on your household size and income, and other factors, you do not qualify for rental assistance. The financial assistance program provides essential relief services to persons in need of shelter, food, utility payments, medication and other items. Contact Emergency Fund directly at (312) 379-0301 for rent assistance.</p>
       <% end %>
       </div>
 

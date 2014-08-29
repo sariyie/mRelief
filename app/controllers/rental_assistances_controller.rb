@@ -12,41 +12,45 @@ class RentalAssistancesController < ApplicationController
   end
 
   def create
-    @rental_assistance = RentalAssistance.new
-    @rental_assistance.rental_dependent_no = params[:rental_dependent_no]
-    @rental_assistance.rental_gross_income = params[:rental_gross_income]
-    @rental_assistance.rental_status = params[:rental_status]
+    rental_dependent_no = params[:rental_dependent_no].to_i
+    rental_gross_income = params[:rental_gross_income]
+    rental_gross_income = rental_gross_income.gsub(/[^0-9\.]/, '').to_i
 
-    if @rental_assistance.save
-      redirect_to "/rental_assistances", :notice => "Rental assistance created successfully."
-    else
-      render 'new'
-    end
-  end
+    if  rental_gross_income.present? && rental_dependent_no.present?
 
-  def edit
-    @rental_assistance = RentalAssistance.find(params[:id])
-  end
+    rental_eligibility = RentalAssistance.find_by({ :rental_dependent_no => params[:rental_dependent_no] })
 
-  def update
-    @rental_assistance = RentalAssistance.find(params[:id])
 
-    @rental_assistance.rental_dependent_no = params[:rental_dependent_no]
-    @rental_assistance.rental_gross_income = params[:rental_gross_income]
-    @rental_assistance.rental_status = params[:rental_status]
+       p "rental_gross_income = #{rental_gross_income}"
+       p "rental_eligibility.rental_gross_income = #{rental_eligibility.rental_gross_income}"
 
-    if @rental_assistance.save
-      redirect_to "/rental_assistances", :notice => "Rental assistance updated successfully."
-    else
-      render 'edit'
-    end
-  end
+       if rental_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above"
+          @eligible = true
 
-  def destroy
-    @rental_assistance = RentalAssistance.find(params[:id])
+         # if params[:rental_status]  == "medical circumstance"
+         #    @eligible_medical = true
 
-    @rental_assistance.destroy
+         #  elsif params[:rental_status]  == "a victim of natural disaster or fire"
+         #    @eligible_natural_disaster = true
 
-    redirect_to "/rental_assistances", :notice => "Rental assistance deleted."
-  end
+         #  elsif params[:rental_status]  == "a recipient of an eviction notice"
+         #    @eligible_eviction = true
+
+         #  elsif params[:rental_status]  == "someone whose unemployment benefits have ended"
+         #    @eligible_unemployment = true
+
+         #  elsif params[:rental_status]  == "have experienced a temporary loss of income"
+         #    @eligible_income_loss = true
+
+         #  elsif params[:rental_status]  == "a victim of domestic violence"
+         #    @eligible_domestic_violence = true
+
+         #  end
+
+         # rental_eligibility_range = rental_eligibility - 100
+
+
+      end
+    end #closes first if statement
+  end #closes method
 end
