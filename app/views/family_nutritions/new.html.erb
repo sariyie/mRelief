@@ -7,7 +7,7 @@
   <p>The Family Nutrition Assistance program is to address food deserts in the south suburbs to purchase and deliver fresh produce twice per month to a variety of sites to distribute to low-income families. </p>
   </div>
 
-  <p>You can find more information on Family Nutrition <a href="http://www.cedaorg.net/www2/CDS.html">here</a></p>
+  <p>You can find more information on Family Nutrition <a href="http://www.cedaorg.net/www2/CDS.html">here.</a></p>
 </div>
 
 <% if @family_nutrition.errors.any? %>
@@ -25,6 +25,7 @@
 
    <!-- Label and input for nutrition_household_size -->
     <div class="form-group col-sm-9">
+    <p><b>If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Family Nutrition Assistance. Please answer the following questions to find out:</b></p>
     <label for="nutrition_household_size">What is your household size?</label>
      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
        <input type="text" id="nutrition_household_size" name="nutrition_household_size" placeholder="household size" class="form-control" value="<%= @family_nutrition.nutrition_household_size %>" required>

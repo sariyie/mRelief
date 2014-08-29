@@ -6,7 +6,7 @@
  <div class="lead"> <p>Emergency Rental Assistance is available for people suffering financial hardship due to a crisis such as loss of job, home fire or illness. The program is intended to allow families to maintain housing during the time it takes to regain stability.</p>
   </div>
 
-  <p>You can find more information about rental assistance <a href="http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/how_to_find_rentalassistanceinchicago.html">here</a></p>
+  <p>You can find more information about rental assistance <a href="http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/how_to_find_rentalassistanceinchicago.html">here.</a></p>
 </div>
 
 <% if @rental_assistance.errors.any? %>
@@ -21,7 +21,7 @@
 <div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
   <div class="panel-body">
     <form action="/create_rental_assistance" role="form">
-
+<p><b> If you have a notarized 5-day notice you may qualify for rental assistance. Please answer the following questions:</b></p>
 <p> Describe you're current rental status: </p>
   <div class="relative" id="rental_status">
     <%= radio_button_tag 'rental_status', 'homeless' %> Homeless

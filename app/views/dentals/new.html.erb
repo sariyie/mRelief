@@ -3,11 +3,11 @@
 <div class="page-header" style="border:none">
   <h1> Do I Qualify for Dental Assistance?</h1>
 
-<div class="lead"> <p>Dental Assistance is financial assistance for limited auto repair needs is available to remove barriers to maintaining or seeking employment, education/training or health maintenance. </p>
+<div class="lead"> <p>Dental Assistance is financial assistance for limited dental needs and is available to remove barriers to maintaining or seeking employment, education/training or health maintenance. </p>
   </div>
 
   <p>You can find more information about Dental Assistance <a href="http://www.cedaorg.net/www2/CDS.html
-">here</a></p>
+">here.</a></p>
 </div>
 
 <% if @dental.errors.any? %>
@@ -25,6 +25,7 @@
 
   <!-- Label and input for dental_household_size -->
   <div class="form-group col-sm-9">
+  <p><b>If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Dental Assistance.</b></p>
     <label for="dental_household_size">What is your household size?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
       <input type="text" id="dental_household_size" name="dental_household_size" placeholder="Household size" class="form-control" value="<%= @dental.dental_household_size %>" required>

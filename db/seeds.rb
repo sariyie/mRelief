@@ -539,17 +539,17 @@ p.save
 p = Program.new
 p.name = "Head Start"
 p.url = "/head_starts/new"
-p.description = "Promote school readiness for babies infants and toddlers"
+p.description = "Promote school readiness for children ages 3-5"
 p.save
 
 p = Program.new
 p.name = "Early Head Start"
 p.url = "/early_head_starts/new"
-p.description = "Promote school readiness for children ages 3-5"
+p.description = "Promote school readiness for babies infants and toddlers"
 p.save
 
 p = Program.new
-p.name = "Housing Assistance"
+p.name = "Housing Counseling and Referral Information"
 p.url = "/housing_assistances/new"
 p.description = "Counseling, household budgeting and financial assistance"
 p.save

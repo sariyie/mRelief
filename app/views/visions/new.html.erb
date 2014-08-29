@@ -1,12 +1,12 @@
 <div class= "container">
 
 <div class="page-header" style="border:none">
-  <h1> Do I qualify for rental assistance?</h1>
+  <h1> Do I qualify for Vision Assistance?</h1>
 
 <div class="lead"> <p>Vision assistance involves providing eye exams and glasses for individuals to remove a barrier to employment, education, and self-sufficiency in the state of Illinois.</p>
   </div>
 
-  <p>You can find more information about Vision Assistance <a href="http://www.cedaorg.net/www2/CDS.html">here</a></p>
+  <p>You can find more information about Vision Assistance <a href="http://www.cedaorg.net/www2/CDS.html">here.</a></p>
 </div>
 
 <% if @vision.errors.any? %>
@@ -22,7 +22,8 @@
   <div class="panel-body">
     <form action="/create_vision" role="form">
 
-  <div class="form-group col-sm-6">
+  <div class="form-group col-sm-9">
+  <p><b> If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Vision Assistance.</b></p>
     <label for="case_management" id="case_management" >Are you participating in Case Management?</label>
      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "The case management program helps one make informed decisions about needed programs and services. One must go through an intake an assessment process to determine the need and readiness to engage in case management. Call 800-571-CEDA (2332) for intake locations."} %>
     <div>

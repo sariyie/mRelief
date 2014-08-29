@@ -3,10 +3,10 @@
 <div class="page-header" style="border:none">
   <h1> Do I qualify for a Child Care Voucher?</h1>
 
-  <div class="lead"> <p>Child Care Assistance Program provides low-income, working families with access to quality, affordable child care that allows them to continue working and contributes to the healthy, emotional and social development of the child. Also commonly referred to as a Child Care Voucher, the state of Illinos helps income eligible families pay for their child care services while they work, go to school, training and other work-related activities.</p>
+  <div class="lead"> <p>Child Care Assistance Program (CCAP) provides low-income, working families with access to quality, affordable child care that allows them to continue working and contributes to the healthy, emotional and social development of the child. Also commonly referred to as a Child Care Voucher, the state of Illinos helps income eligible families pay for their child care services while they work, go to school, training and other work-related activities.</p>
   </div>
 
-  <p>You can find more information about CCAP <a href="http://www.dhs.state.il.us/page.aspx?item=30355">here</a></p>
+  <p>You can find more information about CCAP <a href="http://www.dhs.state.il.us/page.aspx?item=30355">here.</a></p>
 </div>
 
 <% if @child_care_voucher.errors.any? %>
@@ -24,6 +24,7 @@
     <form action="/create_child_care_voucher" role="form">
 
       <div class="form-group col-sm-9">
+      <p><b>If your child is between the ages of 6 months and 12 years, you may qualify for a Child Care Voucher. Please answer the following questions to find out:</b></p>
     <label for="ccdf_dependent_no">How many dependents(including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total family size, including yourself and child[ren]."} %>
 
