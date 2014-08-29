@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+# Routes for the text resource:
+  post('/', { :controller => 'receive_text', :action => 'index'})
+
   # Routes for the Head_start resource:
   # CREATE
   get('/head_starts/new', { :controller => 'head_starts', :action => 'new' })
