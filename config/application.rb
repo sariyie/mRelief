@@ -2,11 +2,15 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 <<<<<<< HEAD
+<<<<<<< HEAD
 require 'dotenv' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
 =======
 require 'dotenv-rails' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
 require 'twilio-ruby'
 >>>>>>> dumb commit
+=======
+require 'dotenv-rails' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
+>>>>>>> 2780376b220abd3a876574f564178f62878b02ef
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
