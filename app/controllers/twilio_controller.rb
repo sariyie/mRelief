@@ -8,11 +8,11 @@ class TwilioController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def text
-
-   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message "Hey Monkey. Thanks for the message!"
-  end
-  twiml.text
+    twiml = Twilio::TwiML::Response.new do |r|
+      r.Message "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
+    end
+    twiml.text
+    render_twiml twiml
 
   end
 end
