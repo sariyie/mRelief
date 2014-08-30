@@ -100,10 +100,9 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  get('/about_us', { :controller => 'snap_eligibilities', :action => 'about_us' })
-  get('/contact_us', { :controller => 'snap_eligibilities', :action => 'contact_us' })
-  get('/what_is_snap', { :controller => 'snap_eligibilities', :action => 'what_is_snap' })
-  get('/how_mrelief_works', { :controller => 'snap_eligibilities', :action => 'how_mrelief_works' })
+  get('/about_us', { :controller => 'pages', :action => 'about_us' })
+  get('/contact_us', { :controller => 'pages', :action => 'contact_us' })
+  get('/how_mrelief_works', { :controller => 'pages', :action => 'how_mrelief_works' })
   get("/", { :controller => "pages", :action => "homepage" })
 
   # The priority is based upon order of creation: first created -> highest priority.

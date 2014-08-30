@@ -68,18 +68,4 @@ class SnapEligibilitiesController < ApplicationController
     redirect_to "/snap_eligibilities", :notice => "Snap eligibility deleted."
   end
 
-  def about_us
-
-  end
-
-  def contact_us
-
-  end
-
-  def what_is_snap
-
-  end
-  def how_mrelief_works
-
-  end
 end
