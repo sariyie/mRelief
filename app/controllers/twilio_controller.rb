@@ -1,14 +1,14 @@
 require 'twilio-ruby'
 require 'sinatra'
 
+enable :sessions
+
 class TwilioController < ApplicationController
   include Webhookable
 
   after_filter :set_header
 
   skip_before_action :verify_authenticity_token
-
-  enable :sessions
 
   def text
     session["counter"] ||= 0
