@@ -9,12 +9,10 @@ class TwilioController < ApplicationController
 
   def text
 
-    message = "Hello, thanks for message number"
-    twiml = Twilio::TwiML::Response.new do |r|
-      r.Message message
-    end
-    twiml.text
-    response_twiml twiml
+   twiml = Twilio::TwiML::Response.new do |r|
+    r.Message "Hey Monkey. Thanks for the message!"
+  end
+  twiml.text
 
   end
 end
