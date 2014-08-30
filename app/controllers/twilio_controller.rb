@@ -12,5 +12,7 @@ class TwilioController < ApplicationController
       r.Message "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
     end
     twiml.text
+    render_twiml twiml
+
   end
 end
