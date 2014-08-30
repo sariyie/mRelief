@@ -1,7 +1,4 @@
 require 'twilio-ruby'
-require 'sinatra'
-
-enable :sessions
 
 class TwilioController < ApplicationController
   include Webhookable
