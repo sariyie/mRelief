@@ -20,6 +20,7 @@ class TwilioController < ApplicationController
     end
     session["counter"] += 1
     twiml.text
+    response_twiml twiml
 
   end
 end
