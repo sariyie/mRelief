@@ -8,12 +8,8 @@ class TwilioController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def text
-    message = nil
-    if sms_count == 0
-      message = "Hello, thanks for the new message."
-    else
-      message = "Hello, thanks for message number"
-    end
+
+    message = "Hello, thanks for message number"
     twiml = Twilio::TwiML::Response.new do |r|
       r.Message message
     end
