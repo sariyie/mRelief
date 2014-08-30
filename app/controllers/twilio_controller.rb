@@ -10,6 +10,7 @@ class TwilioController < ApplicationController
   def text
     session["counter"] ||= 0
     sms_count = session["counter"]
+    message = nil
     if sms_count == 0
       message = "Hello, thanks for the new message."
     else
