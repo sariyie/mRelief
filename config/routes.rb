@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 # Routes for the text resource:
-  post('/', { :controller => 'receive_text', :action => 'index'})
+  post('/', { :controller => 'twilio_controller', :action => 'text'})
 
   # Routes for the Head_start resource:
   # CREATE
