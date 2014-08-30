@@ -4,6 +4,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'dotenv-rails'
 gem 'twilio-ruby'
 gem 'dotenv-rails'
+gem 'sinatra'
 
 gem 'jquery-ui-rails'
 
