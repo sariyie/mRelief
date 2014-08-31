@@ -18,13 +18,13 @@ class TwilioController < ApplicationController
     end
     if sms_count == 0
       message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
-    elsif sms_count = 1
+    else sms_count = 1
       session["age"] = params[:body]
       message = "How many dependents are in your household? Dependents are the number of people living in your household, including yourself."
-    elsif sms_count = 2
+    else sms_count = 2
       session["dependents"] = params[:body]
       message = "What is your gross monthly income? Income includes social security, child support, and unemployment insurance before any deductions."
-    elsif sms_count = 3
+    else sms_count = 3
       session["income"] = params[:body]
       message = "Your income is #{session['income']}. You have #{session['dependents']}. You are #{session['age']}"
     else
@@ -32,7 +32,7 @@ class TwilioController < ApplicationController
     twiml = Twilio::TwiML::Response.new do |r|
       r.Message message
     end
-    session["counter"] += 1
+    session["counter"] += 3
     twiml.text
       render_twiml twiml
 
