@@ -13,14 +13,14 @@ class TwilioController < ApplicationController
     # end
     session["counter"] ||= 0
     sms_count = session["counter"]
-    if params[:body] == "reset"
-      sms_count == 0
-    end
+    # if params[:body] == "reset"
+    #   sms_count == 0
+    # end
     if sms_count == 0
       message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
     elsif sms_count = 1
       session["age"] = params[:body]
-      message = "How many dependents are in your household? Dependents are the number of people living in your household, including yourself."
+      message = "How many dependents are in your household? Dependents are the number of people living in your household, including yourself. #{session['counter']}"
     elsif sms_count = 2
       session["dependents"] = params[:body]
       message = "What is your gross monthly income? Income includes social security, child support, and unemployment insurance before any deductions."
