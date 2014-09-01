@@ -12,10 +12,11 @@ class TwilioController < ApplicationController
     #   r.Message "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
     # end
     session["counter"] ||= 0
-    sms_count = session["counter"]
+
     if params[:Body] == "reset"
       session["counter"] = 0
     end
+       sms_count = session["counter"]
     if sms_count == 0
       message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
     end
