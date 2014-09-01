@@ -13,6 +13,11 @@ class TwilioController < ApplicationController
     # end
     session["counter"] ||= 0
 
+    # session_age = params[:age].to_i
+    # snap_dependent_no = params[:snap_dependent_no].to_i
+    # snap_gross_income = params[:snap_gross_income]
+    # snap_gross_income = snap_gross_income.gsub(/[^0-9\.]/, '').to_i
+
     if params[:Body] == "reset"
       session["counter"] = 0
     end
@@ -30,7 +35,10 @@ class TwilioController < ApplicationController
     end
     if sms_count == 3
       session["income"] = params[:Body]
-      message = "Your income is #{session['income']}. You have #{session['dependents']}. You are #{session['age']}"
+      message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']}"
+      age = session["age"].to_i
+      snap_dependent_no = session["dependents"].to_i
+      snap_gross_income = session["income"]
     end
     if sms_count > 3
       message = "Still stuck #{params[:Body]} #{session['counter']}"
