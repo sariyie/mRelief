@@ -28,7 +28,7 @@
     <br><%= radio_button_tag 'rental_status', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
     <br><%= radio_button_tag 'rental_status', 'a recipient of an eviction notice' %> A recipient of an eviction notice
     <br><%= radio_button_tag 'rental_status', 'have experienced a temporary loss of income' %> Have experienced a temporary loss of income
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Economic crisis or hardship that is out of your control such as an unexpected job loss or medical emergency."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Economic crisis or hardship that is out of your control such as an unexpected job loss. However, you must be able to prove you can afford next month's rent."} %>
     <br><%= radio_button_tag 'rental_status', 'a victim of domestic violence' %> A victim of domestic violence
     <br><%= radio_button_tag 'rental_status', 'none of the above' %> None of the above
   </div>
@@ -36,7 +36,7 @@
 
   <!-- Label and input for rental_dependent_no -->
      <div class="form-group col-sm-9">
-    <label for="rental_dependent_no">How many dependents(including yourself) are in your household?</label>
+    <label for="rental_dependent_no">How many dependents (including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
 
       <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>" required>
@@ -46,7 +46,7 @@
   <!-- Label and input for rental_gross_income -->
   <div class="form-group col-sm-9">
     <label for="rental_gross_income">
-      What is income over the past 90 days?
+      What is your income over the past 90 days?
       <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Includes cash receipts from all sources including money wages and salaries before any deductions, unemployment compensation, public assistance, alimony, child support, lottery/gambling winnings, dividends and all other income."} %>
     </label>
 

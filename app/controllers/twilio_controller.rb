@@ -23,7 +23,7 @@ class TwilioController < ApplicationController
     end
        sms_count = session["counter"]
     if sms_count == 0
-      message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you?"
+      message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you? Send the message 'reset' at any time if you make a mistake"
     end
     if sms_count == 1
       session["age"] = params[:Body]
@@ -35,7 +35,7 @@ class TwilioController < ApplicationController
     end
     if sms_count == 3
       session["income"] = params[:Body]
-      message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']}"
+      message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old."
       age = session["age"].to_i
       snap_dependent_no = session["dependents"].to_i
       snap_gross_income = session["income"]
