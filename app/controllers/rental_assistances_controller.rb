@@ -27,6 +27,12 @@ class RentalAssistancesController < ApplicationController
        if rental_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above"
           @eligible = true
 
+        elsif rental_gross_income  < rental_eligibility.rental_gross_income +100 && params[:rental_status] != "none of the above"
+          @maybe_eligible = true
+
+        else
+          @eligible = false
+
          # if params[:rental_status]  == "medical circumstance"
          #    @eligible_medical = true
 
