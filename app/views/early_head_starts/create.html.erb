@@ -1,23 +1,39 @@
 <div class="container">
 
+<div class="page-header" style="border:none">
+  <h1>Do I qualify for Early Head Start?</h1>
+
+<div class="lead">
+  <p>Early Head Start provides educational and early childhood development activities for children from birth to three years old from low-income families. It includes free medical, dental, and mental health services and nutritious meals, as well as parent education and training.</p>
+  </div>
+
+  <p>You can find more information on Early Head Start <a href="http://chicagoearlylearning.org/faq">here</a></p>
+</div>
+
+
       <% if @eligible %>
-      <div class="page-header"><h1>You may be in luck!</h1></div>
-      <div class="well">
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
         <p>Based on the ages of your children, household size, and income, you likely qualify for Early Head Start. <p> For application information please visit chicagoearlylearning.org to find early learning programs near you or call the Chicago: Ready to Learn! Hotline at (312) 229-1690.</p>
       </div>
 
       <% else %>
 
-      <div class="page-header"><h1>Do I qualify for Early Head Start?</h1></div>
-      <div class="well">
+<div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
         <p>Based on the age of your children, household size and income, you likely do not qualify for Early Head Start.</p>
         <p> If you need assistance, please call the Illinois Action for Children at 312.823.1100.</p>
+        </div>
       <% end %>
       </div>
 
-    <div class="row">
-      <a class="btn btn-default" href="/mrelief"><i class="fa fa-chevron-left"></i> Back</a>
-    </div>
+<div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
 </div>
 
-<div class="container">

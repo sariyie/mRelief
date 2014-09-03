@@ -486,72 +486,84 @@ p = Program.new
 p.name = "Food Stamps"
 p.url = "/mrelief"
 p.description = "Nutrition assistance to low-income people and families"
+p.location = "chicago"
 p.save
 
 p = Program.new
 p.name = "RTA Ride Free"
 p.url = "/rta_free_rides/new"
 p.description = "Free Transit for the Aging and Disabled"
+p.location = "chicago"
 p.save
 
 p = Program.new
 p.name = "Child Care Voucher"
 p.url = "/child_care_vouchers/new"
 p.description = "Quality, affordable child care for low-income families"
+p.location = "illinois"
 p.save
 
 p = Program.new
 p.name = "Rental Assistance"
 p.url = "/rental_assistances/new"
 p.description = "Emergency Rental Assistance during financial hardship"
+p.location = "chicago"
 p.save
 
 p = Program.new
 p.name =  "Auto Repair Assistance"
 p.url = "/auto_repair_assistances/new"
 p.description = "Financial auto assistance to remove employment barriers"
+p.location = "cook county"
 p.save
 
 p = Program.new
 p.name =  "Women, Infants and Children (WIC)"
 p.url = "/wics/new"
 p.description = "Nutrition education, counseling, and food for families"
+p.location = "illinois"
 p.save
 
 p = Program.new
 p.name =  "Vision Assistance"
 p.url = "/visions/new"
 p.description = "Eye exams and glasses to remove employment barriers"
+p.location = "cook county"
 p.save
 
 p = Program.new
 p.name = "Family Nutrition"
 p.url = "/family_nutritions/new"
 p.description = "Fresh Produce for Families"
+p.location = "cook county"
 p.save
 
 p = Program.new
 p.name = "Dental Assistance"
 p.url = "/dentals/new"
 p.description = "Financial dental assistance to remove employment barriers"
+p.location = "cook county"
 p.save
 
 p = Program.new
 p.name = "Head Start"
 p.url = "/head_starts/new"
 p.description = "Promote school readiness for children ages 3-5"
+p.location = "illinois"
 p.save
 
 p = Program.new
 p.name = "Early Head Start"
 p.url = "/early_head_starts/new"
 p.description = "Promote school readiness for babies infants and toddlers"
+p.location = "illinois"
 p.save
 
 p = Program.new
 p.name = "Housing Counseling and Referral Information"
 p.url = "/housing_assistances/new"
 p.description = "Counseling, household budgeting and financial assistance"
+p.location = "cook county"
 p.save
 
 a = AutoRepairAssistance.new

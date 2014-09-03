@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827205914) do
+ActiveRecord::Schema.define(version: 20140903195248) do
 
   create_table "auto_repair_assistances", force: true do |t|
     t.integer  "auto_household_size"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140827205914) do
     t.datetime "updated_at"
     t.string   "url"
     t.text     "description"
+    t.string   "location"
   end
 
   create_table "rental_assistances", force: true do |t|

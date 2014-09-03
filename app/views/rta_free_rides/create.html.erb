@@ -1,26 +1,36 @@
 <div class="container">
 
+    <div class="page-header" style="border:none">
+       <h1>Do I qualify for RTA Ride Free?</h1>
+     <div class="lead"> <p>RTA Ride Free provides free rides on fixed-route transit (regularly scheduled CTA, Metra and Pace buses or trains) for any Illinois resident who is enrolled in the Illinois Department on Aging Benefit Access Program. You must also have a disability or be a senior aged 65 or older.</p>
+     </div>
+
       <% if @eligible %>
-      <div class="page-header"><h1>You may be in luck!</h1></div>
-      <div class="well">
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+
+
         <p>Based on your age, household size, and income, you likely qualify for RTA Ride Free. <p> Feel free to apply online <%= link_to "here", "https://idoaweb.aging.illinois.gov/baa/Welcome.aspx"%> before you visit.</p>
-      </div>
 
       <% else %>
 
-      <div class="page-header"><h1>Do I qualify for RTA Free Ride?</h1></div>
-      <div class="well">
-        <p>Based on your household size and income, you likely do not qualify for RTA Ride Free.</p>
-        <p> Call 312-913-3110 for information about the Reduced Fare Program. Or, if you are a low-income woman exploring other transportation assistance options, go to www.womenwithdrive.org, to view their offerings.
-        </p>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+          <p>Based on your household size and income, you likely do not qualify for RTA Ride Free.</p>
+          <p> Call 312-913-3110 for information about the Reduced Fare Program. Or, if you are a low-income woman exploring other transportation assistance options, go to www.womenwithdrive.org, to view their offerings.
+           </p>
       <% end %>
       </div>
-
-    <div class="container">
-      <div class="row">
-      <a class="btn btn-default" href="/rta_free_rides/new"><i class="fa fa-chevron-left"></i> Back</a>
-      </div>
-    </div>
+</div>
+<div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
 
 </div>
 
