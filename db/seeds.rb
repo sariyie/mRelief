@@ -33,7 +33,6 @@ s.snap_dependent_no = 5
 s.snap_gross_income = 2987.0
 s.save
 
-
 s = SnapEligibility.new
 s.snap_dependent_no = 6
 s.snap_gross_income = 3423.0
