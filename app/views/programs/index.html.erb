@@ -16,19 +16,8 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <div class="row" style="padding: 0 0 40px 0">
   <% chicago_programs = Program.where(:location => "chicago") %>
-
-  <p class="lead text-center">Programs Administered in Chicago Community Service Centers </p>
-  <% chicago_programs.each do |program| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption" style="text-align:center; padding:0 0 20px 0">
-          <h3> <%= program.name %> </li></h3>
-          <p style="padding:0 30px 0 30px"><%= program.description %></p>
-          <p><a href="<%= program.url %>" class="btn btn-primary" role="button">Find Out If You Qualify</a></p>
-=======
   <% chicago_programs.each_with_index do |program, i| %>
     <% if i % 3 == 0 %>
       <div class="row">
@@ -40,7 +29,7 @@
             <p style="padding:0 30px 0 30px"><%= program.description %></p>
             <p><a href="<%= program.url %>" class="btn btn-primary" role="button">Find Out If You Qualify</a></p>
           </div>
->>>>>>> 3ea8f7787d0cb5c5f8960ae64224994c19ef71d8
+
         </div>
       </div>
     <% if (i + 1) % 3 == 0 %>
@@ -51,15 +40,14 @@
 
 
 <!-- Illinois Programs  -->
+ <div class="row">
+    <div class="col-md-12" style="text-align:center; padding-bottom:20px">
+      <h3>Programs Administered in the State of Illinois</h3>
+    </div>
+  </div>
 <div style="margin-bottom:60px">
   <% illinois_programs = Program.where(:location => "illinois") %>
   <% increment = 0 %>
-  <div class="row">
-    <div class="col-md-12" style="text-align:center; padding-bottom:20px">
-      <h3>Programs Administered in Suburban Cook County</h3>
-    </div>
-  </div>
-
   <% illinois_programs.each_with_index do |program, i| %>
     <% if i % 3 == 0 %>
       <div class="row">
@@ -79,55 +67,14 @@
   <% end %>
 </div>
 
-
-<!-- Cook County Programs  -->
-<div style="margin-top:60px">
-  <% cook_county_programs = Program.where(:location => "cook county") %>
-  <% increment = 0 %>
-  <div class="row">
-      <div class="col-md-12" style="text-align:center; padding-bottom:20px">
+<br/>
+   <div class="row">
+    <div class="col-md-12" style="text-align:center; padding-bottom:20px">
       <h3>Programs Administered in Suburban Cook County</h3>
     </div>
   </div>
-
-<<<<<<< HEAD
-  <br/>
-  <div class="row" style="padding: 0 0 40px 0">
-  <% illinois_programs = Program.where(:location => "illinois") %>
-  <p class="lead text-center">Programs Administered in the State of Illinois</p>
-  <% illinois_programs.each do |program| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption" style="text-align:center; padding:0 0 20px 0">
-          <h3> <%= program.name %> </li></h3>
-          <p style="padding:0 30px 0 30px"><%= program.description %></p>
-          <p><a href="<%= program.url %>" class="btn btn-primary" role="button">Find Out If You Qualify</a></p>
-        </div>
-      </div>
-    </div>
-  <% end %>
-  </div>
-
-  <p class="lead text-center">Programs Administered in Suburban Cook County </p>
   <% cook_county_programs = Program.where(:location => "cook county") %>
   <div class="row" style="padding: 0 0 40px 0">
-  <% cook_county_programs.each do |program| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption" style="text-align:center; padding:0 0 20px 0">
-          <h3> <%= program.name %> </li></h3>
-          <p style="padding:0 30px 0 30px"><%= program.description %></p>
-          <p><a href="<%= program.url %>" class="btn btn-primary" role="button">Find Out If You Qualify</a></p>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-
-</div>
-
-=======
   <% cook_county_programs.each_with_index do |program, i| %>
     <% if i % 3 == 0  %>
       <div class="row">
@@ -146,9 +93,5 @@
     <% end %>
   <% end %>
 </div>
-
-
-
 </div>
 
->>>>>>> 3ea8f7787d0cb5c5f8960ae64224994c19ef71d8
