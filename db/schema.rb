@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140903004453) do
+=======
+ActiveRecord::Schema.define(version: 20140903195248) do
+>>>>>>> 3ea8f7787d0cb5c5f8960ae64224994c19ef71d8
 
   create_table "auto_repair_assistances", force: true do |t|
     t.integer  "auto_household_size"

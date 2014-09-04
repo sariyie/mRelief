@@ -1,8 +1,20 @@
 <div class="container">
 
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for Vision Assistance?</h1>
+
+<div class="lead"> <p>Vision assistance involves providing eye exams and glasses for individuals to remove a barrier to employment, education, and self-sufficiency in the state of Illinois.</p>
+  </div>
+
+  <p>You can find more information about Vision Assistance <a href="http://www.cedaorg.net/www2/CDS.html">here.</a></p>
+</div>
+
+
       <% if @eligible %>
-      <div class="page-header"><h1>You may be in luck!</h1></div>
-      <div class="well">
+
+    <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
         <p>Based on your household size and income, you qualify for Vision Assistance. To proceed with your application, find an office near you here:
         <%= link_to "here", "http://www.cedaorg.net/www2/CDS.html " %>
        </p>
@@ -12,13 +24,22 @@
 
       <% else %>
 
-      <div class="page-header"><h1>Do I qualify for Vision Assistance?</h1></div>
-      <div class="well">
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
         <p>Based on your household size and income, you likely do not qualify for Vision assistance. However, the New Eyes for the Needy provides new prescription glasses for low-income US residents. View their website
         <%= link_to "here", "http://www.new-eyes.org/" %>
         and call them here:  973-376-4903</p>
+        </div>
       <% end %>
       </div>
+
+<div class="container">
+  <ul class="pager" style="text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
+</div>
 
 
 </div>

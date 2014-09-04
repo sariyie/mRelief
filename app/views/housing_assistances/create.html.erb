@@ -1,25 +1,39 @@
-
 <div class="container">
 
+<div class="page-header" style="border:none">
+  <h1>Do I qualify for Housing Counseling and Referral Information?</h1>
+
+<div class="lead">
+  <p>Housing counseling and referral information is provided to help families maintain or achieve affordable housing. Financial assistance will be provided to applicants who qualify to further assist them in reaching their goals. </p>
+  </div>
+
+  <p>You can find more information on Housing Counseling and Referral Information <a href="http://www.cedaorg.net/www2/CDS.html">here.</a></p>
+</div>
+
+
       <% if @eligible %>
-      <div class="page-header"><h1>You may be in luck!</h1></div>
-      <div class="well">
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
         <p> Based on your household size and income, you likely qualify for Housing Counseling and Referral Information. </p> <p>Please be sure to find an office near you <%= link_to "here", "http://www.cedaorg.net/www2/CDS.html"%>
          or contact CEDA at their Toll-free number:(800) 571-CEDA (2332) to pursue your application further.</p>
       </div>
 
       <% else %>
 
-      <div class="page-header"><h1>Do I qualify for Housing Counseling and Referral Information?</h1></div>
-      <div class="well">
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
         <p>Based on your household size and income, you likely do not qualify for Housing Counseling and Referral Information. Please refer to the resources on the Illinios Housing Development Authority's website. </p>
         <p> Their resources for buying a new house or rehabilitating an existing one can be found <%= link_to "here", "http://www.ihda.org/homeowner/granthomebuyer.html"%> or you can also call their office here: (312) 836-5200.</p>
+        </div>
       <% end %>
       </div>
 
-    <div class="row">
-      <a class="btn btn-default" href="/mrelief"><i class="fa fa-chevron-left"></i> Back</a>
-    </div>
-</div>
 
 <div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
+</div>

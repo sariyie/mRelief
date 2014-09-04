@@ -1,33 +1,40 @@
 <div class="container" style="padding-bottom:150px">
 
-      <% if @eligible %>
-      <div class="page-header" style="border:none">
-          <h1>Do I qualify for Food Stamps?</h1>
-          <p> Illinois provides people and families all over the state with financial support to purchase food.</p>
-      </div>
-      <div class="panel panel-default" style="margin: 0 0 40px 0">
-  <div class="panel-body">
-  <p style="font-size:32px; font-style:italic">You may be in luck!</p>
-        <h4>Based on your household size and income, you likely qualify for food stamps.</h4>
+<% if @eligible %>
+  <div class="page-header" style="border:none">
+      <h1>Do I qualify for Food Stamps?</h1>
+        <p class="page lead">Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
+  </div>
 
-        <p> Visit this website   <%= link_to "here", "http://abe.illinois.gov" %> to find the nearest family community resource center near you and further determine your eligibility.
-        <br> Feel free to also apply online <%= link_to "here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745"%> before you visit.</p>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+            <h4>Based on your household size and income, you likely qualify for food stamps.</h4>
+            <p> Visit this website   <%= link_to "here", "http://abe.illinois.gov" %> to find the nearest family community resource center near you and further determine your eligibility.
+            <br> Feel free to also apply online <%= link_to "here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745"%> before you visit.</p>
 
 
       <% else %>
 
-<div class="page-header" style="border:none">
+  <div class="page-header" style="border:none">
           <h1>Do I qualify for Food Stamps?</h1>
-          <p> Illinois provides people and families all over the state with financial support to purchase food.</p>
-      </div>
+          <p class="page lead">Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
+  </div>
+
       <div class="panel panel-default" style="margin: 0 0 40px 0">
-  <div class="panel-body">
-  <p style="font-size:32px; font-style:italic">We apologize.</p>
-        <h4>Based on your household size and income, you likely do not qualify for food stamps.</h4>
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+            <h4>Based on your household size and income, you likely do not qualify for food stamps.</h4>
 
-        <p> If you need food assistance, text FOOD to 877-877 to see a summer meal site near you.</p>
-      <% end %>
+            <p> If you need food assistance, text FOOD to 877-877 to see a summer meal site near you.</p>
+
+        <% end %>
       </div>
+</div>
 
-
+<div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
 </div>

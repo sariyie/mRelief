@@ -486,7 +486,11 @@ p = Program.new
 p.name = "Food Stamps"
 p.url = "/mrelief"
 p.description = "Nutrition assistance to low-income people and families"
+<<<<<<< HEAD
 p.location = "illinois"
+=======
+p.location = "chicago"
+>>>>>>> 3ea8f7787d0cb5c5f8960ae64224994c19ef71d8
 p.save
 
 p = Program.new

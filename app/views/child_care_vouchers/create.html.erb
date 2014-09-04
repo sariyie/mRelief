@@ -1,24 +1,31 @@
 
 <div class="container">
 
+<div class="page-header" style="border:none">
+       <h1>Do I qualify for a Child Care Voucher?</h1>
+     <div class="lead"> <p>Child Care Assistance Program (CCAP) provides low-income, working families with access to quality, affordable child care that allows them to continue working and contributes to the healthy, emotional and social development of the child. Also commonly referred to as a Child Care Voucher, the state of Illinos helps income eligible families pay for their child care services while they work, go to school, training and other work-related activities.</p>
+     </div>
+
       <% if @eligible %>
-      <div class="page-header"><h1>You may be in luck!</h1></div>
-      <div class="well">
-        <p>Based on the ages of your children, household size, and income, you likely qualify for a Child Care Voucher. <p> Feel free to look up the nearest office in your county <%= link_to "here", "http://www.dhs.state.il.us/applications/ChildCareEligCalc/eligcalc.html"%> before you visit to apply.</p>
+      <div class="panel panel-default" style="margin: 40px 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+          <p>Based on the ages of your children, household size, and income, you likely qualify for a Child Care Voucher. <p> Feel free to look up the nearest office in your county <%= link_to "here", "http://www.dhs.state.il.us/applications/ChildCareEligCalc/eligcalc.html"%> before you visit to apply.</p>
       </div>
 
       <% else %>
 
-      <div class="page-header"><h1>Do I qualify for a Child Care Voucher?</h1></div>
-      <div class="well">
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+        <p style="font-size:32px; font-style:italic">We apologize.</p>
         <p>Based on the age of your children, household size and income, you likely do not qualify for a Child Care Voucher.</p>
         <p> Call Child Care Aware's toll free hotline: 1-800-424-2246 to learn about additional resources in your community.</p>
       <% end %>
       </div>
-
-    <div class="row">
-      <a class="btn btn-default" href="/mrelief"><i class="fa fa-chevron-left"></i> Back</a>
-    </div>
 </div>
-
 <div class="container">
+  <ul class="pager" style=" text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
+</div>
