@@ -5,7 +5,7 @@
   <div class="lead"> <p>Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
 
   <p>Benefits are provided on the Illinois Link Card - an electronic card that is accepted at most grocery stores.</p></div>
-  <p>You can find more information about SNAP/food stamps <a href="http://www.dhs.state.il.us/page.aspx?item=30357">here</a></p>
+  <p>You can find more information about SNAP/food stamps <a href="http://www.dhs.state.il.us/page.aspx?item=30357">here.</a></p>
 </div>
 
     <% if @snap_eligibility.errors.any? %>
@@ -29,9 +29,9 @@
   <!-- Label and input for snap_dependent_no -->
   <div class="form-group col-sm-9">
     <label for="snap_dependent_no">How many
-        dependents are in your household?
+        dependents are in your household?</label>
       <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
-    </label>
+
 
     <div>
       <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @snap_eligibility.snap_dependent_no %>" required>
@@ -42,9 +42,9 @@
   <div class="form-group col-sm-9">
     <label for="snap_gross_income">
       What is your gross monthly income?
-
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
     </label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+
 
     <div class="input-group">
   <span class="input-group-addon">$</span>
