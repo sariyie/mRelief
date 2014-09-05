@@ -28,7 +28,7 @@
   <!-- Label and input for ehs_dependent_no -->
     <div class="form-group col-sm-9">
     <p><b>If you are either pregnant or have a child who is between 0 and 2 years old, you may be eligible for Early Head Start.</b></p>
-    <label for="ehs_dependent_no">How many dependents(including yourself) are in your household?</label>
+    <label for="ehs_dependent_no">How many dependents (including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Children under the age of 19."} %>
      <input type="text" id="ehs_dependent_no" name="ehs_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @early_head_start.ehs_dependent_no %>" required>
   </div>
