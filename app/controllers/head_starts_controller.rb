@@ -25,7 +25,7 @@ class HeadStartsController < ApplicationController
        p "hs_eligibility.hs_gross_income = #{hs_eligibility.hs_gross_income}"
 
        if hs_gross_income < hs_eligibility.hs_gross_income
-         if child_birthdate  == "yes"
+         if params[:child_birthdate]  == "yes"
             @eligible = true
           end
        else
