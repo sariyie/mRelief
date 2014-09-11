@@ -23,7 +23,7 @@
 
   <div class="form-group col-sm-9">
     <label for="age">How old are you?</label>
-      <input type="text" id="age" name="age" placeholder="Age" class="form-control" required>
+      <input type="text" id="age" name="age" placeholder="For example: 27" class="form-control" required>
   </div>
 
   <!-- Label and input for snap_dependent_no -->
@@ -34,7 +34,7 @@
 
 
     <div>
-      <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @snap_eligibility.snap_dependent_no %>" required>
+      <input type="text" id="snap_dependent_no" name="snap_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @snap_eligibility.snap_dependent_no %>" required>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
 
     <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="gross monthly income"class="form-control" value="<%= @snap_eligibility.snap_gross_income %>" required>
+  <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="For example: 1000"class="form-control" value="<%= @snap_eligibility.snap_gross_income %>" required>
   <span class="input-group-addon">.00</span>
 </div>
     <div style="padding:40px 0 0 0">

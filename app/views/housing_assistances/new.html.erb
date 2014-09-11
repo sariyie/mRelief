@@ -33,7 +33,7 @@
      <p><b>If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Housing Counseling and Referral Information. Please answer the following questions to find out:</b></p>
     <label for="housing_dependent_no">How many dependents (including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Family size, including yourself."} %>
-     <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>" required>
+     <input type="text" id="housing_dependent_no" name="housing_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @housing_assistance.housing_dependent_no %>" required>
   </div>
 
   <!-- Label and input for housing_gross_income -->
@@ -46,7 +46,7 @@
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="gross income" class="form-control" value="<%= @housing_assistance.housing_gross_income %>" required>
+        <input type="text" id="housing_gross_income" name="housing_gross_income" placeholder="For example: 1000" class="form-control" value="<%= @housing_assistance.housing_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

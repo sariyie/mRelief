@@ -26,7 +26,7 @@
     <p><b>If you are a resident of Suburban Cook County and enrolled in the Community Services Block Grant program, you may be eligible for Auto-Repair Assistance.</b></p>
     <label for="auto_household_size">What is your household size?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
-       <input type="text" id="auto_household_size" name="auto_household_size" placeholder="Household size" class="form-control" value="<%= @auto_repair_assistance.auto_household_size %>" required>
+       <input type="text" id="auto_household_size" name="auto_household_size" placeholder="For example: 3" class="form-control" value="<%= @auto_repair_assistance.auto_household_size %>" required>
   </div>
 
 
@@ -40,7 +40,7 @@
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="auto_gross_income" name="auto_gross_income" placeholder="90 day gross income" class="form-control" value="<%= @auto_repair_assistance.auto_gross_income %>" required>
+        <input type="text" id="auto_gross_income" name="auto_gross_income" placeholder="For example: 5000" class="form-control" value="<%= @auto_repair_assistance.auto_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

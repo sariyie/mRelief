@@ -30,7 +30,7 @@
     <label for="rta_dependent_no">How many dependents (including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself, your spouse (if applicable), and/or resident for whom you (or you and your spouse) provided more than half of that person's total financial support last year."} %>
 
-      <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>" required>
+      <input type="text" id="rta_dependent_no" name="rta_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @rta_free_ride.rta_dependent_no %>" required>
   </div>
 
 
@@ -44,7 +44,7 @@
 
     <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input type="text" id="rta_gross_income" name="rta_gross_income" placeholder="gross monthly income" class="form-control" value= "<%= @rta_free_ride.rta_gross_income %>" required>
+  <input type="text" id="rta_gross_income" name="rta_gross_income" placeholder="For example: 30000" class="form-control" value= "<%= @rta_free_ride.rta_gross_income %>" required>
   <span class="input-group-addon">.00</span>
 </div>
 

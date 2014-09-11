@@ -40,7 +40,7 @@
      <div class="form-group col-sm-9">
     <label for="rental_dependent_no">What is your household size?</label>
      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself and your child[ren]."} %>
-     <input type="text" id="wic_household_size" name="wic_household_size" placeholder="household size" class="form-control" value="<%= @wic.wic_household_size %>" required>
+     <input type="text" id="wic_household_size" name="wic_household_size" placeholder="For example: 3" class="form-control" value="<%= @wic.wic_household_size %>" required>
   </div>
 
 
@@ -53,7 +53,7 @@
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="wic_gross_income" name="wic_gross_income" placeholder="monthly income" class="form-control" value="<%= @wic.wic_gross_income %>" required>
+        <input type="text" id="wic_gross_income" name="wic_gross_income" placeholder="For example: 1000" class="form-control" value="<%= @wic.wic_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

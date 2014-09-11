@@ -28,7 +28,7 @@
     <label for="ccdf_dependent_no">How many dependents (including yourself) are in your household?</label>
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total family size, including yourself and child[ren]."} %>
 
-      <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>" required>
+      <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>" required>
   </div>
 
 
@@ -41,7 +41,7 @@
 
     <div class="input-group">
       <span class="input-group-addon">$</span>
-        <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>" required>
+        <input type="text" id="ccdf_gross_income" name="ccdf_gross_income" placeholder="For example: 1500" class="form-control" value="<%= @child_care_voucher.ccdf_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
 

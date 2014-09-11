@@ -46,7 +46,7 @@
     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
 
     <div>
-      <input type="text" id="hs_dependent_no" name="hs_dependent_no" placeholder="# of dependents" class="form-control" value="<%= @head_start.hs_dependent_no %>" required>
+      <input type="text" id="hs_dependent_no" name="hs_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @head_start.hs_dependent_no %>" required>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
 
     <div class="input-group">
   <span class="input-group-addon">$</span>
-  <input  <input type="text" id="hs_gross_income" name="hs_gross_income" placeholder="gross monthly income" class="form-control" value="<%= @head_start.hs_gross_income %>" required>
+  <input  <input type="text" id="hs_gross_income" name="hs_gross_income" placeholder="For example: 30000" class="form-control" value="<%= @head_start.hs_gross_income %>" required>
   <span class="input-group-addon">.00</span>
 </div>
     <div style="padding:40px 0 0 0">
