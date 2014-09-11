@@ -12,6 +12,8 @@ class HeadStartsController < ApplicationController
   end
 
   def create
+
+
     hs_dependent_no = params[:hs_dependent_no].to_i
     hs_gross_income = params[:hs_gross_income]
     hs_gross_income = hs_gross_income.gsub(/[^0-9\.]/, '').to_i
