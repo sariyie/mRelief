@@ -23,7 +23,7 @@ class TwilioController < ApplicationController
     end
        sms_count = session["counter"]
     if sms_count == 0
-      message = "Welcome to mRelief! This conversation will help determine your eligibility for food stamps. How old are you? Send the message 'reset' at any time if you make a mistake"
+      message = "Welcome to mRelief! We help determine your eligibility for food stamps. How old are you? If you make a mistake, send the message 'reset'."
     end
     if sms_count == 1
       session["age"] = params[:Body]
@@ -35,10 +35,33 @@ class TwilioController < ApplicationController
     end
     if sms_count == 3
       session["income"] = params[:Body]
-      message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old."
+      #message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old."
       age = session["age"].to_i
       snap_dependent_no = session["dependents"].to_i
       snap_gross_income = session["income"]
+        if age.present? && snap_gross_income.present? && snap_dependent_no.present?
+
+       if age <= 59
+         snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+       else
+         snap_eligibility = SnapEligibilitySenior.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+       end
+
+       p "snap_gross_income = #{snap_gross_income}"
+       p "snap_eligibility.snap_gross_income = #{snap_eligibility.snap_gross_income}"
+
+       if snap_gross_income < snap_eligibility.snap_gross_income
+         # @yes = "Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps.""Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps."
+         @eligible = true
+       else
+       end
+
+      if @eligible == true
+        message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. You may be in luck! You likely qualify for foodstamps. Call 311 to find the nearest family community resource center near you."
+      end
+      if @eligible != true
+        message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. Text FOOD to 877-877 to find food near you."
+      end
     end
     if sms_count > 3
       message = "Still stuck #{params[:Body]} #{session['counter']}"
