@@ -1,4 +1,8 @@
 class SnapEligibilitiesController < ApplicationController
+
+require 'numbers_in_words'
+require 'numbers_in_words/duck_punch' #see why later
+
   def index
     @snap_eligibilities = SnapEligibility.all
   end
@@ -12,17 +16,39 @@ class SnapEligibilitiesController < ApplicationController
   end
 
   def create
-    age = params[:age].to_i
-    snap_dependent_no = params[:snap_dependent_no].to_i
+    # if the params hash contains a letter
+    if params[:snap_dependent_no] !~ /\D/  # returns true if all numbers
+      snap_dependent_no = params[:snap_dependent_no].to_i
+    else
+      snap_dependent_no = params[:snap_dependent_no].in_numbers
+    end
+
+    if params[:age] !~ /\D/
+      age = params[:age].to_i
+    else
+      age = params[:age].in_numbers
+    end
+
     snap_gross_income = params[:snap_gross_income]
-    snap_gross_income = snap_gross_income.gsub(/[^0-9\.]/, '').to_i
+    snap_gross_income = snap_gross_income.gsub(/[^0-9\.]/, '')
+
+
+    if snap_gross_income !~ /\D/
+      snap_gross_income = snap_gross_income.to_i
+    else
+      if snap_gross_income.include?("dollars")
+        snap_gross_income.slice!"dollars"
+      end
+      snap_gross_income = snap_gross_income.in_numbers
+    end
+
 
     if age.present? && snap_gross_income.present? && snap_dependent_no.present?
 
        if age <= 59
-         snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+         snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => snap_dependent_no })
        else
-         snap_eligibility = SnapEligibilitySenior.find_by({ :snap_dependent_no => params[:snap_dependent_no] })
+         snap_eligibility = SnapEligibilitySenior.find_by({ :snap_dependent_no => snap_dependent_no})
        end
 
        p "snap_gross_income = #{snap_gross_income}"
@@ -69,3 +95,4 @@ class SnapEligibilitiesController < ApplicationController
   end
 
 end
+

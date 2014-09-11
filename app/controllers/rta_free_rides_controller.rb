@@ -13,14 +13,30 @@ class RtaFreeRidesController < ApplicationController
 
  def create
 
-    rta_dependent_no = params[:rta_dependent_no].to_i
+
+    if params[:rta_dependent_no] !~ /\D/  # returns true if all numbers
+      rta_dependent_no = params[:rta_dependent_no].to_i
+    else
+      rta_dependent_no = params[:rta_dependent_no].in_numbers
+    end
+
     rta_gross_income = params[:rta_gross_income]
     rta_gross_income = rta_gross_income.gsub(/[^0-9\.]/, '').to_i
+
+    if rta_gross_income !~ /\D/
+      rta_gross_income = rta_gross_income.to_i
+    else
+      if rta_gross_income.include?("dollars")
+        rta_gross_income.slice!"dollars"
+      end
+      rta_gross_income = rta_gross_income.in_numbers
+    end
+
 
     if  rta_gross_income.present? && rta_dependent_no.present?
 
 
-         rta_eligibility = RtaFreeRide.find_by({ :rta_dependent_no => params[:rta_dependent_no] })
+         rta_eligibility = RtaFreeRide.find_by({ :rta_dependent_no => rta_dependent_no })
 
 
        p "rta_gross_income = #{rta_gross_income}"
@@ -36,4 +52,5 @@ class RtaFreeRidesController < ApplicationController
      end
   end
 end
+
 
