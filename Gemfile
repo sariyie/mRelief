@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.1.2"
+
+gem 'numbers_in_words'
+
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'dotenv-rails'
 gem 'twilio-ruby'
