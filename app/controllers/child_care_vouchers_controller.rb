@@ -1,4 +1,6 @@
 class ChildCareVouchersController < ApplicationController
+   require 'numbers_in_words'
+  require 'numbers_in_words/duck_punch' #see why later
   def index
     @child_care_vouchers = ChildCareVoucher.all
   end

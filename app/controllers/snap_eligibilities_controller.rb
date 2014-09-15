@@ -55,13 +55,8 @@ require 'numbers_in_words/duck_punch' #see why later
        p "snap_eligibility.snap_gross_income = #{snap_eligibility.snap_gross_income}"
 
        if snap_gross_income < snap_eligibility.snap_gross_income
-         # @yes = "Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps.""Based on your household size and income, you likely qualify for food stamps. Enter your zipcode <a href=\"http://abe.illinois.gov\">here</a> to further determine your eligibility and apply for foodstamps."
          @eligible = true
        else
-
-          # @status = "Based on your household size and income, you likely do not qualify for food stamps."
-          # @status = "Based on your household size and income, you likely do not qualify for food stamps.
-          # If you need food assistance, text FOOD to 877-877 to see a summer meal site near you."
        end
      else
        redirect_to :back, :notice => "All fields are required."
