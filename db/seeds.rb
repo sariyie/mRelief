@@ -565,6 +565,13 @@ p.description = "Counseling, household budgeting and financial assistance"
 p.location = "cook county"
 p.save
 
+p = Program.new
+p.name = "All Kids"
+p.url = "/all_kids/new"
+p.description = "Healthcare for Kids"
+p.location = "illinois"
+p.save
+
 a = AutoRepairAssistance.new
 a.auto_household_size = 1
 a.auto_gross_income = 3646.88
@@ -1370,3 +1377,43 @@ h = HeadStart.new
 h.hs_dependent_no = 20
 h.hs_gross_income = 88810
 h.save
+
+a = AllKid.new
+a.kids_household_size = 1
+a.assist_gross_income = 1430
+a.share_gross_income = 1527
+a.premium_1_gross_income = 2033
+a.premium_2_gross_income = 3093
+a.save
+
+a = AllKid.new
+a.kids_household_size = 2
+a.assist_gross_income = 1927
+a.share_gross_income = 2058
+a.premium_1_gross_income = 2740
+a.premium_2_gross_income = 4168
+a.save
+
+a = AllKid.new
+a.kids_household_size = 3
+a.assist_gross_income = 2424
+a.share_gross_income = 2589
+a.premium_1_gross_income = 3447
+a.premium_2_gross_income = 5244
+a.save
+
+a = AllKid.new
+a.kids_household_size = 4
+a.assist_gross_income = 2922
+a.share_gross_income = 3120
+a.premium_1_gross_income = 4154
+a.premium_2_gross_income = 6320
+a.save
+
+a = AllKid.new
+a.kids_household_size = 5
+a.assist_gross_income = 3419
+a.share_gross_income = 3652
+a.premium_1_gross_income = 4861
+a.premium_2_gross_income = 7396
+a.save

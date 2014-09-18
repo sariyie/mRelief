@@ -1,0 +1,55 @@
+<div class="container" style="padding-bottom:150px">
+
+<% if @eligible %>
+  <div class="page-header" style="border:none">
+      <h1>Do I qualify for All Kids?</h1>
+        <p class="page lead">The All Kids program offers many Illinois children comprehensive healthcare that includes doctors visits, hospital stays, prescription drugs, vision care, dental care and medical devices like eyeglasses and asthma inhalers.</p>
+  </div>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+
+
+          <% if @assist_eligible %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Assist.</h4>
+          <% elsif @share_eligible %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Share.</h4>
+
+          <% elsif @premium1_eligible %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Premium Level 1.</h4>
+
+          <% elsif @premium2_eligible %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Premium Level 2.</h4>
+
+          <% end %>
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.9912272225853554", :class => "btn btn-primary btn-sm" %> to complete your application online.</p>
+
+      <% else %>
+
+  <div class="page-header" style="border:none">
+          <h1>Do I qualify for All Kids?</h1>
+          <p class="page lead">The All Kids program offers many Illinois children comprehensive healthcare that includes doctors visits, hospital stays, prescription drugs, vision care, dental care and medical devices like eyeglasses and asthma inhalers.</p>
+  </div>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+
+            <p>Based on your household size and income, you likely do not qualify for All Kids. However, if you and your family don't have health coverage in 2014, you may have to pay a fee -- and all of your health care.
+            <%= link_to "Click Here", "https://www.healthcare.gov/what-if-i-dont-have-health-coverage/", :class => "btn btn-primary btn-sm" %> to learn more about fees.  Get Covered Illinois is a resource that helps families register for insurance at in-person events.
+            <%= link_to "Click Here", "http://getcoveredillinois.gov/events", :class => "btn btn-primary btn-sm" %> to find Get Covered Illinois events in your area. You can also call 1 (866) 311-1119: (Open Monday - Saturday, 8am - 8pm) to discuss your next steps.
+            </p>
+
+
+        <% end %>
+      </div>
+</div>
+
+<div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
+</div>

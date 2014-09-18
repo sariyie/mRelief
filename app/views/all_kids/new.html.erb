@@ -1,0 +1,63 @@
+<div class="page-header" style="border:none">
+  <h1> Do I qualify for All Kids?</h1>
+
+ <div class="lead"> <p>If your child is 18 or younger and lives in the state of Illinois, you may qualify for All Kids health insurance.</p>
+  </div>
+
+
+</div>
+
+
+<% if @all_kid.errors.any? %>
+  <% @all_kid.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
+<div class="panel-body">
+<form action="/create_all_kid" class="form-horizontal">
+  <!-- Label and input for kids_household_size -->
+
+    <p> <b>Please answer the following questions (check all that apply):</b></p>
+  <input type="checkbox" name="status" value="uninsured">  been uninsured for 12 months<br>
+  <input type="checkbox" name="status" value="job_ended"> lost insurance because a JOB ended<br>
+  <input type="checkbox" name="status" value="cobra"> lost insurance because the insurance was COBRA<br>
+  <input type="checkbox" name="status" value="none"> none of the above<br>
+
+  <br>
+    <div class="form-group col-sm-9">
+    <label for="kids_household_size">How many children are living in your household?</label>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "The number of children living in your household."} %>
+     <input type="text" id="kids_household_size" name="kids_household_size" placeholder="For example: 3" class="form-control" value="<%= @all_kid.kids_household_size %>"required>
+  </div>
+
+
+  <!-- Label and input for kids_gross_income -->
+  <div class="form-group col-sm-9">
+    <label for="kids_gross_income">
+      What is your gross monthly income?
+    </label>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources."} %>
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+        <input type="text" id="kids_gross_income" name="kids_gross_income" placeholder="For example: 1000" class="form-control"  required>
+      <span class="input-group-addon">.00</span>
+    </div>
+
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
+  </div>
+
+
+
+</form>
+</div>
+</div>

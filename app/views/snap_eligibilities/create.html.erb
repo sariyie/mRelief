@@ -1,24 +1,52 @@
 <div class="container" style="padding-bottom:150px">
 
-<% if @eligible %>
+<% if @eligible == 'yes' %>
   <div class="page-header" style="border:none">
       <h1>Do I qualify for Food Stamps?</h1>
-        <p class="page lead">Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
+        <p class="page lead">Food stamps, known officially as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
   </div>
 
       <div class="panel panel-default" style="margin: 0 0 40px 0">
         <div class="panel-body">
           <p style="font-size:32px; font-style:italic">You may be in luck!</p>
             <h4>Based on your household size and income, you likely qualify for food stamps.</h4>
-            <p> Visit this website   <%= link_to "here", "http://abe.illinois.gov" %> to find the nearest family community resource center near you and further determine your eligibility.
-            <br> Feel free to also apply online <%= link_to "here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745"%> before you visit.</p>
+
+          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+          <br>
+
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745", :class => "btn btn-primary btn-sm" %>
+             to apply online before you visit.</p>
+
+      </div>
+    </div>
+
+    <% elsif @eligible == 'maybe' %>
+    <br>
+        <br>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+
+            <h4>Based on the information received, we cannot determine your eligibility at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your food stamp eligibility. </h4>
+
+            <br>
+
+          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+          <br>
+
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745", :class => "btn btn-primary btn-sm" %>
+             to apply online before you visit.</p>
+
+      </div>
+    </div>
 
 
-      <% else %>
+      <% elsif @eligible == 'no' %>
 
   <div class="page-header" style="border:none">
           <h1>Do I qualify for Food Stamps?</h1>
-          <p class="page lead">Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
+          <p class="page lead">Food stamps, known officially  as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
   </div>
 
       <div class="panel panel-default" style="margin: 0 0 40px 0">
@@ -28,7 +56,9 @@
 
             <p> If you need food assistance, text FOOD to 877-877 to see a summer meal site near you.</p>
 
-           <p> Direct2Food is also an online resource that will help you locate the food pantries, soup kitchens, and meal programs closest to you. Feel free to go to their site <%= link_to "here", "http://www.direct2food.org/"%> to enter your zipcode and find resources near you.</p>
+           <p> Direct2Food is also an online resource that will help you locate the food pantries, soup kitchens, and meal programs closest to you.
+
+          <%= link_to "Click Here", "http://www.direct2food.org/", :class => "btn btn-primary btn-sm" %> to go to their site to enter your zipcode and find resources near you.</p>
 
         <% end %>
       </div>

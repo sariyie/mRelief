@@ -2,7 +2,7 @@
 
 <div class="page-header" style="border:none">
   <h1>Do I qualify for Food Stamps?</h1>
-  <div class="lead"> <p>Food stamps, known formally as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
+  <div class="lead"> <p>Food stamps, known officially as the Supplemental Nutrition Assistance Program (SNAP), helps low-income people and families buy the food they need for good health.</p>
 
   <p>Benefits are provided on the Illinois Link Card - an electronic card that is accepted at most grocery stores.</p></div>
   <p>You can find more information about SNAP/food stamps <a href="http://www.dhs.state.il.us/page.aspx?item=30357">here.</a></p>
@@ -21,6 +21,8 @@
   <div class="panel-body">
     <form action="/create_snap_eligibility" role="form">
 
+
+
   <div class="form-group col-sm-9">
     <label for="age">How old are you?</label>
       <input type="text" id="age" name="age" placeholder="For example: 27" class="form-control" required>
@@ -28,9 +30,8 @@
 
   <!-- Label and input for snap_dependent_no -->
   <div class="form-group col-sm-9">
-    <label for="snap_dependent_no">How many
-        dependents are in your household?</label>
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+    <label for="snap_dependent_no">What is the number of people living in your household including yourself?</label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "This should include the number of people who purchase and prepare food with you."} %>
 
 
     <div>
@@ -43,7 +44,7 @@
     <label for="snap_gross_income">
       What is your gross monthly income?
     </label>
-      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "This includes the monthly income of all people living in your household including yourself. This includes income from all sources, such as Social Security, child support, and unemployment insurance before any deductions."} %>
 
 
     <div class="input-group">
@@ -51,11 +52,62 @@
   <input type="text" id="snap_gross_income" name="snap_gross_income" placeholder="For example: 1000"class="form-control" value="<%= @snap_eligibility.snap_gross_income %>" required>
   <span class="input-group-addon">.00</span>
 </div>
+
+<br>
+<div class="form-group col-sm-12">
+
+    <label for="education" id="education" >Are you enrolled in college or an institution of higher education ? </label>
+
+    <div class="col-sm-6">
+      <div id="education">
+        <%= radio_button_tag 'education', 'yes' %> yes
+        <%= radio_button_tag 'education', 'no' %> no
+      </div>
+    </div>
+</div>
+<br>
+
+<div class="form-group col-sm-12">
+
+    <label for="citizen" id="citizen" class="pull-left">Are you a citizen of the United States? </label>
+    <div class="clearfix"></div>
+
+    <div class="col-sm-6">
+      <div id="citizen"  class="pull-left">
+        <%= radio_button_tag 'citizen', 'yes' %> yes
+        <%= radio_button_tag 'citizen', 'no' %> no
+      </div>
+    </div>
+</div>
+
+<div class="form-group col-sm-12">
+
+    <label for="disabled" id="disabled" class="pull-left">If you are disabled, describe your current status</label>
+    <div class="clearfix"></div>
+
+    <div class="col-sm-12">
+      <div id="disabled"  class="pull-left">
+        <%= radio_button_tag 'disabled', 'social-security' %>  I am receiving disability payments from Social Security.  <br>
+        <%= radio_button_tag 'disabled', 'railroad' %>  I am receiving disability payments from the Railroad Retirement Board.     <br>
+        <%= radio_button_tag 'disabled', 'veterans' %>  I am receiving disability payments from Veterans
+Affairs.   <br>
+        <%= radio_button_tag 'disabled', 'none' %> I am currently not receiving any disability payments  <br>
+      </div>
+    </div>
+</div>
+
+
+<br>
+
     <div style="padding:40px 0 0 0">
       <button type="submit" class="btn btn-primary">See if I qualify</button>
     </div>
   </div>
 </form>
+
+
+
+
 </div>
 </div>
 </div>

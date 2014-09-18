@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  # Routes for the All_kid resource:
+  # CREATE
+  get('/all_kids/new', { :controller => 'all_kids', :action => 'new' })
+  get('/create_all_kid', { :controller => 'all_kids', :action => 'create' })
+
+
+  #------------------------------
+
 # Routes for the text resource:
   post('/', { :controller => 'twilio', :action => 'text'})
 

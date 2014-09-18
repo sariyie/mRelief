@@ -1,0 +1,70 @@
+<div class="page-header">
+  <h1>Edit All Kid #<%= @all_kid.id %></h1>
+</div>
+
+<% if @all_kid.errors.any? %>
+  <% @all_kid.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_all_kid/<%= @all_kid.id %>" class="form-horizontal">
+  <!-- Label and input for kids_household_size -->
+  <div class="form-group">
+    <label for="kids_household_size" class="col-sm-2 control-label">
+      Kids household size
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="kids_household_size" name="kids_household_size" placeholder="Kids household size" class="form-control" value="<%= @all_kid.kids_household_size %>">
+    </div>
+  </div>
+
+  <!-- Label and input for assist_gross_income -->
+  <div class="form-group">
+    <label for="assist_gross_income" class="col-sm-2 control-label">
+      Assist gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="assist_gross_income" name="assist_gross_income" placeholder="Assist gross income" class="form-control" value="<%= @all_kid.assist_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for share_gross_income -->
+  <div class="form-group">
+    <label for="share_gross_income" class="col-sm-2 control-label">
+      Share gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="share_gross_income" name="share_gross_income" placeholder="Share gross income" class="form-control" value="<%= @all_kid.share_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for premium_1_gross_income -->
+  <div class="form-group">
+    <label for="premium_1_gross_income" class="col-sm-2 control-label">
+      Premium 1 gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="premium_1_gross_income" name="premium_1_gross_income" placeholder="Premium 1 gross income" class="form-control" value="<%= @all_kid.premium_1_gross_income %>">
+    </div>
+  </div>
+
+  <!-- Label and input for premium_2_gross_income -->
+  <div class="form-group">
+    <label for="premium_2_gross_income" class="col-sm-2 control-label">
+      Premium 2 gross income
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="premium_2_gross_income" name="premium_2_gross_income" placeholder="Premium 2 gross income" class="form-control" value="<%= @all_kid.premium_2_gross_income %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update All Kid" class="btn btn-primary">
+    </div>
+  </div>
+</form>

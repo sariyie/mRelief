@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby "2.1.2"
 
+
+gem 'font-awesome-rails'
+
 gem 'numbers_in_words'
 
 gem 'dotenv-rails', :groups => [:development, :test]

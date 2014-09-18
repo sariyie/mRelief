@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>All kids</h1>
+</div>
+
+<p><a href="/all_kids/new" class="btn btn-primary">Add a New All Kid</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Kids household size</th>
+      <th>Assist gross income</th>
+      <th>Share gross income</th>
+      <th>Premium 1 gross income</th>
+      <th>Premium 2 gross income</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @all_kids.each do |all_kid| %>
+      <tr>
+        <td><%= all_kid.kids_household_size %></td>
+        <td><%= all_kid.assist_gross_income %></td>
+        <td><%= all_kid.share_gross_income %></td>
+        <td><%= all_kid.premium_1_gross_income %></td>
+        <td><%= all_kid.premium_2_gross_income %></td>
+        <td>
+          <a href="/all_kids/<%= all_kid.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/all_kids/<%= all_kid.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_all_kid/<%= all_kid.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

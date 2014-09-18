@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
+
   <style>
     /* Only necessary if you are using navbar-fixed-top */
     body {
@@ -16,8 +17,8 @@
     }
   </style>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 
