@@ -76,7 +76,7 @@ require 'numbers_in_words/duck_punch' #see why later
           snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => snap_dependent_no })
         end
 
-           p "snap_gross_income = #{snap_gross_income}"
+            p "snap_gross_income = #{snap_gross_income}"
             p "snap_eligibility.snap_gross_income = #{snap_eligibility.snap_gross_income}"
 
             if snap_gross_income < snap_eligibility.snap_gross_income

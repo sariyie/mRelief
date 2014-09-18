@@ -58,8 +58,6 @@ class AllKidsController < ApplicationController
 
 
         if kids_gross_income <= kids_eligibility.premium_2_gross_income && kids_gross_income > kids_eligibility.premium_1_gross_income
-
-
             if params["status"] == 'none'
                @eligible = false
             else
