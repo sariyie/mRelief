@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  # Routes for the Medicaid resource:
+  # CREATE
+  get('/medicaids/new', { :controller => 'medicaids', :action => 'new' })
+  get('/create_medicaid', { :controller => 'medicaids', :action => 'create' })
+
+
+  #------------------------------
+
+  # Routes for the All_city_program resource:
+  # CREATE
+  get('/all_city_programs/new', { :controller => 'all_city_programs', :action => 'new' })
+  get('/create_all_city_program', { :controller => 'all_city_programs', :action => 'create' })
+
+
+  #------------------------------
+
   # Routes for the All_kid resource:
   # CREATE
   get('/all_kids/new', { :controller => 'all_kids', :action => 'new' })

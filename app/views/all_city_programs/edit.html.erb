@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h1>Edit All City Program #<%= @all_city_program.id %></h1>
+</div>
+
+<% if @all_city_program.errors.any? %>
+  <% @all_city_program.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_all_city_program/<%= @all_city_program.id %>" class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update All City Program" class="btn btn-primary">
+    </div>
+  </div>
+</form>

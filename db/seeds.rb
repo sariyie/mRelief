@@ -572,6 +572,13 @@ p.description = "Healthcare for Kids"
 p.location = "illinois"
 p.save
 
+p = Program.new
+p.url = "/medicaids/new"
+p.name = "Medicaid"
+p.description = "Healthcare for families and individuals"
+p.location = "illinois"
+p.save
+
 a = AutoRepairAssistance.new
 a.auto_household_size = 1
 a.auto_gross_income = 3646.88
@@ -1417,3 +1424,104 @@ a.share_gross_income = 3652
 a.premium_1_gross_income = 4861
 a.premium_2_gross_income = 7396
 a.save
+
+
+m = Medicaid.new
+m.medicaid_household_size = 1
+m.medicaid_gross_income = 16104.60
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 2
+m.medicaid_gross_income = 21707.40
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 3
+m.medicaid_gross_income = 27310.20
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 4
+m.medicaid_gross_income = 32913.00
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 5
+m.medicaid_gross_income = 38515.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 6
+m.medicaid_gross_income = 44118.60
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 7
+m.medicaid_gross_income = 49721.40
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 8
+m.medicaid_gross_income = 55324.20
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 9
+m.medicaid_gross_income = 61768.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 10
+m.medicaid_gross_income = 66438.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 11
+m.medicaid_gross_income = 71108.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 12
+m.medicaid_gross_income = 75778.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 13
+m.medicaid_gross_income = 80448.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 14
+m.medicaid_gross_income = 85118.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 15
+m.medicaid_gross_income = 89788.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 16
+m.medicaid_gross_income = 94458.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 17
+m.medicaid_gross_income = 99128.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 18
+m.medicaid_gross_income = 103798.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 19
+m.medicaid_gross_income = 108460.80
+m.save
+
+m = Medicaid.new
+m.medicaid_household_size = 20
+m.medicaid_gross_income = 113138.80
+m.save

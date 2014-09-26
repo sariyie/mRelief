@@ -1,0 +1,108 @@
+<div class="container" style="padding-bottom:150px">
+<div class="page-header" style="border:none">
+  <h1>Do I qualify for Food Stamps, Rental Assistance and RTA Ride Free?</h1>
+</div>
+
+<% if @eligible_snap == 'yes' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+            <h4>Based on your household size and income, you likely qualify for food stamps.</h4>
+          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+          <br>
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745", :class => "btn btn-primary btn-sm" %>
+             to apply online before you visit.</p>
+
+      </div>
+    </div>
+
+    <% elsif @eligible_snap == 'maybe' %>
+    <br>
+        <br>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+            <h4>Based on the information received, we cannot determine your eligibility at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your food stamp eligibility. </h4>
+            <br>
+          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+          <br>
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745", :class => "btn btn-primary btn-sm" %>
+             to apply online before you visit.</p>
+      </div>
+    </div>
+
+
+      <% elsif @eligible_snap == 'no' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+            <h4>Based on your household size and income, you likely do not qualify for food stamps.</h4>
+
+            <p> If you need food assistance, text FOOD to 877-877 to see a summer meal site near you.</p>
+
+           <p> Direct2Food is also an online resource that will help you locate the food pantries, soup kitchens, and meal programs closest to you.
+
+          <%= link_to "Click Here", "http://www.direct2food.org/", :class => "btn btn-primary btn-sm" %> to go to their site to enter your zipcode and find resources near you.</p>
+        </div>
+      </div>
+
+
+  <% end %>
+
+  <% if @eligible_rental == 'yes' %>
+
+    <div class="panel panel-default" style="margin: 0 0 40px 0">
+      <div class="panel-body">
+        <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+
+        <p>Based on your rental status, household size and income, you likely qualify for rental assistance.
+      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p>
+      </div>
+    </div>
+
+
+    <% elsif @eligible_rental == 'no' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+        <p>Based on your household size and income, and other factors, you do not qualify for rental assistance. The financial assistance program provides essential relief services to persons in need of shelter, food, utility payments, medication and other items. Contact Emergency Fund directly at (312) 379-0301 for rent assistance.</p>
+        </div>
+
+      </div>
+  <% end %>
+
+  <% if @eligible_rta == 'yes' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+
+          <p>Based on your age, household size, and income, you likely qualify for RTA Ride Free. <p> Feel free to apply online <%= link_to "here", "https://idoaweb.aging.illinois.gov/baa/Welcome.aspx"%> before you visit.</p> </p>
+        </div>
+      </div>
+
+  <% elsif @eligible_rta == 'no' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+          <p>Based on your household size and income, you likely do not qualify for RTA Ride Free.</p>
+          <p> Call 312-913-3110 for information about the Reduced Fare Program. Or, if you are a low-income woman exploring other transportation assistance options, go to www.womenwithdrive.org, to view their offerings.
+           </p>
+        </div>
+      </div>
+  <% end %>
+
+
+
+
+<div class="container">
+  <ul class="pager" style="padding: 20px 0 0 0; text-align:left">
+    <!-- <li class="previous"><a href="/">← Back</a></li> -->
+    <li> <%= link_to "← Back", :back, :class => "previous" %></li>
+  </ul>
+</div>

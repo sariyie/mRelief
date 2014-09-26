@@ -1,0 +1,79 @@
+<div class= "container">
+
+<div class="page-header" style="border:none">
+  <h1>Do I qualify for Medicaid?</h1>
+  <div class="lead"> <p> If you are an adult (19 and over) and a resident in the state of Illinois, you may qualify for Medicaid.</p>
+
+
+  </div>
+</div>
+
+
+<% if @medicaid.errors.any? %>
+  <% @medicaid.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
+<div class="panel-body">
+<form action="/create_medicaid" class="form-horizontal">
+
+<div class="form-group col-sm-12">
+
+    <label for="citizen" id="citizen" class="pull-left">Are you a citizen of the United States? </label>
+    <div class="clearfix"></div>
+
+    <div class="col-sm-6">
+      <div id="citizen"  class="pull-left" required>
+        <%= radio_button_tag 'citizen', 'yes' %> yes
+        <%= radio_button_tag 'citizen', 'no' %> no
+      </div>
+    </div>
+</div>
+  <!-- Label and input for medicaid_household_size -->
+
+  <div class="form-group col-sm-9">
+    <label for="medicaid_household_size">What is your household size ?</label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Household size: How many people live in your home (including yourself)?"} %>
+
+    <div>
+      <input type="text" id="medicaid_household_size" name="medicaid_household_size" placeholder="For example: 3" class="form-control" required>
+    </div>
+  </div>
+
+  <!-- Label and input for medicaid_gross_income -->
+
+  <div class="form-group col-sm-9">
+    <label for="medicaid_gross_income">
+      What is your annual income?
+    </label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Annual income: Includes wages, Social Security, SSI, pensions, child support, veteran's benefits, rental income, unemployment, worker's compensation, or other disability payments."} %>
+
+
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="text" id="medicaid_gross_income" name="medicaid_gross_income" placeholder="For example: 30000" class="form-control"required>
+      <span class="input-group-addon">.00</span>
+    </div>
+  </div>
+
+
+<br>
+  <div class="form-group">
+  <div class="col-sm-12">
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
+  </div>
+  </div>
+
+</form>
+
+</div>
+</div>
+</div>
