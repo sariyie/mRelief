@@ -1,13 +1,7 @@
 class VisionsController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @visions = Vision.all
-  end
 
-  def show
-    @vision = Vision.find(params[:id])
-  end
 
   def new
     @vision = Vision.new
@@ -53,28 +47,5 @@ class VisionsController < ApplicationController
     end
   end
 
-  def edit
-    @vision = Vision.find(params[:id])
-  end
 
-  def update
-    @vision = Vision.find(params[:id])
-
-    @vision.vision_gross_income = params[:vision_gross_income]
-    @vision.vision_household_size = params[:vision_household_size]
-
-    if @vision.save
-      redirect_to "/visions", :notice => "Vision updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @vision = Vision.find(params[:id])
-
-    @vision.destroy
-
-    redirect_to "/visions", :notice => "Vision deleted."
-  end
 end

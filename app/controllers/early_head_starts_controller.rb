@@ -2,13 +2,7 @@ class EarlyHeadStartsController < ApplicationController
  require 'numbers_in_words'
 require 'numbers_in_words/duck_punch' #see why later
 
-  def index
-    @early_head_starts = EarlyHeadStart.all
-  end
 
-  def show
-    @early_head_start = EarlyHeadStart.find(params[:id])
-  end
 
   def new
     @early_head_start = EarlyHeadStart.new

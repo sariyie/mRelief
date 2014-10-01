@@ -144,8 +144,64 @@ class AllCityProgramsController < ApplicationController
         end
       end
 
+      #here is the logic for medicaid
+
+      medicaid_eligibility = Medicaid.find_by({ :medicaid_household_size => dependent_no})
+
+      if params[:citizen] == 'no'
+          @eligible_medicaid = 'maybe'
+      elsif params[:citizen] == 'yes'
+        if annual_gross_income < medicaid_eligibility.medicaid_gross_income
+          @eligible_medicaid = 'yes'
+        else
+          @eligible_medicaid = 'no'
+        end
+    end
+
+
+      #here is the logic for all kids
+      if params[:pregnant].present?
+        if params[:pregnant] == 'yes'
+          dependent_no = dependent_no + 1
+        end
+      end
+      kids_eligibility = AllKid.find_by({ :kids_household_size => dependent_no })
+
+      if monthly_gross_income  < kids_eligibility.premium_1_gross_income
+         @eligible_all_kids = "yes"
+      else
+        @eligible_all_kids = "no"
+      end
+
+       if @eligible_all_kids = "yes"
+        # now find out which version they are eligible for
+          if monthly_gross_income <= kids_eligibility.assist_gross_income
+            @assist_eligible = "yes"
+          elsif monthly_gross_income <= kids_eligibility.share_gross_income && monthly_gross_income > kids_eligibility.assist_gross_income
+            @share_eligible = "yes"
+          elsif monthly_gross_income <= kids_eligibility.premium_1_gross_income && monthly_gross_income > kids_eligibility.share_gross_income
+            @premium1_eligible = "yes"
+          end
+       end
+
+        #this is the logic for premium 2
+        if monthly_gross_income <= kids_eligibility.premium_2_gross_income && monthly_gross_income > kids_eligibility.premium_1_gross_income
+            if params["status"] == 'none'
+               @eligible_all_kids = "no"
+            else
+              @eligible_all_kids = "yes"
+              @premium2_eligible = "yes"
+            end
+        end
+
+        if monthly_gross_income > kids_eligibility.premium_2_gross_income
+          @eligible_all_kids = "no"
+        end
 
     end #this ends the present if statement
   end
+
+
+
 
 end

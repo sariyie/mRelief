@@ -1,13 +1,7 @@
 class FamilyNutritionsController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @family_nutritions = FamilyNutrition.all
-  end
 
-  def show
-    @family_nutrition = FamilyNutrition.find(params[:id])
-  end
 
   def new
     @family_nutrition = FamilyNutrition.new
@@ -49,28 +43,5 @@ class FamilyNutritionsController < ApplicationController
     end
   end
 
-  def edit
-    @family_nutrition = FamilyNutrition.find(params[:id])
-  end
 
-  def update
-    @family_nutrition = FamilyNutrition.find(params[:id])
-
-    @family_nutrition.nutrition_gross_income = params[:nutrition_gross_income]
-    @family_nutrition.nutrition_household_size = params[:nutrition_household_size]
-
-    if @family_nutrition.save
-      redirect_to "/family_nutritions", :notice => "Family nutrition updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @family_nutrition = FamilyNutrition.find(params[:id])
-
-    @family_nutrition.destroy
-
-    redirect_to "/family_nutritions", :notice => "Family nutrition deleted."
-  end
 end

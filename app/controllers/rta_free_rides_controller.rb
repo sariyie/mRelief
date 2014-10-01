@@ -1,13 +1,7 @@
 class RtaFreeRidesController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @rta_free_rides = RtaFreeRide.all
-  end
 
-  def show
-    @rta_free_ride = RtaFreeRide.find(params[:id])
-  end
 
   def new
     @rta_free_ride = RtaFreeRide.new

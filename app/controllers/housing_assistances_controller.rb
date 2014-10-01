@@ -1,13 +1,7 @@
 class HousingAssistancesController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @housing_assistances = HousingAssistance.all
-  end
 
-  def show
-    @housing_assistance = HousingAssistance.find(params[:id])
-  end
 
   def new
     @housing_assistance = HousingAssistance.new

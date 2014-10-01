@@ -25,7 +25,8 @@
 <form action="/create_all_kid" class="form-horizontal">
   <!-- Label and input for kids_household_size -->
 
-    <p> <b>Please answer the following questions (check all that apply):</b></p>
+    <p> <b>Please answer the following questions:</b></p>
+    <p> <b>Check the box below that describes your child:</b></p>
   <input type="checkbox" name="status" value="uninsured">  been uninsured for 12 months<br>
   <input type="checkbox" name="status" value="job_ended"> lost insurance because a JOB ended<br>
   <input type="checkbox" name="status" value="cobra"> lost insurance because the insurance was COBRA<br>
@@ -33,10 +34,23 @@
 
   <br>
     <div class="form-group col-sm-9">
-    <label for="kids_household_size">How many children are living in your household?</label>
-     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "The number of children living in your household."} %>
+    <label for="kids_household_size">How many people live in your household (including yourself)?</label>
+     <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "The number of people living in your household including yourself."} %>
      <input type="text" id="kids_household_size" name="kids_household_size" placeholder="For example: 3" class="form-control" value="<%= @all_kid.kids_household_size %>"required>
   </div>
+  <br>
+
+   <div class="form-group col-sm-12">
+
+    <label for="pregnant" id="pregnant" class="pull-left">Are you pregnant ? </label>
+    <div class="clearfix"></div>
+    <div class="col-sm-6">
+      <div id="pregnant">
+        <%= radio_button_tag 'pregnant', 'yes' %> yes
+        <%= radio_button_tag 'pregnant', 'no' %> no
+      </div>
+    </div>
+</div>
 
 
   <!-- Label and input for kids_gross_income -->
@@ -44,7 +58,7 @@
     <label for="kids_gross_income">
       What is your gross monthly income?
     </label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income from all sources."} %>
+    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Total monthly income excluding the following: child support income received, worker's compensation, veteran's benefits, Supplemental Security Income (SSI), Portion of scholarships, awards or fellowship grants used for education purposes, American Indian and Alaska Native (AI/AN) income derived from distributions, payments, ownership interests, real property usage rights, and student financial assistance provided under the Bureau of Indian Affairs education programs."} %>
 
     <div class="input-group">
       <span class="input-group-addon">$</span>

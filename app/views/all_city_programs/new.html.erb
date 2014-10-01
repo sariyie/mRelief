@@ -1,7 +1,7 @@
 <div class= "container">
 
 <div class="page-header" style="border:none">
-  <h1>Do I qualify for Food Stamps, Rental Assistance and RTA Ride Free?</h1>
+  <h1>Do I qualify for Food Stamps, Rental Assistance, RTA Ride Free, All Kids and Medicaid?</h1>
 
 
    <!--  <%# if @snap_eligibility.errors.any? %> -->
@@ -104,7 +104,19 @@
       </div>
     </div>
 </div>
+<br>
 
+   <div class="form-group col-sm-12">
+
+    <label for="pregnant" id="pregnant" class="pull-left">Are you pregnant ? </label>
+    <div class="clearfix"></div>
+    <div class="col-sm-6">
+      <div id="pregnant">
+        <%= radio_button_tag 'pregnant', 'yes' %> yes
+        <%= radio_button_tag 'pregnant', 'no' %> no
+      </div>
+    </div>
+</div>
 <br>
 
 <div class="form-group col-sm-12">
@@ -122,6 +134,22 @@
 </div>
 </div>
 <br>
+
+
+<div class="form-group col-sm-12">
+
+    <label for="status" id="status" class="pull-left">If you have a child, check the box below that describes your child's health insurance status:</label>
+    <div class="clearfix"></div>
+
+    <div class="col-sm-12">
+      <div id="status"  class="pull-left">
+        <%= radio_button_tag 'status', 'uninsured' %>  been uninsured for 12 months  <br>
+        <%= radio_button_tag 'status', 'job_ended' %>  lost insurance because a JOB ended  <br>
+        <%= radio_button_tag 'status', 'cobra' %>  lost insurance because the insurance was COBRA  <br>
+        <%= radio_button_tag 'status', 'none' %> none of the above <br>
+      </div>
+    </div>
+</div>
 
 <br>
 <div class="form-group col-sm-12">

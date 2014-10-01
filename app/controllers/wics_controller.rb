@@ -1,13 +1,7 @@
 class WicsController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @wics = Wic.all
-  end
 
-  def show
-    @wic = Wic.find(params[:id])
-  end
 
   def new
     @wic = Wic.new
@@ -36,7 +30,6 @@ class WicsController < ApplicationController
     end
 
 
-
     wic_status = params[:wic_status]
 
     if  wic_gross_income.present? && wic_household_size.present?
@@ -55,28 +48,5 @@ class WicsController < ApplicationController
 
   end
 
-  def edit
-    @wic = Wic.find(params[:id])
-  end
 
-  def update
-    @wic = Wic.find(params[:id])
-
-    @wic.wic_household_size = params[:wic_household_size]
-    @wic.wic_gross_income = params[:wic_gross_income]
-
-    if @wic.save
-      redirect_to "/wics", :notice => "Wic updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @wic = Wic.find(params[:id])
-
-    @wic.destroy
-
-    redirect_to "/wics", :notice => "Wic deleted."
-  end
 end

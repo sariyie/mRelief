@@ -5,238 +5,470 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# s = SnapEligibility.new
+# s.snap_dependent_no = 1
+# s.snap_gross_income = 1245.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 2
+# s.snap_gross_income = 1681.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 3
+# s.snap_gross_income = 2116.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 4
+# s.snap_gross_income = 2552.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 5
+# s.snap_gross_income = 2987.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 6
+# s.snap_gross_income = 3423.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 7
+# s.snap_gross_income = 3858.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 8
+# s.snap_gross_income = 4294.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 9
+# s.snap_gross_income = 4730.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 10
+# s.snap_gross_income = 5166.0
+# s.save
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 11
+# s.snap_gross_income = 5602.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 12
+# s.snap_gross_income = 6038.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 13
+# s.snap_gross_income = 6474.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 14
+# s.snap_gross_income = 6910.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 15
+# s.snap_gross_income = 7346.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 16
+# s.snap_gross_income = 7782.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 17
+# s.snap_gross_income = 8218.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 18
+# s.snap_gross_income = 8654.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 19
+# s.snap_gross_income = 9090.0
+# s.save
+
+
+# s = SnapEligibility.new
+# s.snap_dependent_no = 20
+# s.snap_gross_income = 9526.0
+# s.save
+
+# #Seniors
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 1
+# s.snap_gross_income = 1915.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 2
+# s.snap_gross_income = 2585.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 3
+# s.snap_gross_income = 3255.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 4
+# s.snap_gross_income = 3925.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 5
+# s.snap_gross_income = 4595.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 6
+# s.snap_gross_income = 5265.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 7
+# s.snap_gross_income = 5935.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 8
+# s.snap_gross_income = 6605.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 9
+# s.snap_gross_income = 7275.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 10
+# s.snap_gross_income = 7945.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 11
+# s.snap_gross_income = 8615.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 12
+# s.snap_gross_income = 9285.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 13
+# s.snap_gross_income = 9955.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 14
+# s.snap_gross_income = 10625.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 15
+# s.snap_gross_income = 11295.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 16
+# s.snap_gross_income = 11965.0
+# s.save
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 17
+# s.snap_gross_income = 12635.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 18
+# s.snap_gross_income = 13305.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 19
+# s.snap_gross_income = 13975.0
+# s.save
+
+
+# s = SnapEligibilitySenior.new
+# s.snap_dependent_no = 20
+# s.snap_gross_income = 14645.0
+# s.save
+
+
 s = SnapEligibility.new
 s.snap_dependent_no = 1
-s.snap_gross_income = 1245.0
+s.snap_gross_income = 1265
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 2
-s.snap_gross_income = 1681.0
+s.snap_gross_income = 1705
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 3
-s.snap_gross_income = 2116.0
+s.snap_gross_income = 2144
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 4
-s.snap_gross_income = 2552.0
+s.snap_gross_income = 2584
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 5
-s.snap_gross_income = 2987.0
+s.snap_gross_income = 3024
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 6
-s.snap_gross_income = 3423.0
+s.snap_gross_income = 3464
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 7
-s.snap_gross_income = 3858.0
+s.snap_gross_income = 3904
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 8
-s.snap_gross_income = 4294.0
+s.snap_gross_income = 4344
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 9
-s.snap_gross_income = 4730.0
+s.snap_gross_income = 4784
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 10
-s.snap_gross_income = 5166.0
+s.snap_gross_income = 5224
 s.save
 
 s = SnapEligibility.new
 s.snap_dependent_no = 11
-s.snap_gross_income = 5602.0
+s.snap_gross_income = 5664
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 12
-s.snap_gross_income = 6038.0
+s.snap_gross_income = 6104
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 13
-s.snap_gross_income = 6474.0
+s.snap_gross_income = 6544
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 14
-s.snap_gross_income = 6910.0
+s.snap_gross_income = 6984
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 15
-s.snap_gross_income = 7346.0
+s.snap_gross_income = 7424
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 16
-s.snap_gross_income = 7782.0
+s.snap_gross_income = 7864
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 17
-s.snap_gross_income = 8218.0
+s.snap_gross_income = 8304
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 18
-s.snap_gross_income = 8654.0
+s.snap_gross_income = 8744
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 19
-s.snap_gross_income = 9090.0
+s.snap_gross_income = 9184
 s.save
 
 
 s = SnapEligibility.new
 s.snap_dependent_no = 20
-s.snap_gross_income = 9526.0
+s.snap_gross_income = 9624
 s.save
 
 #Seniors
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 1
-s.snap_gross_income = 1915.0
+s.snap_gross_income = 1945.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 2
-s.snap_gross_income = 2585.0
+s.snap_gross_income = 2622.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 3
-s.snap_gross_income = 3255.0
+s.snap_gross_income = 3298.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 4
-s.snap_gross_income = 3925.0
+s.snap_gross_income = 3975.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 5
-s.snap_gross_income = 4595.0
+s.snap_gross_income = 4652.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 6
-s.snap_gross_income = 5265.0
+s.snap_gross_income = 5328.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 7
-s.snap_gross_income = 5935.0
+s.snap_gross_income = 6005.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 8
-s.snap_gross_income = 6605.0
+s.snap_gross_income = 6682.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 9
-s.snap_gross_income = 7275.0
+s.snap_gross_income = 7359.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 10
-s.snap_gross_income = 7945.0
+s.snap_gross_income = 8036.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 11
-s.snap_gross_income = 8615.0
+s.snap_gross_income = 8713.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 12
-s.snap_gross_income = 9285.0
+s.snap_gross_income = 9390.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 13
-s.snap_gross_income = 9955.0
+s.snap_gross_income = 10067.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 14
-s.snap_gross_income = 10625.0
+s.snap_gross_income = 10744.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 15
-s.snap_gross_income = 11295.0
+s.snap_gross_income = 11421.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 16
-s.snap_gross_income = 11965.0
+s.snap_gross_income = 12098.0
 s.save
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 17
-s.snap_gross_income = 12635.0
+s.snap_gross_income = 12775.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 18
-s.snap_gross_income = 13305.0
+s.snap_gross_income = 13452.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 19
-s.snap_gross_income = 13975.0
+s.snap_gross_income = 14129.0
 s.save
 
 
 s = SnapEligibilitySenior.new
 s.snap_dependent_no = 20
-s.snap_gross_income = 14645.0
+s.snap_gross_income = 14806.0
 s.save
-
 #Transit Benefits
 
 r = RtaFreeRide.new
@@ -569,14 +801,14 @@ p = Program.new
 p.name = "All Kids"
 p.url = "/all_kids/new"
 p.description = "Healthcare for Kids"
-p.location = "illinois"
+p.location = "chicago"
 p.save
 
 p = Program.new
 p.url = "/medicaids/new"
 p.name = "Medicaid"
 p.description = "Healthcare for families and individuals"
-p.location = "illinois"
+p.location = "chicago"
 p.save
 
 a = AutoRepairAssistance.new
@@ -1423,6 +1655,126 @@ a.assist_gross_income = 3419
 a.share_gross_income = 3652
 a.premium_1_gross_income = 4861
 a.premium_2_gross_income = 7396
+a.save
+
+a = AllKid.new
+a.kids_household_size = 6
+a.assist_gross_income = 3916
+a.share_gross_income = 4183
+a.premium_1_gross_income = 5568
+a.premium_2_gross_income = 8472
+a.save
+
+a = AllKid.new
+a.kids_household_size = 7
+a.assist_gross_income = 4414
+a.share_gross_income = 4714
+a.premium_1_gross_income = 6275
+a.premium_2_gross_income = 9548
+a.save
+
+a = AllKid.new
+a.kids_household_size = 8
+a.assist_gross_income = 4911
+a.share_gross_income = 5245
+a.premium_1_gross_income = 6982
+a.premium_2_gross_income = 10624
+a.save
+
+a = AllKid.new
+a.kids_household_size = 9
+a.assist_gross_income = 5408
+a.share_gross_income = 5776
+a.premium_1_gross_income = 7689
+a.premium_2_gross_income = 11700
+a.save
+
+a = AllKid.new
+a.kids_household_size = 10
+a.assist_gross_income = 5905
+a.share_gross_income = 6307
+a.premium_1_gross_income = 8396
+a.premium_2_gross_income = 12776
+a.save
+
+a = AllKid.new
+a.kids_household_size = 11
+a.assist_gross_income = 6402
+a.share_gross_income = 6838
+a.premium_1_gross_income = 9103
+a.premium_2_gross_income = 13852
+a.save
+
+a = AllKid.new
+a.kids_household_size = 12
+a.assist_gross_income = 6899
+a.share_gross_income = 7369
+a.premium_1_gross_income = 9810
+a.premium_2_gross_income = 14928
+a.save
+
+a = AllKid.new
+a.kids_household_size = 13
+a.assist_gross_income = 7396
+a.share_gross_income = 7900
+a.premium_1_gross_income = 10517
+a.premium_2_gross_income = 16004
+a.save
+
+a = AllKid.new
+a.kids_household_size = 14
+a.assist_gross_income = 7893
+a.share_gross_income = 8431
+a.premium_1_gross_income = 11224
+a.premium_2_gross_income = 17080
+a.save
+
+a = AllKid.new
+a.kids_household_size = 15
+a.assist_gross_income = 8390
+a.share_gross_income = 8962
+a.premium_1_gross_income = 11931
+a.premium_2_gross_income = 18156
+a.save
+
+a = AllKid.new
+a.kids_household_size = 16
+a.assist_gross_income = 8887
+a.share_gross_income = 9493
+a.premium_1_gross_income = 12638
+a.premium_2_gross_income = 19232
+a.save
+
+a = AllKid.new
+a.kids_household_size = 17
+a.assist_gross_income = 9384
+a.share_gross_income = 10024
+a.premium_1_gross_income = 13345
+a.premium_2_gross_income = 20308
+a.save
+
+a = AllKid.new
+a.kids_household_size = 18
+a.assist_gross_income = 9881
+a.share_gross_income = 10555
+a.premium_1_gross_income = 14052
+a.premium_2_gross_income = 21384
+a.save
+
+a = AllKid.new
+a.kids_household_size = 19
+a.assist_gross_income = 10378
+a.share_gross_income = 11086
+a.premium_1_gross_income = 14759
+a.premium_2_gross_income = 22460
+a.save
+
+a = AllKid.new
+a.kids_household_size = 20
+a.assist_gross_income = 10875
+a.share_gross_income = 11617
+a.premium_1_gross_income = 15466
+a.premium_2_gross_income = 23536
 a.save
 
 

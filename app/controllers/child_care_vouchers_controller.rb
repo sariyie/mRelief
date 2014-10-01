@@ -1,13 +1,7 @@
 class ChildCareVouchersController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @child_care_vouchers = ChildCareVoucher.all
-  end
 
-  def show
-    @child_care_voucher = ChildCareVoucher.find(params[:id])
-  end
 
   def new
     @child_care_voucher = ChildCareVoucher.new

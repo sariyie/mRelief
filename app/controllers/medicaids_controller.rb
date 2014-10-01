@@ -6,8 +6,6 @@ class MedicaidsController < ApplicationController
   end
 
 
-
-
   def create
     if params[:medicaid_household_size] !~ /\D/  # returns true if all numbers
       medicaid_household_size = params[:medicaid_household_size].to_i

@@ -1,13 +1,7 @@
 class HeadStartsController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @head_starts = HeadStart.all
-  end
 
-  def show
-    @head_start = HeadStart.find(params[:id])
-  end
 
   def new
     @head_start = HeadStart.new

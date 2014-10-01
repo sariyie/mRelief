@@ -1,13 +1,7 @@
 class AutoRepairAssistancesController < ApplicationController
    require 'numbers_in_words'
-require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @auto_repair_assistances = AutoRepairAssistance.all
-  end
+  require 'numbers_in_words/duck_punch' #see why later
 
-  def show
-    @auto_repair_assistance = AutoRepairAssistance.find(params[:id])
-  end
 
   def new
     @auto_repair_assistance = AutoRepairAssistance.new
@@ -51,28 +45,5 @@ require 'numbers_in_words/duck_punch' #see why later
 
   end
 
-  def edit
-    @auto_repair_assistance = AutoRepairAssistance.find(params[:id])
-  end
 
-  def update
-    @auto_repair_assistance = AutoRepairAssistance.find(params[:id])
-
-    @auto_repair_assistance.auto_household_size = params[:auto_household_size]
-    @auto_repair_assistance.auto_gross_income = params[:auto_gross_income]
-
-    if @auto_repair_assistance.save
-      redirect_to "/auto_repair_assistances", :notice => "Auto repair assistance updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @auto_repair_assistance = AutoRepairAssistance.find(params[:id])
-
-    @auto_repair_assistance.destroy
-
-    redirect_to "/auto_repair_assistances", :notice => "Auto repair assistance deleted."
-  end
 end

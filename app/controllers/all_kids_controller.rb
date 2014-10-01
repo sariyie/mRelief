@@ -33,6 +33,10 @@ class AllKidsController < ApplicationController
       kids_gross_income = kids_gross_income.in_numbers
     end
 
+    if params[:pregnant] == 'yes'
+      kids_household_size = kids_household_size + 1
+    end
+
     if kids_gross_income.present? && kids_household_size.present?
 
       kids_eligibility = AllKid.find_by({ :kids_household_size => kids_household_size })

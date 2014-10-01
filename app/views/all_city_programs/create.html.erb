@@ -1,6 +1,6 @@
 <div class="container" style="padding-bottom:150px">
 <div class="page-header" style="border:none">
-  <h1>Do I qualify for Food Stamps, Rental Assistance and RTA Ride Free?</h1>
+  <h1>Do I qualify for Food Stamps, Rental Assistance, RTA Ride Free, All Kids and Medicaid?</h1>
 </div>
 
 <% if @eligible_snap == 'yes' %>
@@ -23,7 +23,7 @@
         <br>
       <div class="panel panel-default" style="margin: 0 0 40px 0">
         <div class="panel-body">
-            <h4>Based on the information received, we cannot determine your eligibility at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your food stamp eligibility. </h4>
+            <h4>Based on the information received, we cannot determine your eligibility for food stamps at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your food stamp eligibility. </h4>
             <br>
           <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
           <br>
@@ -96,6 +96,92 @@
         </div>
       </div>
   <% end %>
+
+
+  <% if @eligible_all_kids == 'yes' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+
+
+          <% if @assist_eligible == 'yes' %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Assist.</h4>
+          <% elsif @share_eligible == 'yes' %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Share.</h4>
+
+          <% elsif @premium1_eligible == 'yes' %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Premium Level 1.</h4>
+
+          <% elsif @premium2_eligible == 'yes' %>
+            <h4>Based on your household size and income, you likely qualify for All Kids Premium Level 2.</h4>
+
+          <% end %>
+          <br>
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.9912272225853554", :class => "btn btn-primary btn-sm" %> to complete your application online.</p>
+
+      <% elsif @eligible_all_kids == 'no' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+
+            <p>Based on your household size and income, you likely do not qualify for All Kids. However, if you and your family don't have health coverage in 2014, you may have to pay a fee -- and all of your health care.
+            <%= link_to "Click Here", "https://www.healthcare.gov/what-if-i-dont-have-health-coverage/", :class => "btn btn-primary btn-sm" %> to learn more about fees.  Get Covered Illinois is a resource that helps families register for insurance at in-person events.
+            <%= link_to "Click Here", "http://getcoveredillinois.gov/events", :class => "btn btn-primary btn-sm" %> to find Get Covered Illinois events in your area. You can also call 1 (866) 311-1119: (Open Monday - Saturday, 8am - 8pm) to discuss your next steps.
+            </p>
+
+
+        <% end %>
+      </div>
+  </div>
+
+  <% if @eligible_medicaid == 'yes' %>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+            <h4>Based on your household size and income, you likely qualify for Medicaid.</h4>
+
+          <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.9152558493190114 ", :class => "btn btn-primary btn-sm" %>
+          <br>
+      </div>
+    </div>
+
+    <% elsif @eligible_medicaid == 'maybe' %>
+    <br>
+        <br>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+            <h4>Based on the information received, we cannot determine your eligibility for Medicaid at this time. </h4>
+            <p class="lead"> You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your Medicaid eligibility.</p>
+
+            <br>
+      </div>
+    </div>
+
+
+      <% elsif @eligible_medicaid == 'no' %>
+
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+            <h4>Based on your household size and income, you likely do not qualify for Medicaid. </h4>
+
+            <p> However, if you and your family don't have health coverage in 2014, you may have to pay a fee -- and all of your health care.
+
+            <%= link_to "Click Here", "https://www.healthcare.gov/what-if-i-dont-have-health-coverage/", :class => "btn btn-primary btn-sm" %> to learn more about fees.
+
+            <br>
+            Get Covered Illinois is a resource that helps families register for insurance at in-person events.
+            <%= link_to "Click Here", "http://getcoveredillinois.gov/events", :class => "btn btn-primary btn-sm" %> to find Get Covered Illinois events in your area. You can also call 1 (866) 311-1119: (Open Monday - Saturday, 8am - 8pm) to discuss your next steps.
+
+
+            </p>
+
+
+        <% end %>
+      </div>
+</div>
 
 
 

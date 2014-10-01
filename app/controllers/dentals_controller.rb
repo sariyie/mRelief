@@ -1,13 +1,7 @@
 class DentalsController < ApplicationController
    require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
-  def index
-    @dentals = Dental.all
-  end
 
-  def show
-    @dental = Dental.find(params[:id])
-  end
 
   def new
     @dental = Dental.new
@@ -48,28 +42,5 @@ class DentalsController < ApplicationController
 
   end
 
-  def edit
-    @dental = Dental.find(params[:id])
-  end
 
-  def update
-    @dental = Dental.find(params[:id])
-
-    @dental.dental_gross_income = params[:dental_gross_income]
-    @dental.dental_household_size = params[:dental_household_size]
-
-    if @dental.save
-      redirect_to "/dentals", :notice => "Dental updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @dental = Dental.find(params[:id])
-
-    @dental.destroy
-
-    redirect_to "/dentals", :notice => "Dental deleted."
-  end
 end
