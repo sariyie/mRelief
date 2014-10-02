@@ -2,6 +2,8 @@ class RentalAssistancesController < ApplicationController
   require 'numbers_in_words'
   require 'numbers_in_words/duck_punch' #see why later
 
+  require 'open-uri'
+  require 'json'
 
   def new
     @rental_assistance = RentalAssistance.new
@@ -27,8 +29,6 @@ class RentalAssistancesController < ApplicationController
       rental_gross_income = rental_gross_income.in_numbers
     end
 
-
-
     if  rental_gross_income.present? && rental_dependent_no.present?
 
     rental_eligibility = RentalAssistance.find_by({ :rental_dependent_no => rental_dependent_no })
@@ -39,37 +39,8 @@ class RentalAssistancesController < ApplicationController
 
        if rental_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above"
           @eligible = true
-
-        # elsif rental_gross_income  < rental_eligibility.rental_gross_income +100 && params[:rental_status] != "none of the above"
-        #   @maybe_eligible = true
-
-        # else
-        #   @eligible = false
-
-         # if params[:rental_status]  == "medical circumstance"
-         #    @eligible_medical = true
-
-         #  elsif params[:rental_status]  == "a victim of natural disaster or fire"
-         #    @eligible_natural_disaster = true
-
-         #  elsif params[:rental_status]  == "a recipient of an eviction notice"
-         #    @eligible_eviction = true
-
-         #  elsif params[:rental_status]  == "someone whose unemployment benefits have ended"
-         #    @eligible_unemployment = true
-
-         #  elsif params[:rental_status]  == "have experienced a temporary loss of income"
-         #    @eligible_income_loss = true
-
-         #  elsif params[:rental_status]  == "a victim of domestic violence"
-         #    @eligible_domestic_violence = true
-
-         #  end
-
-         # rental_eligibility_range = rental_eligibility - 100
-
-
       end
+
     end #closes first if statement
   end #closes method
 end
