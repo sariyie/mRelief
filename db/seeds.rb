@@ -673,45 +673,45 @@ c.save
 
 # Rental Assistance
 
-r = RentalAssistance.new
-r.rental_dependent_no = 1
-r.rental_gross_income = 3646.88
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 1
+# r.rental_gross_income = 3646.88
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 2
-r.rental_gross_income = 4915.63
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 2
+# r.rental_gross_income = 4915.63
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 3
-r.rental_gross_income = 6184.38
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 3
+# r.rental_gross_income = 6184.38
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 4
-r.rental_gross_income = 7453.13
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 4
+# r.rental_gross_income = 7453.13
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 5
-r.rental_gross_income = 8721.88
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 5
+# r.rental_gross_income = 8721.88
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 6
-r.rental_gross_income = 9990.63
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 6
+# r.rental_gross_income = 9990.63
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 7
-r.rental_gross_income = 11259.38
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 7
+# r.rental_gross_income = 11259.38
+# r.save
 
-r = RentalAssistance.new
-r.rental_dependent_no = 8
-r.rental_gross_income = 12528.13
-r.save
+# r = RentalAssistance.new
+# r.rental_dependent_no = 8
+# r.rental_gross_income = 12528.13
+# r.save
 
 p = Program.new
 p.name = "Food Stamps"
@@ -734,12 +734,12 @@ p.description = "Quality, affordable child care for low-income families"
 p.location = "illinois"
 p.save
 
-p = Program.new
-p.name = "Rental Assistance"
-p.url = "/rental_assistances/new"
-p.description = "Emergency Rental Assistance during financial hardship"
-p.location = "chicago"
-p.save
+# p = Program.new
+# p.name = "Rental Assistance"
+# p.url = "/rental_assistances/new"
+# p.description = "Emergency Rental Assistance during financial hardship"
+# p.location = "chicago"
+# p.save
 
 p = Program.new
 p.name =  "Auto Repair Assistance"

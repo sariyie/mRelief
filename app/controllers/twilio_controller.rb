@@ -59,12 +59,10 @@ class TwilioController < ApplicationController
       if sms_count > 3
         message = "Still stuck #{params[:Body]} #{session['counter']}"
       end
-
+    end #this ends sms_count ==3
       twiml = Twilio::TwiML::Response.new do |r|
         r.Message message
       end
-
-       end #this ends sms_count ==3
     session["counter"] += 1
     twiml.text
       render_twiml twiml
