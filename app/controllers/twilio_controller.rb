@@ -39,7 +39,6 @@ class TwilioController < ApplicationController
       age = session["age"].to_i
       snap_dependent_no = session["dependents"].to_i
       snap_gross_income = session["income"]
-        if age.present? && snap_gross_income.present? && snap_dependent_no.present?
 
        if age <= 59
          snap_eligibility = SnapEligibility.find_by({ :snap_dependent_no => snap_dependent_no })
@@ -47,27 +46,23 @@ class TwilioController < ApplicationController
          snap_eligibility = SnapEligibilitySenior.find_by({ :snap_dependent_no => snap_dependent_no })
        end
 
-       p "snap_gross_income = #{snap_gross_income}"
-       p "snap_eligibility.snap_gross_income = #{snap_eligibility.snap_gross_income}"
-
        if snap_gross_income < snap_eligibility.snap_gross_income
          @eligible = true
-       else
        end
 
-      if @eligible == true
-        message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. You may be in luck! You likely qualify for foodstamps. Call 311 to find the nearest family community resource center near you."
+        if @eligible == true
+          message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. You may be in luck! You likely qualify for foodstamps. Call 311 to find the nearest family community resource center near you."
+        end
+        if @eligible != true
+          message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. Text FOOD to 877-877 to find food near you."
+        end
+      if sms_count > 3
+        message = "Still stuck #{params[:Body]} #{session['counter']}"
       end
-      if @eligible != true
-        message = "Your income is #{session['income']}. You have #{session['dependents']} dependents. You are #{session['age']} years old. Text FOOD to 877-877 to find food near you."
+    end #this ends sms_count ==3
+      twiml = Twilio::TwiML::Response.new do |r|
+        r.Message message
       end
-    end
-    if sms_count > 3
-      message = "Still stuck #{params[:Body]} #{session['counter']}"
-    end
-    twiml = Twilio::TwiML::Response.new do |r|
-      r.Message message
-    end
     session["counter"] += 1
     twiml.text
       render_twiml twiml
