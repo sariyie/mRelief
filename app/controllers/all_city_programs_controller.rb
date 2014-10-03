@@ -173,7 +173,7 @@ class AllCityProgramsController < ApplicationController
         @eligible_all_kids = "no"
       end
 
-       if @eligible_all_kids = "yes"
+       if @eligible_all_kids == "yes"
         # now find out which version they are eligible for
           if monthly_gross_income <= kids_eligibility.assist_gross_income
             @assist_eligible = "yes"
