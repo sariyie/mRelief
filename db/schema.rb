@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925174357) do
+ActiveRecord::Schema.define(version: 20141008025429) do
 
   create_table "all_city_programs", force: true do |t|
     t.datetime "created_at"
@@ -85,6 +85,14 @@ ActiveRecord::Schema.define(version: 20140925174357) do
     t.datetime "updated_at"
   end
 
+  create_table "organizations", force: true do |t|
+    t.string   "organization_id"
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "programs", force: true do |t|
     t.string   "name"
     t.string   "category"
@@ -106,6 +114,20 @@ ActiveRecord::Schema.define(version: 20140925174357) do
   create_table "rta_free_rides", force: true do |t|
     t.integer  "rta_dependent_no"
     t.decimal  "rta_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "service_centers", force: true do |t|
+    t.string   "name"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "organization"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

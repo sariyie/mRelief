@@ -1,0 +1,111 @@
+<div class="page-header">
+  <h1>Add Service Center</h1>
+</div>
+
+<% if @service_center.errors.any? %>
+  <% @service_center.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_service_center" class="form-horizontal">
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">
+      Name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @service_center.name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for latitude -->
+  <div class="form-group">
+    <label for="latitude" class="col-sm-2 control-label">
+      Latitude
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="latitude" name="latitude" placeholder="Latitude" class="form-control" value="<%= @service_center.latitude %>">
+    </div>
+  </div>
+
+  <!-- Label and input for longitude -->
+  <div class="form-group">
+    <label for="longitude" class="col-sm-2 control-label">
+      Longitude
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="longitude" name="longitude" placeholder="Longitude" class="form-control" value="<%= @service_center.longitude %>">
+    </div>
+  </div>
+
+  <!-- Label and input for street -->
+  <div class="form-group">
+    <label for="street" class="col-sm-2 control-label">
+      Street
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="street" name="street" placeholder="Street" class="form-control" value="<%= @service_center.street %>">
+    </div>
+  </div>
+
+  <!-- Label and input for city -->
+  <div class="form-group">
+    <label for="city" class="col-sm-2 control-label">
+      City
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @service_center.city %>">
+    </div>
+  </div>
+
+  <!-- Label and input for state -->
+  <div class="form-group">
+    <label for="state" class="col-sm-2 control-label">
+      State
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @service_center.state %>">
+    </div>
+  </div>
+
+  <!-- Label and input for zip -->
+  <div class="form-group">
+    <label for="zip" class="col-sm-2 control-label">
+      Zip
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @service_center.zip %>">
+    </div>
+  </div>
+
+  <!-- Label and input for phone -->
+  <div class="form-group">
+    <label for="phone" class="col-sm-2 control-label">
+      Phone
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" value="<%= @service_center.phone %>">
+    </div>
+  </div>
+
+  <!-- Label and input for organization -->
+  <div class="form-group">
+    <label for="organization" class="col-sm-2 control-label">
+      Organization
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="organization" name="organization" placeholder="Organization" class="form-control" value="<%= @service_center.organization %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Service Center" class="btn btn-primary">
+    </div>
+  </div>
+</form>

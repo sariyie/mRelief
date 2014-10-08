@@ -1,5 +1,39 @@
 Rails.application.routes.draw do
 
+  # Routes for the Organization resource:
+  # CREATE
+  get('/organizations/new', { :controller => 'organizations', :action => 'new' })
+  get('/create_organization', { :controller => 'organizations', :action => 'create' })
+
+  # READ
+  get('/organizations', { :controller => 'organizations', :action => 'index' })
+  get('/organizations/:id', { :controller => 'organizations', :action => 'show' })
+
+  # UPDATE
+  get('/organizations/:id/edit', { :controller => 'organizations', :action => 'edit' })
+  get('/update_organization/:id', { :controller => 'organizations', :action => 'update' })
+
+  # DELETE
+  get('/delete_organization/:id', { :controller => 'organizations', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Service_center resource:
+  # CREATE
+  get('/service_centers/new', { :controller => 'service_centers', :action => 'new' })
+  get('/create_service_center', { :controller => 'service_centers', :action => 'create' })
+
+  # READ
+  get('/service_centers', { :controller => 'service_centers', :action => 'index' })
+  get('/service_centers/:id', { :controller => 'service_centers', :action => 'show' })
+
+  # UPDATE
+  get('/service_centers/:id/edit', { :controller => 'service_centers', :action => 'edit' })
+  get('/update_service_center/:id', { :controller => 'service_centers', :action => 'update' })
+
+  # DELETE
+  get('/delete_service_center/:id', { :controller => 'service_centers', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Medicaid resource:
   # CREATE
   get('/medicaids/new', { :controller => 'medicaids', :action => 'new' })
