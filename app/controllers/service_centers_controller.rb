@@ -5,7 +5,7 @@ class ServiceCentersController < ApplicationController
 
   def index
 
-
+  end
 
   def show
     @service_center = ServiceCenter.find(params[:id])
