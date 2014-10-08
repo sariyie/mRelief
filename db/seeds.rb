@@ -734,12 +734,12 @@ p.description = "Quality, affordable child care for low-income families"
 p.location = "illinois"
 p.save
 
- p = Program.new
- p.name = "Rental Assistance"
- p.url = "/rental_assistances/new"
- p.description = "Emergency Rental Assistance during financial hardship"
- p.location = "chicago"
- p.save
+ # p = Program.new
+ # p.name = "Rental Assistance"
+ # p.url = "/rental_assistances/new"
+ # p.description = "Emergency Rental Assistance during financial hardship"
+ # p.location = "chicago"
+ # p.save
 
 p = Program.new
 p.name =  "Auto Repair Assistance"

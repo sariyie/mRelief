@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
 
+  # Routes for the Laf_center resource:
+  # CREATE
+  get('/laf_centers/new', { :controller => 'laf_centers', :action => 'new' })
+  get('/create_laf_center', { :controller => 'laf_centers', :action => 'create' })
+
+  # READ
+  get('/laf_centers', { :controller => 'laf_centers', :action => 'index' })
+  get('/laf_centers/:id', { :controller => 'laf_centers', :action => 'show' })
+
+  # UPDATE
+  get('/laf_centers/:id/edit', { :controller => 'laf_centers', :action => 'edit' })
+  get('/update_laf_center/:id', { :controller => 'laf_centers', :action => 'update' })
+
+  # DELETE
+  get('/delete_laf_center/:id', { :controller => 'laf_centers', :action => 'destroy' })
+  #------------------------------
+
   # Routes for the Organization resource:
   # CREATE
   get('/organizations/new', { :controller => 'organizations', :action => 'new' })

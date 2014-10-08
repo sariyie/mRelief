@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008025429) do
+ActiveRecord::Schema.define(version: 20141008163514) do
 
   create_table "all_city_programs", force: true do |t|
     t.datetime "created_at"
@@ -78,6 +78,18 @@ ActiveRecord::Schema.define(version: 20141008025429) do
     t.datetime "updated_at"
   end
 
+  create_table "laf_centers", force: true do |t|
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "center"
+    t.string   "address"
+    t.string   "contact"
+    t.string   "telephone"
+    t.string   "spanish"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "medicaids", force: true do |t|
     t.integer  "medicaid_household_size"
     t.decimal  "medicaid_gross_income"
@@ -130,6 +142,7 @@ ActiveRecord::Schema.define(version: 20141008025429) do
     t.string   "organization"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   create_table "snap_eligibilities", force: true do |t|

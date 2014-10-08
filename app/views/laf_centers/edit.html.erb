@@ -1,0 +1,90 @@
+<div class="page-header">
+  <h1>Edit Laf Center #<%= @laf_center.id %></h1>
+</div>
+
+<% if @laf_center.errors.any? %>
+  <% @laf_center.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_laf_center/<%= @laf_center.id %>" class="form-horizontal">
+  <!-- Label and input for zipcode -->
+  <div class="form-group">
+    <label for="zipcode" class="col-sm-2 control-label">
+      Zipcode
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="zipcode" name="zipcode" placeholder="Zipcode" class="form-control" value="<%= @laf_center.zipcode %>">
+    </div>
+  </div>
+
+  <!-- Label and input for city -->
+  <div class="form-group">
+    <label for="city" class="col-sm-2 control-label">
+      City
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @laf_center.city %>">
+    </div>
+  </div>
+
+  <!-- Label and input for center -->
+  <div class="form-group">
+    <label for="center" class="col-sm-2 control-label">
+      Center
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="center" name="center" placeholder="Center" class="form-control" value="<%= @laf_center.center %>">
+    </div>
+  </div>
+
+  <!-- Label and input for address -->
+  <div class="form-group">
+    <label for="address" class="col-sm-2 control-label">
+      Address
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @laf_center.address %>">
+    </div>
+  </div>
+
+  <!-- Label and input for contact -->
+  <div class="form-group">
+    <label for="contact" class="col-sm-2 control-label">
+      Contact
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="contact" name="contact" placeholder="Contact" class="form-control" value="<%= @laf_center.contact %>">
+    </div>
+  </div>
+
+  <!-- Label and input for telephone -->
+  <div class="form-group">
+    <label for="telephone" class="col-sm-2 control-label">
+      Telephone
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="telephone" name="telephone" placeholder="Telephone" class="form-control" value="<%= @laf_center.telephone %>">
+    </div>
+  </div>
+
+  <!-- Label and input for spanish -->
+  <div class="form-group">
+    <label for="spanish" class="col-sm-2 control-label">
+      Spanish
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="spanish" name="spanish" placeholder="Spanish" class="form-control" value="<%= @laf_center.spanish %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Laf Center" class="btn btn-primary">
+    </div>
+  </div>
+</form>
