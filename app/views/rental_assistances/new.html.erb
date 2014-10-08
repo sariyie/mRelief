@@ -3,7 +3,7 @@
 <div class="page-header" style="border:none">
   <h1> Do I qualify for Rental Assistance?</h1>
 
- <div class="lead"> <p>Emergency Rental Assistance is available for people suffering financial hardship due to a crisis such as loss of job, home fire or illness. The program is intended to allow families to maintain housing during the time it takes to regain stability.</p>
+ <div class="lead"> <p>Rental assistance is a homeless prevention program for those who have "suffered a financial loss related to the emergency." Eligible recipients can document this loss and prove that they can afford next month's rent. </p>
   </div>
 
   <p>You can find more information about rental assistance <a href="http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/how_to_find_rentalassistanceinchicago.html">here.</a></p>
@@ -22,7 +22,7 @@
   <div class="panel-body">
     <form action="/create_rental_assistance" role="form">
 
-<p> <b>Describe your current rental status: </b></p>
+<p> <b>What circumstance explains why you are unable to pay rent at this time? </b></p>
   <div class="relative" id="rental_status">
     <%= radio_button_tag 'rental_status', 'medical circumstance' %> Someone experiencing a medical circumstance
     <br><%= radio_button_tag 'rental_status', 'a victim of natural disaster or fire' %> A victim of natural disaster or fire
@@ -34,14 +34,28 @@
   </div>
   <br>
 
+  <div class="form-group col-sm-12">
+
+    <label for="lease" id="lease" >Is your name currently on the lease of the apartment that you are renting?</label>
+
+      <div class="col-sm-6">
+        <div id="lease">
+          <%= radio_button_tag 'lease', 'yes' %> yes
+          <%= radio_button_tag 'lease', 'no' %> no
+        </div>
+      </div>
+  </div>
+<br>
+
   <!-- Label and input for rental_dependent_no -->
      <div class="form-group col-sm-9">
-    <label for="rental_dependent_no">How many dependents (including yourself) are in your household?</label>
-    <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
+        <label for="rental_dependent_no">How many dependents (including yourself) are in your household?</label>
+        <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Number of people living in your household, including yourself."} %>
 
-      <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>" required>
-  </div>
+        <input type="text" id="rental_dependent_no" name="rental_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @rental_assistance.rental_dependent_no %>" required>
+    </div>
 
+  <%= render 'programs/zipcode_question' %>
 
   <!-- Label and input for rental_gross_income -->
   <div class="form-group col-sm-9">

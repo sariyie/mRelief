@@ -1,18 +1,21 @@
 <div class="container">
   <div class="page-header" style="border:none">
    <h1> Do I qualify for Rental Assistance?</h1>
+  </div>
 
    <div class="lead"> <p>Emergency Rental Assistance is available for people suffering financial hardship due to a crisis such as loss of job, home fire or illness. The program is intended to allow families to maintain housing during the time it takes to regain stability.</p>
   </div>
 
-      <% if @eligible %>
+      <% if @eligible == "yes" %>
 
     <div class="panel panel-default" style="margin: 0 0 40px 0">
       <div class="panel-body">
         <p style="font-size:32px; font-style:italic">You may be in luck!</p>
 
         <p>Based on your rental status, household size and income, you likely qualify for rental assistance.
-      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p></div>
+      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p>
+    </div>
+    </div>
 
         <!--   <%# if @eligible_medical %>
             <div class="well">
@@ -50,12 +53,23 @@
             </div>
           <%# end %> -->
 
-      <% else %>
+       <% elsif @eligible == "maybe" %>
+
+       <div class="panel panel-default" style="margin: 0 0 40px 0">
+         <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">Close enough to apply!</p>
+
+          <p>According to the income guidelines of Rental Assistance, you make too much money to apply. However, in some cases the city may make an exception. Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.
+          </p>
+          </div>
+        </div>
+
+      <% elsif @eligible == "no" %>
 
       <div class="panel panel-default" style="margin: 0 0 40px 0">
         <div class="panel-body">
           <p style="font-size:32px; font-style:italic">We apologize.</p>
-        <p>Based on your household size and income, and other factors, you do not qualify for rental assistance. The financial assistance program provides essential relief services to persons in need of shelter, food, utility payments, medication and other items. Contact Emergency Fund directly at (312) 379-0301 for rent assistance.</p>
+        <p>Based on your household size and income, and other factors, you do not qualify for rental assistance. Recipients of rental assistance must have their name on the lease of the apartment they are renting.  The financial assistance program provides essential relief services to persons in need of shelter, food, utility payments, medication and other items. Contact Emergency Fund directly at (312) 379-0301 for rent assistance.</p>
         </div>
       <% end %>
       </div>

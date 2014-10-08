@@ -32,15 +32,28 @@ class RentalAssistancesController < ApplicationController
     if  rental_gross_income.present? && rental_dependent_no.present?
 
     rental_eligibility = RentalAssistance.find_by({ :rental_dependent_no => rental_dependent_no })
+    rental_cut_off =  rental_eligibility.rental_gross_income
+    rental_cut_off_plus_200 = rental_eligibility.rental_gross_income + 200
 
 
        p "rental_gross_income = #{rental_gross_income}"
        p "rental_eligibility.rental_gross_income = #{rental_eligibility.rental_gross_income}"
 
-       if rental_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above"
-          @eligible = true
-      end
+      if params[:lease] == "no"
+        @eligible == "no"
 
+      elsif params[:lease] == "yes"
+          if rental_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above"
+              @eligible = "yes"
+          elsif rental_gross_income< rental_cut_off_plus_200 && rental_gross_income >= rental_cut_off
+            if params[:rental_status] != "none of the above"
+              @eligible = "maybe"
+            end
+          else
+              @eligible = "no"
+
+          end
+      end # closes the if statement about the lease agreement
     end #closes first if statement
   end #closes method
 end
