@@ -31,6 +31,8 @@
       <input type="text" id="ccdf_dependent_no" name="ccdf_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @child_care_voucher.ccdf_dependent_no %>" required>
   </div>
 
+    <%= render 'programs/zipcode_question' %>
+
 
   <!-- Label and input for rta_gross_income -->
   <div class="form-group col-sm-9">

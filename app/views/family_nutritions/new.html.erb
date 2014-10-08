@@ -44,6 +44,9 @@
           <input type="text" id="nutrition_gross_income" name="nutrition_gross_income" placeholder="For example: 5000" class="form-control" value="<%= @family_nutrition.nutrition_gross_income %>" required>
       <span class="input-group-addon">.00</span>
     </div>
+  </div>
+
+  <%= render 'programs/zipcode_question' %>
 
     <div style="padding:40px 0 0 0">
       <button type="submit" class="btn btn-primary">See if I qualify</button>

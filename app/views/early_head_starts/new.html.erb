@@ -33,6 +33,8 @@
      <input type="text" id="ehs_dependent_no" name="ehs_dependent_no" placeholder="For example: 3" class="form-control" value="<%= @early_head_start.ehs_dependent_no %>" required>
   </div>
 
+  <%= render 'programs/zipcode_question' %>
+
 
   <!-- Label and input for ehs_gross_income -->
    <div class="form-group col-sm-9">
@@ -48,10 +50,13 @@
       <span class="input-group-addon">.00</span>
     </div>
 
+     <div class="form-group col-sm-12">
     <div style="padding:40px 0 0 0">
       <button type="submit" class="btn btn-primary">See if I qualify</button>
     </div>
+    </div>
   </div>
+
 
 </form>
 </div>

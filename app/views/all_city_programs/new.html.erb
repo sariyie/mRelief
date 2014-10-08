@@ -162,11 +162,14 @@
         <%= radio_button_tag 'disabled', 'social-security' %>  I am receiving disability payments from Social Security.  <br>
         <%= radio_button_tag 'disabled', 'railroad' %>  I am receiving disability payments from the Railroad Retirement Board.     <br>
         <%= radio_button_tag 'disabled', 'veterans' %>  I am receiving disability payments from Veterans
-Affairs.   <br>
+          Affairs.   <br>
         <%= radio_button_tag 'disabled', 'none' %> I am currently not receiving any disability payments  <br>
       </div>
     </div>
 </div>
+
+  <%= render 'programs/zipcode_question' %>
+
 
 
 <div class="col-sm-12">

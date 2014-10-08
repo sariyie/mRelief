@@ -59,11 +59,15 @@
     </label>
        <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Your income per year before tax deductions."} %>
 
-    <div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input  <input type="text" id="hs_gross_income" name="hs_gross_income" placeholder="For example: 30000" class="form-control" value="<%= @head_start.hs_gross_income %>" required>
-  <span class="input-group-addon">.00</span>
-</div>
+      <div class="input-group">
+         <span class="input-group-addon">$</span>
+         <input  <input type="text" id="hs_gross_income" name="hs_gross_income" placeholder="For example: 30000" class="form-control" value="<%= @head_start.hs_gross_income %>" required>
+         <span class="input-group-addon">.00</span>
+      </div>
+    </div>
+
+    <%= render 'programs/zipcode_question' %>
+
     <div style="padding:40px 0 0 0">
       <button type="submit" class="btn btn-primary">Find out if I qualify</button>
     </div>
