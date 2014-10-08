@@ -1,5 +1,4 @@
-require 'open-uri'
-require 'json'
+
 
 class ServiceCentersController < ApplicationController
 
