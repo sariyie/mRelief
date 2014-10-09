@@ -2,7 +2,6 @@ require 'roo'
 class LafCentersController < ApplicationController
 
   def index
-
      ex = Roo::Excel.new("public/LAF_Spreadsheet.xls")
      ex.default_sheet = ex.sheets[0]
      2.upto(67) do | line |
@@ -16,9 +15,6 @@ class LafCentersController < ApplicationController
 
       @laf_center = LafCenter.create(:zipcode => zipcode, :city => city, :center => center, :address => address, :contact => contact,
       :telephone => telephone, :spanish => spanish)
-   end
-
+    end
   end
-
-
 end

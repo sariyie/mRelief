@@ -119,16 +119,16 @@ class AllCityProgramsController < ApplicationController
 
       #here is the logic for rental assistance
 
-      rental_eligibility = RentalAssistance.find_by({ :rental_dependent_no => dependent_no })
+      # rental_eligibility = RentalAssistance.find_by({ :rental_dependent_no => dependent_no })
 
-       p "ninety_day_gross_income = #{ninety_day_gross_income}"
-       p "rental_eligibility.rental_gross_income = #{rental_eligibility.rental_gross_income}"
+      #  p "ninety_day_gross_income = #{ninety_day_gross_income}"
+      #  p "rental_eligibility.rental_gross_income = #{rental_eligibility.rental_gross_income}"
 
-       if ninety_day_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above" && params[:citizen] == 'yes'
-          @eligible_rental = "yes"
-        else
-          @eligible_rental = "no"
-       end
+      #  if ninety_day_gross_income < rental_eligibility.rental_gross_income && params[:rental_status] != "none of the above" && params[:citizen] == 'yes'
+      #     @eligible_rental = "yes"
+      #   else
+      #     @eligible_rental = "no"
+      #  end
 
 
         #here is the logic for rta ride free

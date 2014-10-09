@@ -61,11 +61,24 @@ require 'numbers_in_words/duck_punch' #see why later
           @eligible = 'maybe'
         end
 
-      # this is the logic for the zipcode and the laf center
+      # his is the logic for the zipcode and the laf center
 
       @user_zipcode = params[:zipcode]
       zipcode = @user_zipcode << ".0"
       @lafcenter = LafCenter.find_by(:zipcode => zipcode)
+
+      #this is the logic for the community resources
+
+      @food_resources = ServiceCenter.where(:description => "food pantry")
+      if @food_resources.count > 2
+        #in this case there are 2 food pantries in the user's zip
+        @food_resources.where(:zip => @user_zipcode)
+        if @food_resources.count == 1
+          @food_resources_first = @food_resources.first
+          @food_resources_second = ServiceCenter.where(:description => "food pantry")
+        end
+      end
+
 
       # this is the logic for disability
       if params[:disabled].present?

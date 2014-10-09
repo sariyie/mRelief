@@ -9,7 +9,7 @@
         <div class="panel-body">
           <p style="font-size:32px; font-style:italic">You may be in luck!</p>
             <h4>Based on your household size and income, you likely qualify for food stamps.</h4>
-          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+          <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest Community Service Center and further determine your eligibility.
           <br>
           <br>
           <%= link_to "Click Here", "https://abe.illinois.gov/abe/access/accessController?id=0.3971759164763745", :class => "btn btn-primary btn-sm" %>
@@ -35,7 +35,7 @@
 
               <br>
 
-            <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest family community resource center near you and further determine your eligibility.
+            <%= link_to "Click Here", "http://abe.illinois.gov", :class => "btn btn-primary btn-sm" %>  to find the nearest Community Service Center and further determine your eligibility.
             <br>
 
             <br>
@@ -64,19 +64,19 @@
 
   <% end %>
 
-  <% if @eligible_rental == 'yes' %>
+<!--   <%# if @eligible_rental == 'yes' %>
 
     <div class="panel panel-default" style="margin: 0 0 40px 0">
       <div class="panel-body">
         <p style="font-size:32px; font-style:italic">You may be in luck!</p>
 
         <p>Based on your rental status, household size and income, you likely qualify for rental assistance.
-      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p>
+      Applications can be filed at any of the City’s six Community Service Centers. For more information about Emergency Rental Assistance, visit your local Community Service Center <%#= link_to "here", "http://www.cityofchicago.org/city/en/depts/fss/provdrs/serv/svcs/community_servicecenterlocations.html"%> or call 3-1-1.</p>
       </div>
     </div>
 
 
-    <% elsif @eligible_rental == 'no' %>
+    <%# elsif @eligible_rental == 'no' %>
 
       <div class="panel panel-default" style="margin: 0 0 40px 0">
         <div class="panel-body">
@@ -85,7 +85,7 @@
         </div>
 
       </div>
-  <% end %>
+  <%# end %> -->
 
   <% if @eligible_rta == 'yes' %>
 

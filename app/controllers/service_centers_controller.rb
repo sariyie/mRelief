@@ -1,67 +1,38 @@
-
+require 'open-uri'
+require 'json'
 
 class ServiceCentersController < ApplicationController
 
   def index
+    complete_dataset = []
+    100.times do |num|
+      num = num + 15
+      url = "http://app.purplebinder.com/api/v2/search?page="+num.to_s
+      raw_data = open(url).read
+      parsed_data = JSON.parse(raw_data)
 
-  end
 
-  def show
-    @service_center = ServiceCenter.find(params[:id])
-  end
+        parsed_data.each do |service_center|
 
-  def new
-    @service_center = ServiceCenter.new
-  end
-
-  def create
-    @service_center = ServiceCenter.new
-    @service_center.name = params[:name]
-    @service_center.latitude = params[:latitude]
-    @service_center.longitude = params[:longitude]
-    @service_center.street = params[:street]
-    @service_center.city = params[:city]
-    @service_center.state = params[:state]
-    @service_center.zip = params[:zip]
-    @service_center.phone = params[:phone]
-    @service_center.organization = params[:organization]
-
-    if @service_center.save
-      redirect_to "/service_centers", :notice => "Service center created successfully."
-    else
-      render 'new'
+         ServiceCenter.create(
+           name: service_center["name"],
+           latitude: service_center["coordinates"][0],
+           longitude: service_center["coordinates"][1],
+           street: service_center["address"]["street"],
+           city: service_center["address"]["city"],
+           state: service_center["address"]["state"],
+           zip: service_center["address"]["zip"],
+           phone: service_center["phones"][0]["number"],
+           organization: service_center["organization"]["id"],
+           description: service_center["short_desc"]
+         )
+         Organization.create(
+           organization_id: service_center["organization"]["id"],
+           name: service_center["organization"]["name"],
+           url: service_center["organization"]["url"]
+         )
+         puts "looped through #{num} time"
+      end
     end
-  end
-
-  def edit
-    @service_center = ServiceCenter.find(params[:id])
-  end
-
-  def update
-    @service_center = ServiceCenter.find(params[:id])
-
-    @service_center.name = params[:name]
-    @service_center.latitude = params[:latitude]
-    @service_center.longitude = params[:longitude]
-    @service_center.street = params[:street]
-    @service_center.city = params[:city]
-    @service_center.state = params[:state]
-    @service_center.zip = params[:zip]
-    @service_center.phone = params[:phone]
-    @service_center.organization = params[:organization]
-
-    if @service_center.save
-      redirect_to "/service_centers", :notice => "Service center updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @service_center = ServiceCenter.find(params[:id])
-
-    @service_center.destroy
-
-    redirect_to "/service_centers", :notice => "Service center deleted."
   end
 end
