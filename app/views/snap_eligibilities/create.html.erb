@@ -68,49 +68,7 @@
 
           <%= link_to "Click Here", "http://www.direct2food.org/", :class => "btn btn-primary btn-sm" %> to go to their site to enter your zipcode and find resources near you.</p>
 
-          <br>
-          <p>Here are some additional community resources provided by Purple Binder:</p>
 
-        <% if @food_resources_first.present? %>
-          <div class="first-resource">
-            <%= @food_resources_first.first.name %> <br>
-            <%= @food_resources_first.first.street %> <br>
-            <%= @food_resources_first.first.city %> <br>
-            <%= @food_resources_first.first.state %>, <%= @food_resources_first.first.zip %> <br>
-            <%= @food_resources_first.first.phone %>
-          </div>
-        <% end %>
-
-        <% if @food_resources_second.present? %>
-          <div class="first-resource">
-            <%= @food_resources_second.first.name %> <br>
-            <%= @food_resources_second.first.street %> <br>
-            <%= @food_resources_second.first.city %> <br>
-            <%= @food_resources_second.first.state %>, <%= @food_resources_second.first.zip %> <br>
-            <%= @food_resources_first.first.phone %>
-          </div>
-        <% end %>
-
-          <br>
-        <% if @food_resources.count > 0  %>
-          <div class="first-resource">
-            <%= @food_resources.first.name %> <br>
-            <%= @food_resources.first.street %> <br>
-            <%= @food_resources.first.city %> <br>
-            <%= @food_resources.first.state %>, <%= @food_resources.first.zip %> <br>
-            <%= @food_resources.first.phone %>
-          </div>
-        <% end %>
-
-        <% if @food_resources.count > 1 %>
-           <div class="second-resource">
-             <%= @food_resources.second.name %><br>
-             <%= @food_resources.second.street %><br>
-             <%= @food_resources.second.city %><br>
-             <%= @food_resources.second.state %>, <%= @food_resources.second.zip %> <br>
-             <%= @food_resources.second.phone %>
-           </div>
-        <% end  %>
 
         <% end %>
       </div>
