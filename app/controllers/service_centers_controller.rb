@@ -6,7 +6,7 @@ class ServiceCentersController < ApplicationController
   def index
     complete_dataset = []
     100.times do |num|
-      num = num + 15
+      num = num + 98
       url = "http://app.purplebinder.com/api/v2/search?page="+num.to_s
       raw_data = open(url).read
       parsed_data = JSON.parse(raw_data)

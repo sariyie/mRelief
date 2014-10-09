@@ -64,20 +64,30 @@ require 'numbers_in_words/duck_punch' #see why later
       # his is the logic for the zipcode and the laf center
 
       @user_zipcode = params[:zipcode]
-      zipcode = @user_zipcode << ".0"
-      @lafcenter = LafCenter.find_by(:zipcode => zipcode)
+      @zipcode = @user_zipcode << ".0"
+      @lafcenter = LafCenter.find_by(:zipcode => @zipcode)
 
       #this is the logic for the community resources
+      # @user_zipcode = @user_zipcode.chomp(".0")
+      # @food_resources = ServiceCenter.where(:description => "food pantry")
+      # @food_resources_zip = @food_resources.where(:zip => @user_zipcode)
 
-      @food_resources = ServiceCenter.where(:description => "food pantry")
-      if @food_resources.count > 2
-        #in this case there are 2 food pantries in the user's zip
-        @food_resources.where(:zip => @user_zipcode)
-        if @food_resources.count == 1
-          @food_resources_first = @food_resources.first
-          @food_resources_second = ServiceCenter.where(:description => "food pantry")
-        end
-      end
+      #   #in this case there are 2 food pantries in the user's zip
+      #   if @food_resources_zip.count >= 2
+      #      @food_resources = @food_resources_zip
+      #   end
+
+      #   #in this case there is 1 food pantry in the user's zip
+      #   if @food_resources_zip.count == 1
+      #      @food_resources_first = @food_resources_zip.first
+      #      @food_resources_second = @food_resources.first
+      #   end
+
+      #   #in this caser there are no food pantries in the user's zip
+      #   if  @food_resources_zip == 0
+      #       @food_resources_first = @food_resources.first
+      #       @food_resources_second = @food_resources.second
+      #   end
 
 
       # this is the logic for disability
