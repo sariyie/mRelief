@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Routes for the Laf_center resource:
 
   # READ
-  # get('/laf_centers', { :controller => 'laf_centers', :action => 'index' })
+   get('/laf_centers', { :controller => 'laf_centers', :action => 'index' })
   # get('/laf_centers/:id', { :controller => 'laf_centers', :action => 'show' })
 
 
