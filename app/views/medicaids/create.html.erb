@@ -27,7 +27,19 @@
           </div>
 
             <h4>Based on the information received, we cannot determine your eligibility at this time. </h4>
-            <p class="lead"> You may need to discuss your situation with a Medicaid expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your Medicaid eligibility.</p>
+            <br>
+            <p class="lead"> You may need to discuss your situation with a Medicaid expert that can share more information on your probable eligibility. A Legal Assistance Foundation (LAF) Paralegal near you can discuss your Medicaid eligibility with you.</p>
+
+            <br>
+
+            <p class="lead">
+            The nearest LAF center is the <%= @lafcenter.center %>.<br>
+            Address: <%=  @lafcenter.address %> <%= @lafcenter.city %>, <%= @user_zipcode %> <br>
+            Phone number: <%= @lafcenter.telephone %> <br>
+            Spanish Speaker: <%= @lafcenter.spanish %>
+            </p>
+
+            <br>
 
             <br>
       </div>

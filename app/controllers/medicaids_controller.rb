@@ -41,5 +41,9 @@ class MedicaidsController < ApplicationController
         end
     end
 
+    @user_zipcode = params[:zipcode]
+    zipcode = @user_zipcode << ".0"
+    @lafcenter = LafCenter.find_by(:zipcode => zipcode)
+
   end
 end

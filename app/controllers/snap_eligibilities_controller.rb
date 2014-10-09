@@ -61,6 +61,12 @@ require 'numbers_in_words/duck_punch' #see why later
           @eligible = 'maybe'
         end
 
+      # this is the logic for the zipcode and the laf center
+
+      @user_zipcode = params[:zipcode]
+      zipcode = @user_zipcode << ".0"
+      @lafcenter = LafCenter.find_by(:zipcode => zipcode)
+
       # this is the logic for disability
       if params[:disabled].present?
 

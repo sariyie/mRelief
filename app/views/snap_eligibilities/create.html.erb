@@ -27,7 +27,15 @@
       <div class="panel panel-default" style="margin: 0 0 40px 0">
         <div class="panel-body">
 
-            <h4>Based on the information received, we cannot determine your eligibility at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. Call 312.341.1070 to find a Legal Assistance Foundation (LAF) Paralegal near you to discuss your food stamp eligibility. </h4>
+            <h4>Based on the information received, we cannot determine your eligibility at this time. You may need to discuss your situation with a Food Stamp expert that can share more information on your probable eligibility. A Legal Assistance Foundation (LAF) Paralegal near you can discuss your food stamp eligibility with you. </h4>
+            <br>
+
+            <h5>
+            The nearest LAF center is the <%= @lafcenter.center %>.<br>
+            Address: <%=  @lafcenter.address %> <%= @lafcenter.city %>, <%= @user_zipcode %> <br>
+            Phone number: <%= @lafcenter.telephone %> <br>
+            Spanish Speaker: <%= @lafcenter.spanish %>
+            </h5>
 
             <br>
 
