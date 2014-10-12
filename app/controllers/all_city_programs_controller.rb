@@ -203,6 +203,14 @@ class AllCityProgramsController < ApplicationController
           @eligible_all_kids = "no"
         end
 
+        if dependent_no == 1
+          @eligible_all_kids = "no"
+        end
+
+        if params[:status] == "no_children"
+          @eligible_all_kids = "no"
+        end
+
     end #this ends the present if statement
   end
 

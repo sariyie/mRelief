@@ -143,10 +143,12 @@
 
     <div class="col-sm-12">
       <div id="status"  class="pull-left">
+        <%= radio_button_tag 'status', 'no_children' %> do not have children <br>
         <%= radio_button_tag 'status', 'uninsured' %>  been uninsured for 12 months  <br>
         <%= radio_button_tag 'status', 'job_ended' %>  lost insurance because a JOB ended  <br>
         <%= radio_button_tag 'status', 'cobra' %>  lost insurance because the insurance was COBRA  <br>
         <%= radio_button_tag 'status', 'none' %> none of the above <br>
+
       </div>
     </div>
 </div>
