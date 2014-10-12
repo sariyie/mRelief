@@ -1,0 +1,39 @@
+<div class="container" style="padding-bottom:150px">
+
+ <div class="page-header" style="border:none">
+    <h1>Do I qualify for the Medicare Cost Sharing Program?</h1>
+    <p class="page lead">If you are receiving Medicare through the Social Security Administration, you may qualify for a Medicare cost sharing program that will pay your Medicare Part B premium and -- depending on your income -- your Medicare deductibles and co-pays. </p>
+  </div>
+
+<% if @eligible == 'yes' %>
+      <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">You may be in luck!</p>
+            <h4>Based on your answers, you may qualify for a Medicare Cost Sharing Program.  Important Note:  If you previously opted out of Medicare part B, the Medicare cost sharing program, you may be able to get your Medicare premium paid now. Please contact or visit your LAF paralegal to re-enroll for Medicare Part B. You can see the nearest Community Service Center near you.</h4>
+          </p>
+          <br>
+          <h5>
+          The nearest LAF center is the <%= @lafcenter.center %>.<br>
+          Address: <%=  @lafcenter.address %> <%= @lafcenter.city %>, <%= @zipcode %> <br>
+          Phone number: <%= @lafcenter.telephone %> <br>
+          Spanish Speaker: <%= @lafcenter.spanish %>
+          </h5>
+          <br>
+        </div>
+     </div>
+
+<% else %>
+
+    <div class="panel panel-default" style="margin: 0 0 40px 0">
+        <div class="panel-body">
+          <p style="font-size:32px; font-style:italic">We apologize.</p>
+
+          <h4>Based on your answers, you do not currently qualify for Medicare Cost Sharing. However, the Senior Health Insurance Program (SHIP), which is a free statewide health insurance counseling service for Medicare beneficiaries and their caregivers may be able to provide you with more information on what you do qualify for. To contact SHIP, please call (800) 252-8966 or email AGING.SHIP@illinois.gov. Below, see resources to free or reduced clinics near you. </h4>
+
+        </div>
+      </div>
+
+<% end %>
+
+
+</div>

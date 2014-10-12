@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # Routes for the Medicare_cost_sharing resource:
+  # CREATE
+  get('/medicare_cost_sharings/new', { :controller => 'medicare_cost_sharings', :action => 'new' })
+  get('/create_medicare_cost_sharing', { :controller => 'medicare_cost_sharings', :action => 'create' })
+
+
   # Routes for the Laf_center resource:
 
   # READ

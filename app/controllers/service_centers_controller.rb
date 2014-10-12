@@ -36,3 +36,18 @@ class ServiceCentersController < ApplicationController
     end
   end
 end
+
+
+# ServiceCenter.where(:description => "food pantry").each do |center|
+#   puts "ServiceCenter.create(:name => '#{center.name}',
+#         :latitude => '#{center.latitude}',
+#         :longitude => '#{center.longitude}',
+#         :street => '#{center.street}',
+#         :city => '#{center.city}',
+#         :state => '#{center.state}',
+#         :zip => '#{center.zip}',
+#         :phone => '#{center.phone}',
+#         :organization => '#{center.organization}',
+#         :description => '#{center.description}'
+#     )"
+# end

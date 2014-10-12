@@ -811,6 +811,13 @@ p.description = "Healthcare for families and individuals"
 p.location = "chicago"
 p.save
 
+p = Program.new
+p.url = "/medicare_cost_sharings/new"
+p.name = "Medicare Cost Sharing"
+p.description = "Medicare Assistance"
+p.location = "illinois"
+p.save
+
 a = AutoRepairAssistance.new
 a.auto_household_size = 1
 a.auto_gross_income = 3646.88
@@ -1877,3 +1884,560 @@ m = Medicaid.new
 m.medicaid_household_size = 20
 m.medicaid_gross_income = 113138.80
 m.save
+
+
+m = MedicareCostSharing.new
+m.household_size = 1
+m.medicare_cost_sharing = 973
+m.premium_only = 1312
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 2
+m.medicare_cost_sharing = 1311
+m.premium_only = 1769
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 3
+m.medicare_cost_sharing = 1649
+m.premium_only = 2225
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 4
+m.medicare_cost_sharing = 1988
+m.premium_only = 2682
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 5
+m.medicare_cost_sharing = 2326
+m.premium_only = 3139
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 6
+m.medicare_cost_sharing = 2664
+m.premium_only = 3596
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 7
+m.medicare_cost_sharing = 3003
+m.premium_only = 4052
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 8
+m.medicare_cost_sharing = 3341
+m.premium_only = 4509
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 9
+m.medicare_cost_sharing = 3679
+m.premium_only = 4966
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 10
+m.medicare_cost_sharing = 4017
+m.premium_only = 5423
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 11
+m.medicare_cost_sharing = 4017
+m.premium_only = 5880
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 12
+m.medicare_cost_sharing = 4355
+m.premium_only = 6337
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 13
+m.medicare_cost_sharing = 4693
+m.premium_only = 6794
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 14
+m.medicare_cost_sharing = 5031
+m.premium_only = 7251
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 15
+m.medicare_cost_sharing = 5369
+m.premium_only = 7708
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 16
+m.medicare_cost_sharing = 5707
+m.premium_only = 8165
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 17
+m.medicare_cost_sharing = 6045
+m.premium_only = 8622
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 18
+m.medicare_cost_sharing = 6383
+m.premium_only = 9079
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 19
+m.medicare_cost_sharing = 6721
+m.premium_only = 9536
+m.save
+
+m = MedicareCostSharing.new
+m.household_size = 20
+m.medicare_cost_sharing = 7059
+m.premium_only = 9993
+m.save
+
+
+
+
+
+
+
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6326267',
+        :longitude => '41.8791118',
+        :street => '208 S La Salle Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60604',
+        :phone => '312-629-4500',
+        :organization => '2779',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.632155',
+        :longitude => '41.895234',
+        :street => '721 N LaSalle Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60654',
+        :phone => '312-655-7000',
+        :organization => '339',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6247152',
+        :longitude => '41.8983818',
+        :street => '126 E Chestnut Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60611',
+        :phone => '312-787-4570',
+        :organization => '2264',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6372422',
+        :longitude => '41.9011425',
+        :street => '1000 N Orleans Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60610',
+        :phone => '(312) 337-7111',
+        :organization => '3974',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.658466',
+        :longitude => '41.88884',
+        :street => '4241 W Washington Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60624',
+        :phone => '773-722-0544',
+        :organization => '3750',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.658466',
+        :longitude => '41.88884',
+        :street => '5112 W Washington Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60644',
+        :phone => '773-287-0206',
+        :organization => '2433',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6607647',
+        :longitude => '41.8914599',
+        :street => '528 N Ada Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60642',
+        :phone => '312-421-3122',
+        :organization => '2402',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Chicago Temple Corps Community Center ',
+        :latitude => '-87.6660481',
+        :longitude => '41.8814614',
+        :street => '1 N Ogden Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60607',
+        :phone => '(312) 492-6803',
+        :organization => '700',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6576554',
+        :longitude => '41.8586468',
+        :street => '1641 S Allport Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60608',
+        :phone => '312-226-7887',
+        :organization => '2441',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6253538',
+        :longitude => '41.8491806',
+        :street => '2401 S Wabash Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60616',
+        :phone => '312-791-1846',
+        :organization => '2380',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6624899',
+        :longitude => '41.8997747',
+        :street => '1400 W Augusta Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-278-7471',
+        :organization => '646',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.682103',
+        :longitude => '41.892448',
+        :street => '600 N Leavitt Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60612',
+        :phone => '312-666-6726 ',
+        :organization => '4509',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6539749',
+        :longitude => '41.8389383',
+        :street => '3057 S Gratten Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60608',
+        :phone => '773-927-6420',
+        :organization => '2208',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6754752',
+        :longitude => '41.8496353',
+        :street => '2319 S Damen Ave',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60608',
+        :phone => '773-579-0832',
+        :organization => '106',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6890333',
+        :longitude => '41.8805075',
+        :street => '20 S Campbell Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60612',
+        :phone => '312-733-4801',
+        :organization => '2394',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6699359',
+        :longitude => '41.9090008',
+        :street => '1649 W LeMoyne Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-276-2338',
+        :organization => '2270',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.648025',
+        :longitude => '41.921758',
+        :street => '2145 N Halsted Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60614',
+        :phone => '312-943-6776 x2130',
+        :organization => '529',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.653893',
+        :longitude => '41.92191',
+        :street => '1010 W Webster Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60614',
+        :phone => '773-325-8610',
+        :organization => '3970',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6106128',
+        :longitude => '41.8314344',
+        :street => '600 E 35th Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60616',
+        :phone => '312-225-5300',
+        :organization => '2187',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6894132',
+        :longitude => '41.9005056',
+        :street => '1048 N Campbell Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-342-1516',
+        :organization => '4015',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6859481',
+        :longitude => '41.9086856',
+        :street => '1510 N Claremont Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-486-5901',
+        :organization => '2419',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6909904',
+        :longitude => '41.903143',
+        :street => '2536 W Division Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-278-8653',
+        :organization => '3990',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.7054817',
+        :longitude => '41.862508',
+        :street => '3147 W Douglas Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60623',
+        :phone => '773-522-3050',
+        :organization => '4000',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.689022',
+        :longitude => '41.9148372',
+        :street => '2442 W Moffat Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60647',
+        :phone => '773-772-4161',
+        :organization => '3999',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6979775',
+        :longitude => '41.9028056',
+        :street => '2827 W Division Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-342-5868',
+        :organization => '2257',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6658017',
+        :longitude => '41.9272053',
+        :street => '2507 N Greenview Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60614',
+        :phone => '773-472-1083',
+        :organization => '129',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.7021414',
+        :longitude => '41.851791',
+        :street => '3047 W Cermak',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60623',
+        :phone => '773-521-8400 x14',
+        :organization => '1110',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Manna Food Pantry',
+        :latitude => '-87.69775',
+        :longitude => '41.912207',
+        :street => '1665 N Mozart Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60647',
+        :phone => '773-384-2200',
+        :organization => '3994',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6243836',
+        :longitude => '41.8201352',
+        :street => '50 E 41st Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60653',
+        :phone => '773-268-1518',
+        :organization => '4016',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Fresh Market Food Pantry',
+        :latitude => '-87.713827',
+        :longitude => '41.8886355',
+        :street => '402 N Saint Louis Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60624',
+        :phone => '773-346-1785',
+        :organization => '1748',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6998523',
+        :longitude => '41.9103446',
+        :street => '2914 W North Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60647',
+        :phone => '773-227-5747',
+        :organization => '4001',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Operation Pull Food Pantry',
+        :latitude => '-87.6050051',
+        :longitude => '41.8209902',
+        :street => '4017 S Drexel Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60653',
+        :phone => '773-285-5819',
+        :organization => '3997',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.60712',
+        :longitude => '41.817344',
+        :street => '4242 S Cottage Grove',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60653',
+        :phone => '773-548-7500',
+        :organization => '2320',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.7068317',
+        :longitude => '41.9013272',
+        :street => '1116 N Kedzie Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60651',
+        :phone => '773-772-7170 x3303',
+        :organization => '115',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'St. Maurice Church Food Pantry',
+        :latitude => '-87.677296',
+        :longitude => '41.828052',
+        :street => '3615 S Hoyne Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60609',
+        :phone => '773-523-3917',
+        :organization => '3998',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.706467',
+        :longitude => '41.848276',
+        :street => '2356 S Sawyer Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60623',
+        :phone => '773 972-3143',
+        :organization => '3985',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.7016343',
+        :longitude => '41.9212382',
+        :street => '2157 N Humboldt Boulevard',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60647',
+        :phone => '773-235-3646',
+        :organization => '2444',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6137943',
+        :longitude => '41.813021',
+        :street => '4501 S Vincennes Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60653',
+        :phone => '773-373-6144',
+        :organization => '3986',
+        :description => 'food pantry'
+    )
+ServiceCenter.create(:name => 'Food Pantry',
+        :latitude => '-87.6137943',
+        :longitude => '41.813021',
+        :street => '4501 S Vincennes Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60653',
+        :phone => '773-373-6144',
+        :organization => '3986',
+        :description => 'food pantry'
+    )

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008163514) do
+ActiveRecord::Schema.define(version: 20141009175130) do
 
   create_table "all_city_programs", force: true do |t|
     t.datetime "created_at"
@@ -93,6 +93,14 @@ ActiveRecord::Schema.define(version: 20141008163514) do
   create_table "medicaids", force: true do |t|
     t.integer  "medicaid_household_size"
     t.decimal  "medicaid_gross_income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medicare_cost_sharings", force: true do |t|
+    t.integer  "household_size"
+    t.decimal  "medicare_cost_sharing"
+    t.decimal  "premium_only"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

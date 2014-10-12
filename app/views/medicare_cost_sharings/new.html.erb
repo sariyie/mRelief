@@ -1,0 +1,77 @@
+<div class= "container">
+
+<div class="page-header" style="border:none">
+  <h1>Do I qualify for the Medicare Cost Sharing program?</h1>
+  <div class="lead"> <p>If you are receiving Medicare through the Social Security Administration, you may qualify for a Medicare cost sharing program that will pay your Medicare Part B premium and -- depending on your income -- your Medicare deductibles and co-pays. </p>
+
+
+</div>
+
+<% if @medicare_cost_sharing.errors.any? %>
+  <% @medicare_cost_sharing.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div class="panel panel-default col-md-12" style="margin: 0 0 40px 0; padding-top:15px">
+<div class="panel-body">
+<form action="/create_medicare_cost_sharing" class="form-horizontal">
+  <!-- Label and input for household_size -->
+
+  <div class="form-group col-sm-9">
+    <label for="household_size">What is your household size? </label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Please include yourself, your spouse, your children under 18 who live with you"} %>
+
+    <div>
+      <input type="text" id="household_size" name="household_size" placeholder="For example: 3" class="form-control" required>
+    </div>
+  </div>
+
+
+  <div class="form-group col-sm-9">
+    <label for="medicare_household_size">How many people in your household receive Medicare?</label>
+      <%#= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "This should include the number of people who purchase and prepare food with you."} %>
+
+    <div>
+      <input type="text" id="medicare_household_size" name="medicare_household_size" placeholder="For example: 2" class="form-control"  required>
+    </div>
+  </div>
+
+  <!-- Label and input for medicare_cost_sharing -->
+ <div class="form-group col-sm-9">
+    <label for="assets">What is you gross monthly income?</label>
+      <%#= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "This should include the number of people who purchase and prepare food with you."} %>
+
+    <div>
+      <input type="text" id="monthly_income" name="monthly_income" placeholder="For example: 1000" class="form-control" required>
+    </div>
+  </div>
+
+  <!-- Label and input for premium_only -->
+   <div class="form-group col-sm-9">
+    <label for="assets">Please estimate the value of your assets. (Exclude the value of your home and car.)</label>
+      <%= link_to "<i class=\"fa fa-info-circle\"></i>".html_safe, "#", data: {toggle: "popover", placement: "top", content: "Personal property is anything owned by a person that is not land or permanently affixed to land. This includes such items as: money in checking and savings accounts;stocks, bonds, savings certificates, and other securities;farm and small business equipment, unless used for income for self-support, estate bequests; and miscellaneous resources that are not real property."} %>
+
+    <div>
+      <input type="text" id="assets" name="assets" placeholder="For example: 5000" class="form-control" required>
+    </div>
+  </div>
+
+  <%= render "programs/zipcode_question" %>
+
+  <div class="form-group col-sm-12">
+    <div style="padding:40px 0 0 0">
+      <button type="submit" class="btn btn-primary">See if I qualify</button>
+    </div>
+  </div>
+  </div>
+</form>
+</div>
+</div>
+
+</div>
+

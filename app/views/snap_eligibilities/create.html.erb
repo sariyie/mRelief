@@ -68,42 +68,36 @@
 
           <%= link_to "Click Here", "http://www.direct2food.org/", :class => "btn btn-primary btn-sm" %> to go to their site to enter your zipcode and find resources near you.</p>
 
-
-
-          <!-- <p>Here are some additional resources from Purple Binder:</p>
-
-          <%# if @food_resources_zip.count >= 2 %>
-            <%#= @food_resources_zip.first.name %>  <br>
-            <%#= @food_resources_zip.first.street %> <br>
-            <%#= @food_resources_zip.first.city %> <br>
-            <%#= @food_resources_zip.first.state %>, <%#= @food_resources_zip.first.zip %> <br>
-            <%#= @food_resources_zip.first.phone %> <br>
+          <p>Here are some additional resources from Purple Binder:</p>
+          <% if @food_resources_zip.count >= 2 %>
+            <%= @food_resources_zip.first.name %>  <br>
+            <%= @food_resources_zip.first.street %> <br>
+            <%= @food_resources_zip.first.city %> <br>
+            <%= @food_resources_zip.first.state %>, <%= @food_resources_zip.first.zip %> <br>
+            <%= @food_resources_zip.first.phone %> <br>
             <br>
-            <%#= @food_resources_zip.second.name %> <br>
-            <%#= @food_resources_zip.second.street %> <br>
-            <%#= @food_resources_zip.second.city %> <br>
-            <%#= @food_resources_zip.second.state %>, <%#= @food_resources_zip.second.zip %> <br>
-            <%#= @food_resources_zip.second.phone %> <br>
-          <%# end %>
-
-            <%# if @food_resources_first.present? %>
-              <%#= @food_resources_first.name %> <br>
-              <%#= @food_resources_first.street %> <br>
-              <%#= @food_resources_first.city %> <br>
-              <%#= @food_resources_first.state %>, <%#= @food_resources_first.zip %> <br>
-              <%#= @food_resources_first.phone %> <br>
-
-              <br>
-              <%#= @food_resources_second.name %> <br>
-              <%#= @food_resources_second.street %> <br>
-              <%#= @food_resources_second.city %> <br>
-              <%#= @food_resources_second.state %>, <%#= @food_resources_second.zip %> <br>
-              <%#= @food_resources_second.phone %> <br>
-            <%# end %>
-  -->
-
+            <%= @food_resources_zip.second.name %> <br>
+            <%= @food_resources_zip.second.street %> <br>
+            <%= @food_resources_zip.second.city %> <br>
+            <%= @food_resources_zip.second.state %>, <%= @food_resources_zip.second.zip %> <br>
+            <%= @food_resources_zip.second.phone %> <br>
           <% end %>
 
+            <% if @food_resources_first.present? %>
+              <%= @food_resources_first.name %> <br>
+              <%= @food_resources_first.street %> <br>
+              <%= @food_resources_first.city %> <br>
+              <%= @food_resources_first.state %>, <%= @food_resources_first.zip %> <br>
+              <%= @food_resources_first.phone %> <br>
+
+              <br>
+              <%= @food_resources_second.name %> <br>
+              <%= @food_resources_second.street %> <br>
+              <%= @food_resources_second.city %> <br>
+              <%= @food_resources_second.state %>, <%= @food_resources_second.zip %> <br>
+              <%= @food_resources_second.phone %> <br>
+            <% end %>
+          <% end %>
 
       </div>
 </div>
