@@ -75,6 +75,10 @@ class AllKidsController < ApplicationController
           @eligible = false
         end
 
+        if kids_household_size == 1
+          @eligible = false
+        end
+
     end
     end
 
