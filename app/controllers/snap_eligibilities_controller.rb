@@ -84,7 +84,7 @@ require 'numbers_in_words/duck_punch' #see why later
         end
 
         #in this caser there are no food pantries in the user's zip
-        if  @food_resources_zip == 0
+        if  @food_resources_zip.count == 0
             @food_resources_first = @food_resources.first
             @food_resources_second = @food_resources.second
         end

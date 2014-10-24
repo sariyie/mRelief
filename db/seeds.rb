@@ -815,7 +815,7 @@ p = Program.new
 p.url = "/medicare_cost_sharings/new"
 p.name = "Medicare Cost Sharing"
 p.description = "Medicare Assistance"
-p.location = "illinois"
+p.location = "chicago"
 p.save
 
 a = AutoRepairAssistance.new
@@ -2440,4 +2440,96 @@ ServiceCenter.create(:name => 'Food Pantry',
         :phone => '773-373-6144',
         :organization => '3986',
         :description => 'food pantry'
+    )
+
+
+####
+
+ServiceCenter.create(:name => 'Dr. James West Clinic at Haymarket Center',
+        :latitude => '-87.6510137',
+        :longitude => '41.8825815',
+        :street => '22 N Sangamon Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60607',
+        :phone => '312-660-1775',
+        :organization => '4432',
+        :description => 'mental health * primary care'
+    )
+ServiceCenter.create(:name => 'Mile Square Main Clinic and Urgent Care (and Neighborhood Locations)',
+        :latitude => '-87.6695189',
+        :longitude => '41.848922',
+        :street => 'Main Location: 1220 S Wood St',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60608',
+        :phone => '312-996-2000',
+        :organization => '2052',
+        :description => 'mental health * primary care * health care'
+    )
+ServiceCenter.create(:name => 'General and Specialty Care - Various Locations',
+        :latitude => '-87.6695189',
+        :longitude => '41.848922',
+        :street => 'ACCESS @ Sinai - 2653 W Ogden Ave',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60608',
+        :phone => '1-866-882-2237',
+        :organization => '4062',
+        :description => 'primary care * pediatrics * psychiatry'
+    )
+ServiceCenter.create(:name => 'West Town Family Health Center',
+        :latitude => '-87.698419',
+        :longitude => '41.900626',
+        :street => '1044 N Mozart Street Suite 203',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60622',
+        :phone => '773-292-8300',
+        :organization => '3713',
+        :description => 'primary care * pediatrics * family medicine'
+    )
+ServiceCenter.create(:name => 'Erie Humboldt Park Health Center',
+        :latitude => '-87.6965333',
+        :longitude => '41.9102914',
+        :street => '2750 W North Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60647',
+        :phone => '312-666-3494',
+        :organization => '4171',
+        :description => 'case management * counseling * primary care'
+    )
+ServiceCenter.create(:name => 'Heartland Health Center - Lakeview Pediatric Center',
+        :latitude => '-87.65311',
+        :longitude => '41.937738',
+        :street => '3048 N Wilton Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60657',
+        :phone => '773-296-7580',
+        :organization => '2779',
+        :description => 'dental services * immunizations * primary care services'
+    )
+ServiceCenter.create(:name => 'Mile Square Humboldt Park Clinic',
+        :latitude => '-87.7084359',
+        :longitude => '41.9030913',
+        :street => '3240 West Division Street',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60651',
+        :phone => '312.413.7425',
+        :organization => '2052',
+        :description => 'primary care * fqhc * community health'
+    )
+ServiceCenter.create(:name => 'Henson School-Based Health Clinic',
+        :latitude => '-87.7215937',
+        :longitude => '41.8636346',
+        :street => '1326 S Avers Avenue',
+        :city => 'Chicago',
+        :state => 'IL',
+        :zip => '60623',
+        :phone => '312-666-3494',
+        :organization => '4171',
+        :description => 'individual therapy * group therapy * primary care'
     )

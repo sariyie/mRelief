@@ -69,6 +69,36 @@
 
             </p>
 
+            <p>Here are some additional resources from Purple Binder:</p>
+          <% if @medical_resources_zip.count >= 2 %>
+            <%= @medical_resources_zip.first.name %>  <br>
+            <%= @medical_resources_zip.first.street %> <br>
+            <%= @medical_resources_zip.first.city %> <br>
+            <%= @medical_resources_zip.first.state %>, <%= @medical_resources_zip.first.zip %> <br>
+            <%= @medical_resources_zip.first.phone %> <br>
+            <br>
+            <%= @medical_resources_zip.second.name %> <br>
+            <%= @medical_resources_zip.second.street %> <br>
+            <%= @medical_resources_zip.second.city %> <br>
+            <%= @medical_resources_zip.second.state %>, <%= @medical_resources_zip.second.zip %> <br>
+            <%= @medical_resources_zip.second.phone %> <br>
+          <% end %>
+
+            <% if @medical_resources_first.present? %>
+              <%= @medical_resources_first.name %> <br>
+              <%= @medical_resources_first.street %> <br>
+              <%= @medical_resources_first.city %> <br>
+              <%= @medical_resources_first.state %>, <%= @medical_resources_first.zip %> <br>
+              <%= @medical_resources_first.phone %> <br>
+
+              <br>
+              <%= @medical_resources_second.name %> <br>
+              <%= @medical_resources_second.street %> <br>
+              <%= @medical_resources_second.city %> <br>
+              <%= @medical_resources_second.state %>, <%= @medical_resources_second.zip %> <br>
+              <%= @medical_resources_second.phone %> <br>
+            <% end %>
+
 
         <% end %>
       </div>
